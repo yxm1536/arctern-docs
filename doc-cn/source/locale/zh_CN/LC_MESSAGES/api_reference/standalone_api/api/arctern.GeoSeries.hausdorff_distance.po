@@ -36,7 +36,6 @@ msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.hausdorff_distance:5 of
-#, fuzzy
 msgid ""
 "The geometry or GeoSeries to calculate the Hausdorff distance between it "
 "and the geometries in the first GeoSeries.  * If ``other`` is a geometry,"
@@ -45,10 +44,7 @@ msgid ""
 "function calculates the Hausdorff distance between each geometry in the "
 "GeoSeries and the geometry with the same index in ``other``."
 msgstr ""
-"用于计算第一个 GeoSeries 中的几何体与其之间 Hausdorff 距离的几何体或 GeoSeries。* 如果 ``other`` "
-"是几何体，那么此方法计算 GeoSeries 中每个几何体与 ``other`` 之间的 Hausdorff 距离。* 如果 ``other`` "
-"是一个 GeoSeries，那么此方法计算 GeoSeries 中每个几何体与 ``other`` 中具有相同索引的几何体之间的 "
-"Hausdorff 距离。"
+"用于计算第一个 GeoSeries 中的几何体与其之间 Hausdorff 距离的几何体或 GeoSeries。* 如果 ``other`` 是几何体，则此方法计算 GeoSeries 中每个几何体与 ``other`` 之间的 Hausdorff 距离。* 如果 ``other`` 是一个 GeoSeries，则此方法计算 GeoSeries 中每个几何体与 ``other`` 中具有相同索引的几何体之间的 Hausdorff 距离。"
 
 #: arctern.GeoSeries.hausdorff_distance:5 of
 msgid ""
@@ -77,7 +73,7 @@ msgstr ""
 msgid ""
 "Hausdorff distance between each geometry in the GeoSeries and the "
 "corresponding geometry given in ``other``."
-msgstr ""
+msgstr "GeoSeries 中的每个几何体与 ``other`` 中给出的对应几何体之间的 Hausdorff 距离。"
 
 #: arctern.GeoSeries.hausdorff_distance of
 msgid "返回类型"
