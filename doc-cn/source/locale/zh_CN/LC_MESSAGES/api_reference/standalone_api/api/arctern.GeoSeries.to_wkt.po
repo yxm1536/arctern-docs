@@ -34,7 +34,7 @@ msgstr ""
 
 #: arctern.GeoSeries.to_wkt:3 of
 msgid "Sequence of geometries in WKT format."
-msgstr ""
+msgstr "WKT 格式的几何体序列。"
 
 #: arctern.GeoSeries.to_wkt of
 msgid "返回类型"
