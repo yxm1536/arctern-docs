@@ -23,20 +23,20 @@ msgstr ""
 
 #: arctern.GeoSeries.point:1 of
 msgid "Constructs POINT objects based on the given coordinates."
-msgstr ""
+msgstr "根据给定的坐标构造 POINT 对象。"
 
 #: arctern.GeoSeries.point:3 of
 msgid ""
 "``x`` and ``y`` are Series so that points can be created in batch. The "
 "number of values in the two Series should be the same."
-msgstr ""
+msgstr "``x`` 和 ``y`` 是 Series，因此可以批量创建点。两个 Series 中的值的数量应相同。"
 
 #: arctern.GeoSeries.point:5 of
 msgid ""
 "Suppose that the demension of ``x`` is *N*, the returned GeoSeries of "
 "this function should contains *N* points. The position of the *i*th point"
 " is defined by its coordinates *(x, y).*"
-msgstr ""
+msgstr "假设 ``x`` 的维度为 *N*，则此函数返回的 GeoSeries 应包含 *N* 个点。第 *i* 个的点的位置由其坐标 *(x, y)* 定义。"
 
 #: arctern.GeoSeries.point of
 msgid "参数"
@@ -44,18 +44,18 @@ msgstr ""
 
 #: arctern.GeoSeries.point:7 of
 msgid "X coordinates of points."
-msgstr ""
+msgstr "点的 x 坐标。"
 
 #: arctern.GeoSeries.point:9 of
 msgid "Y coordinates of points."
-msgstr ""
+msgstr "点的 Y 坐标。"
 
 #: arctern.GeoSeries.point:11 of
 msgid ""
 "A string representation of Coordinate Reference System (CRS). The string "
 "is made up of an authority code and a SRID (Spatial Reference "
 "Identifier), for example, \"EPSG:4326\"."
-msgstr ""
+msgstr "CRS（Coordinate Reference System，坐标参考系）的字符串表示。 该字符串由机构代码和 SRID（Spatial Reference Identifier，空间参考标识符）组成，例如 \"EPSG:4326\"。"
 
 #: arctern.GeoSeries.point of
 msgid "返回"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: arctern.GeoSeries.point:15 of
 msgid "Sequence of POINT objects."
-msgstr ""
+msgstr "POINT 对象序列。"
 
 #: arctern.GeoSeries.point of
 msgid "返回类型"

@@ -23,11 +23,11 @@ msgstr ""
 
 #: arctern.GeoSeries.geom_from_geojson:1 of
 msgid "Constructs geometries from GeoJSON strings."
-msgstr ""
+msgstr "根据 GeoJSON 字符串构造几何体。"
 
 #: arctern.GeoSeries.geom_from_geojson:3 of
 msgid "``json`` is Series so that geometries can be created in batch."
-msgstr ""
+msgstr "``json`` 是 Series，因此可以批量创建几何体。"
 
 #: arctern.GeoSeries.geom_from_geojson of
 msgid "参数"
@@ -35,14 +35,14 @@ msgstr ""
 
 #: arctern.GeoSeries.geom_from_geojson:5 of
 msgid "String representations of geometries in JSON format."
-msgstr ""
+msgstr "JSON 格式的几何体的字符串表示。"
 
 #: arctern.GeoSeries.geom_from_geojson:7 of
 msgid ""
 "A string representation of Coordinate Reference System (CRS). The string "
 "is made up of an authority code and a SRID (Spatial Reference "
 "Identifier), for example, \"EPSG:4326\"."
-msgstr ""
+msgstr "CRS（Coordinate Reference System，坐标参考系）的字符串表示。 该字符串由机构代码和 SRID（Spatial Reference Identifier，空间参考标识符）组成，例如 \"EPSG:4326\"。"
 
 #: arctern.GeoSeries.geom_from_geojson of
 msgid "返回"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: arctern.GeoSeries.geom_from_geojson:11 of
 msgid "Sequence of geometries."
-msgstr ""
+msgstr "几何体序列。"
 
 #: arctern.GeoSeries.geom_from_geojson of
 msgid "返回类型"
