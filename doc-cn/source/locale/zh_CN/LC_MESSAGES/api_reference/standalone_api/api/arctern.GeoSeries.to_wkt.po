@@ -26,7 +26,7 @@ msgid ""
 "Transforms all geometries in the GeoSeries to `WKT "
 "<https://en.wikipedia.org/wiki/Well-"
 "known_text_representation_of_geometry>`_ strings."
-msgstr "将 GeoSeries 中的所有几何体转换为`WKT <https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry>`_ 字符串。"
+msgstr "将 GeoSeries 中的所有几何体转换为`WKT <https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry> `_ 字符串。"
 
 #: arctern.GeoSeries.to_wkt of
 msgid "返回"

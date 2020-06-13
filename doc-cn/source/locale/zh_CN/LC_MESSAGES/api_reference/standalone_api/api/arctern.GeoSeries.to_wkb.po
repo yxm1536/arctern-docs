@@ -26,7 +26,7 @@ msgid ""
 "Transforms all geometries in the GeoSeries to `WKB "
 "<https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry"
 "#Well-known_binary>`_ strings."
-msgstr "将 GeoSeries 中的所有几何体转换为`WKB <https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry#Well-known_binary>`_ 字符串。"
+msgstr "将 GeoSeries 中的所有几何体转换为`WKB <https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry#Well-known_binary> `_ 字符串。"
 
 #: arctern.GeoSeries.to_wkb of
 msgid "返回"
