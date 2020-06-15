@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-15 09:57+0800\n"
+"POT-Creation-Date: 2020-06-15 15:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,25 +50,6 @@ msgstr ""
 "GeoSeries 中的每个几何体是否接触 ``other``。* 如果 ``other`` 是一个 GeoSeries，则此方法检查 "
 "GeoSeries 中的每个几何体是否接触 ``other`` 中具有相同索引的几何体。"
 
-#: arctern.GeoSeries.touches:5 of
-msgid ""
-"The geometry or GeoSeries to test whether it touches the geometries in "
-"the first GeoSeries."
-msgstr "用于检查与第一个 GeoSeries 中的几何体是否接触的几何体或 GeoSeries。"
-
-#: arctern.GeoSeries.touches:7 of
-msgid ""
-"If ``other`` is a geometry, this function tests the \"touch\" relation "
-"between each geometry in the GeoSeries and ``other``."
-msgstr "如果 ``other`` 是几何体，则此方法检查 GeoSeries 中的每个几何体是否接触 ``other``。"
-
-#: arctern.GeoSeries.touches:8 of
-msgid ""
-"If ``other`` is a GeoSeries, this function tests the \"touch\" relation "
-"between each geometry in the GeoSeries and the geometry with the same "
-"index in ``other``."
-msgstr "如果 ``other`` 是一个 GeoSeries，则此方法检查 GeoSeries 中的每个几何体是否接触 ``other`` 中具有相同索引的几何体。"
-
 #: arctern.GeoSeries.touches of
 msgid "返回"
 msgstr ""
@@ -103,4 +84,27 @@ msgstr ""
 
 #~ msgid "*False*: The first geometry does not touch the other."
 #~ msgstr ""
+
+#~ msgid ""
+#~ "The geometry or GeoSeries to test "
+#~ "whether it touches the geometries in "
+#~ "the first GeoSeries."
+#~ msgstr "用于检查与第一个 GeoSeries 中的几何体是否接触的几何体或 GeoSeries。"
+
+#~ msgid ""
+#~ "If ``other`` is a geometry, this "
+#~ "function tests the \"touch\" relation "
+#~ "between each geometry in the GeoSeries"
+#~ " and ``other``."
+#~ msgstr "如果 ``other`` 是几何体，则此方法检查 GeoSeries 中的每个几何体是否接触 ``other``。"
+
+#~ msgid ""
+#~ "If ``other`` is a GeoSeries, this "
+#~ "function tests the \"touch\" relation "
+#~ "between each geometry in the GeoSeries"
+#~ " and the geometry with the same "
+#~ "index in ``other``."
+#~ msgstr ""
+#~ "如果 ``other`` 是一个 GeoSeries，则此方法检查 GeoSeries"
+#~ " 中的每个几何体是否接触 ``other`` 中具有相同索引的几何体。"
 
