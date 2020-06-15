@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.plot.plot_geometry:1 of
 msgid "Plots a collection of geometries."
-msgstr ""
+msgstr "绘制一组几何图形。"
 
 #: arctern.plot.plot_geometry of
 msgid "参数"
@@ -31,11 +31,11 @@ msgstr ""
 
 #: arctern.plot.plot_geometry:3 of
 msgid "The axes where geometries will be plotted."
-msgstr ""
+msgstr "绘制几何图形的画布的坐标轴。"
 
 #: arctern.plot.plot_geometry:5 of
 msgid "Sequence of geometries."
-msgstr ""
+msgstr "一组点。"
 
 #: arctern.plot.plot_geometry:7 of
 msgid ""
@@ -69,41 +69,69 @@ msgid ""
 " |alpha     |float, opacity    |1.0    |All"
 "                                               | "
 "+----------+------------------+-------+--------------------------------------------------+"
-msgstr ""
+msgstr "``style_kwds`` 指定描述几何图形样式的属性。下面是可用样式属性的列表："
+"+----------+------------------+-------+--------------------------------------------------+"
+" |属性       |描述               |默认值   |赋给"
+"                                        | "
+"+==========+==================+=======+==================================================+"
+" |color     |str, 颜色          |'C0'   |Point, MultiPoint, Linestring, "
+"MultiLinestring    | "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |edgecolor |str, 边缘颜色      |'black'|Polygon, MultiPolygon"
+"                             | "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |facecolor |str, 表面颜色      |'C0'   |Polygon, MultiPolygon"
+"                             | "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |linewidth |float, 线宽度      |1.0    |Linestring, MultiLinestring, "
+"Polygon, MultiPolygon| "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |linestyle |str, 线样式        |'-'    |Linestring, MultiLinestring, "
+"Polygon, MultiPolygon| "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |marker    |str, 标志样式      |'o'    |Point, MultiPoint"
+"                                 | "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |markersize|float, 标志尺寸    |6.0    |Point, MultiPoint"
+"                                 | "
+"+----------+------------------+-------+--------------------------------------------------+"
+" |alpha     |float, 不透明度    |1.0    |All"
+"                                               | "
+"+----------+------------------+-------+--------------------------------------------------+"
 
 #: arctern.plot.plot_geometry:7 of
 msgid ""
 "``style_kwds`` specify the properties that describe the style of "
 "geometric graphs."
-msgstr ""
+msgstr "``style_kwds`` 指定描述几何图形样式的属性。"
 
 #: arctern.plot.plot_geometry:9 of
 msgid "Here is a list of availble style properties:"
-msgstr ""
+msgstr "下面是可用样式属性的列表："
 
 #: arctern.plot.plot_geometry:12 of
 msgid "Property"
-msgstr ""
+msgstr "属性"
 
 #: arctern.plot.plot_geometry:12 of
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: arctern.plot.plot_geometry:12 of
 msgid "Default"
-msgstr ""
+msgstr "默认值"
 
 #: arctern.plot.plot_geometry:12 of
 msgid "Applied to"
-msgstr ""
+msgstr "赋给"
 
 #: arctern.plot.plot_geometry:14 of
 msgid "color"
-msgstr ""
+msgstr "颜色"
 
 #: arctern.plot.plot_geometry:14 of
 msgid "str, color"
-msgstr ""
+msgstr "str, 颜色"
 
 #: arctern.plot.plot_geometry:14 arctern.plot.plot_geometry:18 of
 msgid "'C0'"
@@ -115,11 +143,11 @@ msgstr ""
 
 #: arctern.plot.plot_geometry:16 of
 msgid "edgecolor"
-msgstr ""
+msgstr "边缘颜色"
 
 #: arctern.plot.plot_geometry:16 of
 msgid "str, edge color"
-msgstr ""
+msgstr "str, 边缘颜色"
 
 #: arctern.plot.plot_geometry:16 of
 msgid "'black'"
@@ -131,19 +159,19 @@ msgstr ""
 
 #: arctern.plot.plot_geometry:18 of
 msgid "facecolor"
-msgstr ""
+msgstr "表面颜色"
 
 #: arctern.plot.plot_geometry:18 of
 msgid "str, face color"
-msgstr ""
+msgstr "str, 表面颜色"
 
 #: arctern.plot.plot_geometry:20 of
 msgid "linewidth"
-msgstr ""
+msgstr "线宽度"
 
 #: arctern.plot.plot_geometry:20 of
 msgid "float, line width"
-msgstr ""
+msgstr "float, 线宽度"
 
 #: arctern.plot.plot_geometry:20 arctern.plot.plot_geometry:28 of
 msgid "1.0"
@@ -155,11 +183,11 @@ msgstr ""
 
 #: arctern.plot.plot_geometry:22 of
 msgid "linestyle"
-msgstr ""
+msgstr "线样式"
 
 #: arctern.plot.plot_geometry:22 of
 msgid "str, line style"
-msgstr ""
+msgstr "str, 线样式"
 
 #: arctern.plot.plot_geometry:22 of
 msgid "'-'"
@@ -167,11 +195,11 @@ msgstr ""
 
 #: arctern.plot.plot_geometry:24 of
 msgid "marker"
-msgstr ""
+msgstr "标志"
 
 #: arctern.plot.plot_geometry:24 of
 msgid "str, marker style"
-msgstr ""
+msgstr "str, 标志"
 
 #: arctern.plot.plot_geometry:24 of
 msgid "'o'"
@@ -183,11 +211,11 @@ msgstr ""
 
 #: arctern.plot.plot_geometry:26 of
 msgid "markersize"
-msgstr ""
+msgstr "标志尺寸"
 
 #: arctern.plot.plot_geometry:26 of
 msgid "float, marker size"
-msgstr ""
+msgstr "float, 标志尺寸"
 
 #: arctern.plot.plot_geometry:26 of
 msgid "6.0"
@@ -199,11 +227,11 @@ msgstr ""
 
 #: arctern.plot.plot_geometry:28 of
 msgid "float, opacity"
-msgstr ""
+msgstr "float, 不透明度"
 
 #: arctern.plot.plot_geometry:28 of
 msgid "All"
-msgstr ""
+msgstr "所有"
 
 #: arctern.plot.plot_geometry:32 of
 msgid "提示"
@@ -214,7 +242,7 @@ msgid ""
 "See `matplotlib.pyplot.plot document "
 "<https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot>`_"
 " for detailed description of marker styles, line styles, and colors."
-msgstr ""
+msgstr "关于标志样式、线样式和颜色的详细说明，请参见 `matplotlib.pyplot.plot 文档 <https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html?highlight=plot#matplotlib.pyplot.plot>`_ 。"
 
 #: arctern.plot.plot_geometry:36 of
 msgid "实际案例"

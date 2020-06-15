@@ -85,7 +85,7 @@ msgstr "为所有几何图形设置 CRS（Coordinate Reference System，坐标�
 msgid ""
 "Extra parameters passed to `contextily.add_basemap. "
 "<https://contextily.readthedocs.io/en/latest/reference.html>`_"
-msgstr "传到 `contextily.add_basemap. <https://contextily.readthedocs.io/en/latest/reference.html>`_ 中的其他参数。"
+msgstr "传到 `contextily.add_basemap <https://contextily.readthedocs.io/en/latest/reference.html>`_ 中的其他参数。"
 
 #: arctern.plot.weighted_pointmap:30 of
 msgid "实际案例"
