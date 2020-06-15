@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.plot.choroplethmap:1 of
 msgid "Plots a choropleth map in matplotlib."
-msgstr ""
+msgstr "在 Matplotlib 中绘制轮廓图。"
 
 #: arctern.plot.choroplethmap of
 msgid "参数"
@@ -31,26 +31,26 @@ msgstr ""
 
 #: arctern.plot.choroplethmap:3 of
 msgid "Axes where geometries will be plotted."
-msgstr ""
+msgstr "绘制几何图形的画布的坐标轴。"
 
 #: arctern.plot.choroplethmap:5 of
 msgid "Sequence of polygons, as region boundaries to plot."
-msgstr ""
+msgstr "一组多边形，作为区域边界来绘制。"
 
 #: arctern.plot.choroplethmap:7 of
 msgid "Color weights for polygons"
-msgstr ""
+msgstr "多边形的颜色权重。"
 
 #: arctern.plot.choroplethmap:9 of
 msgid "Bounding box of the map. For example, [west, south, east, north]."
-msgstr ""
+msgstr "地图的边界，如 [west, south, east, north]。"
 
 #: arctern.plot.choroplethmap:11 of
 msgid ""
 "Range of color gradient. Either use [\"hex_color\"] to specify a same "
 "color for all geometries, or [\"hex_color1\", \"hex_color2\"] to specify "
 "a color gradient ranging from \"hex_color1\" to \"hex_color2\"."
-msgstr ""
+msgstr "颜色梯度。你可以使用 ["hex_color"] 来为所有几何体指定相同的颜色，或者使用 ["hex_color1", "hex_color2"] 来指定从 \"hex_color1\" 到 \"hex_color2\" 的渐变色。"
 
 #: arctern.plot.choroplethmap:14 of
 msgid ""
@@ -58,27 +58,27 @@ msgid ""
 "``color_gradient`` has two values [\"color1\", \"color2\"]. Binds w1 to "
 "\"color1\", and w2 to \"color2\". When weight < w1 or weight > w2, the "
 "weight will be truncated to w1 or w2 accordingly."
-msgstr ""
+msgstr "``color_gradient`` 的权重范围 [w1, w2]，默认值为 0。只有在 ``color_gradient`` 有两个值 [\"color1\", \"color2\"] 的情况下才需要指定 ``color_bound``。将 \"color1\" 绑定到 w1，将 \"color2\" 绑定到 w2。当某个权重小于 w1 或大于 w2 时，此权重将相应地被截断为 w1 或 w2。"
 
 #: arctern.plot.choroplethmap:17 of
 msgid "Opacity of polygons, ranged from 0.0 to 1.0, by default 1.0."
-msgstr ""
+msgstr "多边形的不透明度，范围是 0.0 到 1.0，默认值为 1.0。"
 
 #: arctern.plot.choroplethmap:19 of
 msgid ""
 "The Coordinate Reference System (CRS) set to all geometries, by default "
 "'EPSG:3857'. Only supports SRID as a WKT representation of CRS by now."
-msgstr ""
+msgstr "为所有几何图形设置 CRS（Coordinate Reference System，坐标参考系），默认值为 'EPSG:3857'。目前仅支持 SRID（Spatial Reference Identifier，空间参考标识符）作为 CRS 的 WKT 表示。"
 
 #: arctern.plot.choroplethmap:22 of
 msgid "Aggregation type, by default 'max'."
-msgstr ""
+msgstr "聚合类型，默认值为 'max'。"
 
 #: arctern.plot.choroplethmap:24 of
 msgid ""
 "Extra parameters passed to `contextily.add_basemap. "
 "<https://contextily.readthedocs.io/en/latest/reference.html>`_"
-msgstr ""
+msgstr "传到 `contextily.add_basemap <https://contextily.readthedocs.io/en/latest/reference.html>`_ 中的其他参数。"
 
 #: arctern.plot.choroplethmap:28 of
 msgid "实际案例"
