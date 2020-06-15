@@ -41,11 +41,11 @@ msgstr "POLYGON: 单个多边形的面积。"
 
 #: arctern.GeoSeries.area:7 of
 msgid "MULTIPOLYGON: Sum of area of multiple polygons."
-msgstr ""
+msgstr "MULTIPOLYGON: 多个多边形的面积总和。"
 
 #: arctern.GeoSeries.area:8 of
 msgid "CURVEPOLYGON: Area of a single curvilinear polygon."
-msgstr ""
+msgstr "CURVEPOLYGON: 单个曲线多边形的面积。"
 
 #: arctern.GeoSeries.area:9 of
 msgid "MULTICURVE: Sum of area of multiple curvilinear polygons."
