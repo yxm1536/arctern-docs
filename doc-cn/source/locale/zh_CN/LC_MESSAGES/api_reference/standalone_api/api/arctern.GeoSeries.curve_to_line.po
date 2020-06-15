@@ -27,7 +27,7 @@ msgstr "将每个几何体中的曲线转换为近似线性表示。"
 
 #: arctern.GeoSeries.curve_to_line:3 of
 msgid "For example,"
-msgstr ""
+msgstr "例如，"
 
 #: arctern.GeoSeries.curve_to_line:5 of
 msgid "CIRCULAR STRING to LINESTRING,"

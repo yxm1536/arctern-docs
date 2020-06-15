@@ -32,7 +32,6 @@ msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.set_crs:3 of
-#, fuzzy
 msgid ""
 "A string representation of CRS. The string is made up of an authority "
 "code and a SRID (Spatial Reference Identifier), for example, "

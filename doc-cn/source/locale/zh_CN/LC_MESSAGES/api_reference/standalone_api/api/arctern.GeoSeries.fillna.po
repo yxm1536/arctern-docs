@@ -50,7 +50,6 @@ msgid "Axis along which to fill missing values."
 msgstr "沿着此坐标轴填充缺失值。"
 
 #: arctern.GeoSeries.fillna:11 of
-#, fuzzy
 msgid ""
 "Whether to fill NA values in-place, by default False.  * *True:* Fills NA"
 " values in-place. This will modify any other views on this object. * "

@@ -35,7 +35,7 @@ msgstr ""
 msgid ""
 "A GeoSeries that contains only one geometry, which is the union of all "
 "geometries in the GeoSeries."
-msgstr ""一个仅包含一个几何体的 GeoSeries，其中的几何体是第一个 GeoSeries 中所有几何体的并集。"
+msgstr "一个仅包含一个几何体的 GeoSeries，其中的几何体是第一个 GeoSeries 中所有几何体的并集。"
 
 #: arctern.GeoSeries.unary_union of
 msgid "返回类型"
