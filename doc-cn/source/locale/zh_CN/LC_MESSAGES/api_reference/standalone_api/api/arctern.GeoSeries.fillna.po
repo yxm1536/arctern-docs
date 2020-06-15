@@ -67,13 +67,13 @@ msgid ""
 "NAs, it will only be partially filled. * If ``method`` is not specified, "
 "this is the maximum number of entries along the entire axis where NaNs "
 "will be filled."
-msgstr ""
+msgstr "要填充的 NA 值数量有限，默认值为 None。如果不为 None，必须大于 0。* 如果设置了 ``method``，这是要向前/向后填充的连续 NA 值的最大数量。换句话说，如果空缺大于这个连续 NA 值的数量，它只会被部分填充。* 如果没有设置 ``method``，这是填充了 NaN 的整个坐标轴上的最大条目数。"
 
 #: arctern.GeoSeries.fillna:16 of
 msgid ""
 "Limited number of NA values to be filled, by default None. It must be "
 "greater than 0 if not None."
-msgstr ""
+msgstr "要填充的 NA 值数量有限，默认值为 None。如果不为 None，必须大于 0。"
 
 #: arctern.GeoSeries.fillna:18 of
 msgid ""
@@ -81,13 +81,13 @@ msgid ""
 "values to forward/backward fill. In other words, if there is a gap with "
 "more than this number of consecutive NAs, it will only be partially "
 "filled."
-msgstr ""
+msgstr "如果设置了 ``method``，这是要向前/向后填充的连续 NA 值的最大数量。换句话说，如果空缺大于这个连续 NA 值的数量，它只会被部分填充。"
 
 #: arctern.GeoSeries.fillna:19 of
 msgid ""
 "If ``method`` is not specified, this is the maximum number of entries "
 "along the entire axis where NaNs will be filled."
-msgstr ""
+msgstr "如果没有设置 ``method``，这是填充了 NaN 的整个坐标轴上的最大条目数。"
 
 #: arctern.GeoSeries.fillna:21 of
 msgid ""
@@ -112,11 +112,11 @@ msgstr ""
 
 #: arctern.GeoSeries.fillna:26 of
 msgid "None if ``inplace=False``."
-msgstr ""
+msgstr "如果 ``inplace = False``，则为 None。"
 
 #: arctern.GeoSeries.fillna:27 of
 msgid "A GeoSeries with missing values filled if ``inplace=True``."
-msgstr ""
+msgstr "如果 ``inplace = True``，则填充缺失值的 GeoSeries。"
 
 #: arctern.GeoSeries.fillna of
 msgid "返回类型"

@@ -38,7 +38,6 @@ msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.touches:5 of
-#, fuzzy
 msgid ""
 "The geometry or GeoSeries to test whether it touches the geometries in "
 "the first GeoSeries.  * If ``other`` is a geometry, this function tests "
@@ -55,20 +54,20 @@ msgstr ""
 msgid ""
 "The geometry or GeoSeries to test whether it touches the geometries in "
 "the first GeoSeries."
-msgstr ""
+msgstr "用于检查与第一个 GeoSeries 中的几何体是否接触的几何体或 GeoSeries。"
 
 #: arctern.GeoSeries.touches:7 of
 msgid ""
 "If ``other`` is a geometry, this function tests the \"touch\" relation "
 "between each geometry in the GeoSeries and ``other``."
-msgstr ""
+msgstr "如果 ``other`` 是几何体，则此方法检查 GeoSeries 中的每个几何体是否接触 ``other``。"
 
 #: arctern.GeoSeries.touches:8 of
 msgid ""
 "If ``other`` is a GeoSeries, this function tests the \"touch\" relation "
 "between each geometry in the GeoSeries and the geometry with the same "
 "index in ``other``."
-msgstr ""
+msgstr "如果 ``other`` 是一个 GeoSeries，则此方法检查 GeoSeries 中的每个几何体是否接触 ``other`` 中具有相同索引的几何体。"
 
 #: arctern.GeoSeries.touches of
 msgid "返回"

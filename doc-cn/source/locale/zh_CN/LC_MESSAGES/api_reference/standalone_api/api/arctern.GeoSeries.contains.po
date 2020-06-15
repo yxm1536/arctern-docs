@@ -32,7 +32,6 @@ msgid "参数"
 msgstr ""
 
 #: arctern.GeoSeries.contains:3 of
-#, fuzzy
 msgid ""
 "The geometry or GeoSeries to test whether the geometries in the first "
 "GeoSeries contains it.  * If ``other`` is a geometry, this function tests"
@@ -49,20 +48,20 @@ msgstr ""
 msgid ""
 "The geometry or GeoSeries to test whether the geometries in the first "
 "GeoSeries contains it."
-msgstr ""
+msgstr "用于检查第一个 GeoSeries 中的几何体是否包含它的几何体或 GeoSeries。"
 
 #: arctern.GeoSeries.contains:5 of
 msgid ""
 "If ``other`` is a geometry, this function tests the \"contain\" relation "
 "between each geometry in the GeoSeries and ``other``."
-msgstr ""
+msgstr "如果 ``other`` 是几何体，则此方法检查 GeoSeries 中每个几何体是否包含 ``other``。"
 
 #: arctern.GeoSeries.contains:6 of
 msgid ""
 "If ``other`` is a GeoSeries, this function tests the \"contain\" relation"
 " between each geometry in the GeoSeries and the geometry with the same "
 "index in ``other``."
-msgstr ""
+msgstr "如果 ``other`` 是一个 GeoSeries，则此方法将检查 GeoSeries 中的每个几何体是否包含 ``other`` 中具有相同索引的几何体。"
 
 #: arctern.GeoSeries.contains of
 msgid "返回"

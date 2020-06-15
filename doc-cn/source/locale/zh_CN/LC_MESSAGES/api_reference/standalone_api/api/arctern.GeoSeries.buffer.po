@@ -26,7 +26,7 @@ msgid ""
 "For each geometry, moves all of its points away from its centroid to "
 "construct a new geometry. The distance of movement is specified as "
 "``distance``."
-msgstr "对于每个几何体，将其所有点向远离几何体中心的方向移动以构造新的几何体。。移动距离被指定为 ``distance``。"
+msgstr "对于每个几何体，将其所有点向远离几何体中心的方向移动以构造新的几何体。移动距离被指定为 ``distance``。"
 
 #: arctern.GeoSeries.buffer:3 of
 msgid ""
