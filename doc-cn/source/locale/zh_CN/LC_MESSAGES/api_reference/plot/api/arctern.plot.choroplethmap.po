@@ -35,7 +35,7 @@ msgstr "绘制几何图形的画布的坐标轴。"
 
 #: arctern.plot.choroplethmap:5 of
 msgid "Sequence of polygons, as region boundaries to plot."
-msgstr "一组多边形，作为区域边界来绘制。"
+msgstr "一组作为要绘制的区域边界的多边形。"
 
 #: arctern.plot.choroplethmap:7 of
 msgid "Color weights for polygons"
