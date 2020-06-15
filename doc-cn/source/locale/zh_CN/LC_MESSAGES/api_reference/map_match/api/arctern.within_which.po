@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "For each geometry in ``left``, search for a geometry in ``right`` that "
 "contains it."
-msgstr ""
+msgstr "对于 ``left`` 中的每个几何体，在 ``right`` 中搜索包含该几何体的几何体。"
 
 #: arctern.within_which of
 msgid "参数"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: arctern.within_which:3 arctern.within_which:5 of
 msgid "Sequence of geometries."
-msgstr ""
+msgstr "几何体序列。"
 
 #: arctern.within_which of
 msgid "返回"
@@ -45,7 +45,7 @@ msgid ""
 "index *i* in the returned Series indicates that the geometry ``left[i]`` "
 "is within the geometry ``right[j]``.  * When there are multiple "
 "candidates, return one of them. * When there is no candidate, return NA."
-msgstr ""
+msgstr "在 ``right`` 中的几何体索引。例如，返回的 Series 中具有索引 *i* 的 *j* 值表示几何体 ``left[i]`` 在几何体` `right[j]`` 之内。"
 
 #: arctern.within_which:8 of
 msgid ""

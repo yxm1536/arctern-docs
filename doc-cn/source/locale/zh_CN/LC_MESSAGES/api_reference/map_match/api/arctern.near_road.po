@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Tests whether there is a road within the given ``distance`` of all "
 "``points``. The points do not need to be part of a continuous path."
-msgstr ""
+msgstr "检查在所有 ``points`` 的给定 ``distance`` 内是否存在道路。``points`` 中的点不必都位于连续路径上。"
 
 #: arctern.near_road of
 msgid "参数"
@@ -33,15 +33,15 @@ msgstr ""
 
 #: arctern.near_road:3 of
 msgid "LINGSTRING objects in WKB format."
-msgstr ""
+msgstr "一组 WKB 格式的 LINGSTRING 对象。"
 
 #: arctern.near_road:5 of
 msgid "POINT objects in WKB format."
-msgstr ""
+msgstr "一组 WKB 格式的 POINT 对象。"
 
 #: arctern.near_road:7 of
 msgid "Searching distance around the points, by default 100."
-msgstr ""
+msgstr "搜索所有点周围的距离，默认值为 100。"
 
 #: arctern.near_road of
 msgid "返回"
@@ -52,7 +52,7 @@ msgid ""
 "A Series that contains only one boolean value that indicates whether "
 "there is a road within the given ``distance`` of all ``points``.  * "
 "*True*: The road exists. * *False*: The road does not exist."
-msgstr ""
+msgstr "一个仅包含一个布尔值的 Series，该布尔值指示在所有 ``points`` 的给定 ``distance`` 内是否存在道路。* *True*: 道路存在。* *False*: 道路不存在。"
 
 #: arctern.near_road:10 of
 msgid ""

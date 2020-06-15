@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/api_reference/map_match/map_match.rst:4
 msgid "Map Match"
-msgstr ""
+msgstr "地图匹配"
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
 msgid ""
@@ -29,7 +29,7 @@ msgstr ""
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
 msgid "Returns the location on ``roads`` closest to the ``points``."
-msgstr ""
+msgstr "在 ``roads`` 中的所有道路上查找最接近 ``points`` 中的点的位置。"
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
 msgid ":obj:`arctern.nearest_road <arctern.nearest_road>`\\ \\(roads\\, points\\)"
@@ -37,7 +37,7 @@ msgstr ""
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
 msgid "Returns the road in ``roads`` closest to the ``points``."
-msgstr ""
+msgstr "在 ``roads`` 中的所有道路上查找最接近 ``points`` 中的点的道路。"
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
 msgid ""
@@ -49,7 +49,7 @@ msgstr ""
 msgid ""
 "Tests whether there is a road within the given ``distance`` of all "
 "``points``."
-msgstr ""
+msgstr "检查在所有 ``points`` 的给定 ``distance`` 内是否存在道路。"
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
 msgid ":obj:`arctern.within_which <arctern.within_which>`\\ \\(left\\, right\\)"
@@ -59,5 +59,5 @@ msgstr ""
 msgid ""
 "For each geometry in ``left``, search for a geometry in ``right`` that "
 "contains it."
-msgstr ""
+msgstr "对于 ``left`` 中的每个几何体，在 ``right`` 中搜索包含该几何体的几何体。"
 
