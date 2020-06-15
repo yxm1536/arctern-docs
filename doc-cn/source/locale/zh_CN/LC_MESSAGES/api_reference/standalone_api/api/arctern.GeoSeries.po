@@ -55,7 +55,7 @@ msgid ""
 "The Coordinate Reference System (CRS) set to all geometries in GeoSeries."
 " Only supports SRID as a WKT representation of CRS by now, for example, "
 "\"EPSG:4326\"."
-msgstr "为 GeoSeries 中的所有几何体设置 CRS（Coordinate Reference System，坐标参考系）。目前仅支持 SRID（Spatial Reference Identifier，空间参考标识符）作为 CRS 的 WKT 表示，例如 ``\"EPSG:4326\"``。"
+msgstr "为 GeoSeries 中的所有几何体设置 CRS（Coordinate Reference System，坐标参考系）。目前仅支持 SRID（Spatial Reference Identifier，空间参考标识符）作为 CRS 的 WKT 表示，例如 \"EPSG:4326\"。"
 
 #: arctern.GeoSeries:13 of
 msgid ""
