@@ -49,7 +49,7 @@ msgstr ""
 msgid ""
 "Tests whether there is a road within the given ``distance`` of all "
 "``points``."
-msgstr "检查在所有 ``points`` 的给定 ``distance`` 内是否存在道路。"
+msgstr "检查在所有 ``points`` 附近的给定范围 ``distance`` 内是否存在道路。"
 
 #: ../../source/api_reference/map_match/map_match.rst:12:<autosummary>:1
 msgid ":obj:`arctern.within_which <arctern.within_which>`\\ \\(left\\, right\\)"

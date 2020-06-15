@@ -25,7 +25,7 @@ msgstr ""
 msgid ""
 "Tests whether there is a road within the given ``distance`` of all "
 "``points``. The points do not need to be part of a continuous path."
-msgstr "检查在所有 ``points`` 的给定 ``distance`` 内是否存在道路。``points`` 中的点不必都位于连续路径上。"
+msgstr "检查在所有 ``points`` 附近的给定范围 ``distance`` 内是否存在道路。``points`` 中的点不必都位于连续路径上。"
 
 #: arctern.near_road of
 msgid "参数"
