@@ -23,7 +23,7 @@ msgstr ""
 
 #: arctern.plot.iconviz:1 of
 msgid "Plots an icon map in Matplotlib."
-msgstr ""
+msgstr "在 Matplotlib 中绘制图标图。"
 
 #: arctern.plot.iconviz of
 msgid "参数"
@@ -31,31 +31,31 @@ msgstr ""
 
 #: arctern.plot.iconviz:3 of
 msgid "Axes where geometries will be plotted."
-msgstr ""
+msgstr "绘制几何图形的画布的坐标轴。"
 
 #: arctern.plot.iconviz:5 of
 msgid "Sequence of points."
-msgstr ""
+msgstr "一组点。"
 
 #: arctern.plot.iconviz:7 of
 msgid "Bounding box of the map. For example, [west, south, east, north]."
-msgstr ""
+msgstr "地图的边界，如 [west, south, east, north]。"
 
 #: arctern.plot.iconviz:9 of
 msgid "Absolute path to icon file."
-msgstr ""
+msgstr "图标文件的绝对路径。"
 
 #: arctern.plot.iconviz:11 of
 msgid ""
 "The Coordinate Reference System (CRS) set to all geometries, by default "
 "'EPSG:3857'. Only supports SRID as a WKT representation of CRS by now."
-msgstr ""
+msgstr "为所有几何图形设置 CRS（Coordinate Reference System，坐标参考系），默认值为 'EPSG:3857'。目前仅支持 SRID（Spatial Reference Identifier，空间参考标识符）作为 CRS 的 WKT 表示。"
 
 #: arctern.plot.iconviz:14 of
 msgid ""
 "Extra parameters passed to `contextily.add_basemap. "
 "<https://contextily.readthedocs.io/en/latest/reference.html>`_"
-msgstr ""
+msgstr "传到 `contextily.add_basemap <https://contextily.readthedocs.io/en/latest/reference.html>`_ 中的其他参数。"
 
 #: arctern.plot.iconviz:18 of
 msgid "实际案例"
