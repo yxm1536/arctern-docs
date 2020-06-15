@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-13 14:56+0800\n"
+"POT-Creation-Date: 2020-06-15 14:40+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,20 +57,6 @@ msgid ""
 msgstr ""
 "是否原处填充 NA 值，默认值为 False。 * *True:* 原处填充 NA 值。该操作将修改此对象的任何其他视图。 * *False:* "
 "创建一个新的 GeoSeries 对象，在其中填充 NA 值。"
-
-#: arctern.GeoSeries.fillna:11 of
-msgid "Whether to fill NA values in-place, by default False."
-msgstr ""
-
-#: arctern.GeoSeries.fillna:13 of
-msgid ""
-"*True:* Fills NA values in-place. This will modify any other views on "
-"this object."
-msgstr ""
-
-#: arctern.GeoSeries.fillna:14 of
-msgid "*False:* Create a new GeoSeries object, and then fill NA values in it."
-msgstr ""
 
 #: arctern.GeoSeries.fillna:16 of
 msgid ""
@@ -365,5 +351,17 @@ msgstr ""
 #~ "Limited number of NA values to be"
 #~ " filled, by default None It must "
 #~ "be greater than 0 if not None."
+#~ msgstr ""
+
+#~ msgid "Whether to fill NA values in-place, by default False."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "*True:* Fills NA values in-place. "
+#~ "This will modify any other views "
+#~ "on this object."
+#~ msgstr ""
+
+#~ msgid "*False:* Create a new GeoSeries object, and then fill NA values in it."
 #~ msgstr ""
 
