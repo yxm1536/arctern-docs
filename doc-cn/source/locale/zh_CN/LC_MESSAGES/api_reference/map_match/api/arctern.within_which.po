@@ -47,7 +47,7 @@ msgid ""
 "candidates, return one of them. * When there is no candidate, return NA."
 msgstr ""
 "在 ``right`` 中的几何体索引。例如，返回的 Series 中，索引为 *i*、值为 *j* 的元素表示几何体 ``left[i]`` "
-"在几何体` `right[j]`` 之内。"
+"在几何体 ``right[j]`` 之内。"
 
 #: arctern.within_which of
 msgid "返回类型"
