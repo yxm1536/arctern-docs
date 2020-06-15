@@ -52,7 +52,7 @@ msgid ""
 "A Series that contains only one boolean value that indicates whether "
 "there is a road within the given ``distance`` of all ``points``.  * "
 "*True*: The road exists. * *False*: The road does not exist."
-msgstr "一个仅包含一个布尔值的 Series，该布尔值指示在所有 ``points`` 的给定 ``distance`` 内是否存在道路。* *True*: 道路存在。* *False*: 道路不存在。"
+msgstr "一个仅包含一个布尔值的 Series，该布尔值指示在所有 ``points`` 的给定 ``distance`` 内是否存在道路。* *True:* 道路存在。* *False:* 道路不存在。"
 
 #: arctern.near_road:10 of
 msgid ""
