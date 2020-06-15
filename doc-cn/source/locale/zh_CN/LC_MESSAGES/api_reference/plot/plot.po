@@ -29,7 +29,7 @@ msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid "Plots a collection of geometries."
-msgstr ""
+msgstr "绘制一组几何图形。"
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid ""
@@ -39,7 +39,7 @@ msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid "Plots a point map in Matplotlib."
-msgstr ""
+msgstr "在 Matplotlib 中绘制点图。"
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid ""
@@ -49,7 +49,7 @@ msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid "Plots a weighted point map in Matplotlib."
-msgstr ""
+msgstr "在 Matplotlib 中绘制加权点图。"
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid ""
@@ -59,7 +59,7 @@ msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid "Plots a heat map in matplotlib."
-msgstr ""
+msgstr "在 Matplotlib 中绘制热地图。"
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid ""
@@ -69,7 +69,7 @@ msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid "Plots a choropleth map in matplotlib."
-msgstr ""
+msgstr "在 Matplotlib 中绘制轮廓图。"
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid ""
@@ -79,7 +79,7 @@ msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid "Plots an icon map in Matplotlib."
-msgstr ""
+msgstr "在 Matplotlib 中绘制图标图。"
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid ""
@@ -89,5 +89,5 @@ msgstr ""
 
 #: ../../source/api_reference/plot/plot.rst:15:<autosummary>:1
 msgid "Plots a fishnet map in Matplotlib."
-msgstr ""
+msgstr "在 Matplotlib 中绘制渔网图。"
 
