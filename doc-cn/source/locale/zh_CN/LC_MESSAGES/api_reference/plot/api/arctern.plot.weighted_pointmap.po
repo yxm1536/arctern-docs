@@ -79,13 +79,13 @@ msgstr "点的不透明度，范围是 0.0 到 1.0，默认值为 1.0。"
 msgid ""
 "The Coordinate Reference System (CRS) set to all geometries, by default "
 "'EPSG:3857'. Only supports SRID as a WKT representation of CRS by now."
-msgstr "为所有几何图形设置 CRS（Coordinate Reference System，坐标参考系），默认值为 'EPSG:3857'，。"
+msgstr "为所有几何图形设置 CRS（Coordinate Reference System，坐标参考系），默认值为 'EPSG:3857'。目前仅支持 SRID（Spatial Reference Identifier，空间参考标识符）作为 CRS 的 WKT 表示。"
 
 #: arctern.plot.weighted_pointmap:26 of
 msgid ""
 "Extra parameters passed to `contextily.add_basemap. "
 "<https://contextily.readthedocs.io/en/latest/reference.html>`_"
-msgstr ""
+msgstr "传到 `contextily.add_basemap. <https://contextily.readthedocs.io/en/latest/reference.html>`_ 中的其他参数。"
 
 #: arctern.plot.weighted_pointmap:30 of
 msgid "实际案例"
