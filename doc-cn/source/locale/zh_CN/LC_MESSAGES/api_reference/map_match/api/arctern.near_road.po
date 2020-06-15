@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-13 10:47+0800\n"
+"POT-Creation-Date: 2020-06-15 14:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,21 +52,9 @@ msgid ""
 "A Series that contains only one boolean value that indicates whether "
 "there is a road within the given ``distance`` of all ``points``.  * "
 "*True*: The road exists. * *False*: The road does not exist."
-msgstr "一个仅包含一个布尔值的 Series，该布尔值指示在所有 ``points`` 的给定 ``distance`` 内是否存在道路。* *True:* 道路存在。* *False:* 道路不存在。"
-
-#: arctern.near_road:10 of
-msgid ""
-"A Series that contains only one boolean value that indicates whether "
-"there is a road within the given ``distance`` of all ``points``."
 msgstr ""
-
-#: arctern.near_road:12 of
-msgid "*True*: The road exists."
-msgstr ""
-
-#: arctern.near_road:13 of
-msgid "*False*: The road does not exist."
-msgstr ""
+"一个仅包含一个布尔值的 Series，该布尔值指示在所有 ``points`` 的给定 ``distance`` 内是否存在道路。* "
+"*True:* 道路存在。* *False:* 道路不存在。"
 
 #: arctern.near_road of
 msgid "返回类型"
@@ -83,5 +71,18 @@ msgstr ""
 #~ " ``distance`` of all ``points``. * "
 #~ "*True*: The road exists. * *False*: "
 #~ "The road does not exist."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "A Series that contains only one "
+#~ "boolean value that indicates whether "
+#~ "there is a road within the given"
+#~ " ``distance`` of all ``points``."
+#~ msgstr ""
+
+#~ msgid "*True*: The road exists."
+#~ msgstr ""
+
+#~ msgid "*False*: The road does not exist."
 #~ msgstr ""
 
