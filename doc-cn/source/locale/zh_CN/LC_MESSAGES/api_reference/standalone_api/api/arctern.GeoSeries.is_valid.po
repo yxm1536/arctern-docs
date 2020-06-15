@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-13 11:05+0800\n"
+"POT-Creation-Date: 2020-06-15 09:57+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,20 +37,6 @@ msgid ""
 "whether an element is valid.  * *True:* The geometry is valid. * *False:*"
 " The geometry is invalid."
 msgstr "GeoSeries 中每个元素对应的布尔值，指示元素是否为有效的。 * *True*: 几何体是有效的。 * *False*: 几何体是无效的。"
-
-#: arctern.GeoSeries.is_valid:3 of
-msgid ""
-"Mask of boolean values for each element in the GeoSeries that indicates "
-"whether an element is valid."
-msgstr ""
-
-#: arctern.GeoSeries.is_valid:5 of
-msgid "*True:* The geometry is valid."
-msgstr ""
-
-#: arctern.GeoSeries.is_valid:6 of
-msgid "*False:* The geometry is invalid."
-msgstr ""
 
 #: arctern.GeoSeries.is_valid of
 msgid "返回类型"
@@ -104,5 +90,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "**\\* *False** (** The geometry is invalid.*)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Mask of boolean values for each "
+#~ "element in the GeoSeries that indicates"
+#~ " whether an element is valid."
 #~ msgstr ""
 

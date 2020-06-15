@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-13 10:47+0800\n"
+"POT-Creation-Date: 2020-06-15 09:57+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,26 +40,9 @@ msgid ""
 "the intersection of each geometry in the GeoSeries and the geometry with "
 "the same index in ``other``."
 msgstr ""
-"用于计算第一个 GeoSeries 中的几何体与其交集的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法计算 GeoSeries 中的每个几何体与 ``other`` 的交集。* 如果 ``other`` 是一个 GeoSeries，则此方法计算 GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体的交集。"
-
-#: arctern.GeoSeries.intersection:3 of
-msgid ""
-"The geometry or GeoSeries to calculate the intersection of it and the "
-"geometries in the first GeoSeries."
-msgstr ""
-
-#: arctern.GeoSeries.intersection:5 of
-msgid ""
-"If ``other`` is a geometry, this function calculates the intersection of "
-"each geometry in the GeoSeries and ``other``."
-msgstr ""
-
-#: arctern.GeoSeries.intersection:6 of
-msgid ""
-"If ``other`` is a GeoSeries, this function calculates the intersection of"
-" each geometry in the GeoSeries and the geometry with the same index in "
-"``other``."
-msgstr ""
+"用于计算第一个 GeoSeries 中的几何体与其交集的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法计算 "
+"GeoSeries 中的每个几何体与 ``other`` 的交集。* 如果 ``other`` 是一个 GeoSeries，则此方法计算 "
+"GeoSeries 中的每个几何体与 ``other`` 中具有相同索引的几何体的交集。"
 
 #: arctern.GeoSeries.intersection of
 msgid "返回"
@@ -79,4 +62,25 @@ msgstr ""
 #: arctern.GeoSeries.intersection:13 of
 msgid "实际案例"
 msgstr ""
+
+#~ msgid ""
+#~ "The geometry or GeoSeries to calculate"
+#~ " the intersection of it and the "
+#~ "geometries in the first GeoSeries."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If ``other`` is a geometry, this "
+#~ "function calculates the intersection of "
+#~ "each geometry in the GeoSeries and "
+#~ "``other``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If ``other`` is a GeoSeries, this "
+#~ "function calculates the intersection of "
+#~ "each geometry in the GeoSeries and "
+#~ "the geometry with the same index "
+#~ "in ``other``."
+#~ msgstr ""
 

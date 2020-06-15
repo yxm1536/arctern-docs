@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-13 10:47+0800\n"
+"POT-Creation-Date: 2020-06-15 09:57+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,26 +44,10 @@ msgid ""
 "function calculates the Hausdorff distance between each geometry in the "
 "GeoSeries and the geometry with the same index in ``other``."
 msgstr ""
-"用于计算第一个 GeoSeries 中的几何体与其之间 Hausdorff 距离的几何体或 GeoSeries。* 如果 ``other`` 是几何体，则此方法计算 GeoSeries 中每个几何体与 ``other`` 之间的 Hausdorff 距离。* 如果 ``other`` 是一个 GeoSeries，则此方法计算 GeoSeries 中每个几何体与 ``other`` 中具有相同索引的几何体之间的 Hausdorff 距离。"
-
-#: arctern.GeoSeries.hausdorff_distance:5 of
-msgid ""
-"The geometry or GeoSeries to calculate the Hausdorff distance between it "
-"and the geometries in the first GeoSeries."
-msgstr ""
-
-#: arctern.GeoSeries.hausdorff_distance:7 of
-msgid ""
-"If ``other`` is a geometry, this function calculates the Hausdorff "
-"distance between each geometry in the GeoSeries and ``other``."
-msgstr ""
-
-#: arctern.GeoSeries.hausdorff_distance:8 of
-msgid ""
-"If ``other`` is a GeoSeries, this function calculates the Hausdorff "
-"distance between each geometry in the GeoSeries and the geometry with the"
-" same index in ``other``."
-msgstr ""
+"用于计算第一个 GeoSeries 中的几何体与其之间 Hausdorff 距离的几何体或 GeoSeries。* 如果 ``other`` "
+"是几何体，则此方法计算 GeoSeries 中每个几何体与 ``other`` 之间的 Hausdorff 距离。* 如果 ``other`` "
+"是一个 GeoSeries，则此方法计算 GeoSeries 中每个几何体与 ``other`` 中具有相同索引的几何体之间的 Hausdorff"
+" 距离。"
 
 #: arctern.GeoSeries.hausdorff_distance of
 msgid "返回"
@@ -82,4 +66,26 @@ msgstr ""
 #: arctern.GeoSeries.hausdorff_distance:15 of
 msgid "实际案例"
 msgstr ""
+
+#~ msgid ""
+#~ "The geometry or GeoSeries to calculate"
+#~ " the Hausdorff distance between it "
+#~ "and the geometries in the first "
+#~ "GeoSeries."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If ``other`` is a geometry, this "
+#~ "function calculates the Hausdorff distance "
+#~ "between each geometry in the GeoSeries"
+#~ " and ``other``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If ``other`` is a GeoSeries, this "
+#~ "function calculates the Hausdorff distance "
+#~ "between each geometry in the GeoSeries"
+#~ " and the geometry with the same "
+#~ "index in ``other``."
+#~ msgstr ""
 

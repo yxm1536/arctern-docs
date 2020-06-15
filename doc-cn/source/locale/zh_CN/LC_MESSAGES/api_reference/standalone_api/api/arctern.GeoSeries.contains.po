@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-13 10:47+0800\n"
+"POT-Creation-Date: 2020-06-15 09:57+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,7 +41,9 @@ msgid ""
 "\"contain\" relation between each geometry in the GeoSeries and the "
 "geometry with the same index in ``other``."
 msgstr ""
-"用于检查第一个 GeoSeries 中的几何体是否包含它的几何体或 GeoSeries。* 如果 ``other`` 是几何体，则此方法检查 GeoSeries 中每个几何体是否包含 ``other``。如果 ``other`` 是一个 GeoSeries，则此方法将检查 GeoSeries 中的每个几何体是否包含 ``other`` 中具有相同索引的几何体。"
+"用于检查第一个 GeoSeries 中的几何体是否包含它的几何体或 GeoSeries。* 如果 ``other`` 是几何体，则此方法检查 "
+"GeoSeries 中每个几何体是否包含 ``other``。如果 ``other`` 是一个 GeoSeries，则此方法将检查 "
+"GeoSeries 中的每个几何体是否包含 ``other`` 中具有相同索引的几何体。"
 
 #: arctern.GeoSeries.contains:3 of
 msgid ""
@@ -72,21 +74,9 @@ msgid ""
 "whether it contains the geometries in ``other``.  * *True*: The first "
 "geometry contains the other. * *False*: The first geometry does not "
 "contain the other."
-msgstr "GeoSeries 中每个元素对应的布尔值，指示元素是否包含 ``other`` 中的几何体。* *True*: 第一个几何体包含另一个几何体。* *False*: 第一个几何体不包含另一个几何体。"
-
-#: arctern.GeoSeries.contains:9 of
-msgid ""
-"Mask of boolean values for each element in the GeoSeries that indicates "
-"whether it contains the geometries in ``other``."
 msgstr ""
-
-#: arctern.GeoSeries.contains:11 of
-msgid "*True*: The first geometry contains the other."
-msgstr ""
-
-#: arctern.GeoSeries.contains:12 of
-msgid "*False*: The first geometry does not contain the other."
-msgstr ""
+"GeoSeries 中每个元素对应的布尔值，指示元素是否包含 ``other`` 中的几何体。* *True*: 第一个几何体包含另一个几何体。*"
+" *False*: 第一个几何体不包含另一个几何体。"
 
 #: arctern.GeoSeries.contains of
 msgid "返回类型"
@@ -107,5 +97,18 @@ msgstr ""
 #~ "geometry contains the other. * *False*:"
 #~ " The first geometry does not contain"
 #~ " the other."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Mask of boolean values for each "
+#~ "element in the GeoSeries that indicates"
+#~ " whether it contains the geometries "
+#~ "in ``other``."
+#~ msgstr ""
+
+#~ msgid "*True*: The first geometry contains the other."
+#~ msgstr ""
+
+#~ msgid "*False*: The first geometry does not contain the other."
 #~ msgstr ""
 

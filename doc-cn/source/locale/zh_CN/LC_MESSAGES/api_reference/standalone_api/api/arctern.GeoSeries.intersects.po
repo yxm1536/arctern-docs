@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-13 10:47+0800\n"
+"POT-Creation-Date: 2020-06-15 09:57+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,26 +40,9 @@ msgid ""
 "tests the intersection relation between each geometry in the GeoSeries "
 "and the geometry with the same index in ``other``."
 msgstr ""
-"用于检查与第一个 GeoSeries 中的几何体是否相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检查 GeoSeries 中的每个几何体是否与 ``other`` 相交。* 如果 ``other`` 是一个 GeoSeries，那么此方法检查 GeoSeries 中的每个几何体是否与 ``other`` 中具有相同索引的几何体相交。"
-
-#: arctern.GeoSeries.intersects:3 of
-msgid ""
-"The geometry or GeoSeries to test whether it is intersected with the "
-"geometries in the first GeoSeries."
-msgstr ""
-
-#: arctern.GeoSeries.intersects:5 of
-msgid ""
-"If ``other`` is a geometry, this function tests the intersection relation"
-" between each geometry in the GeoSeries and ``other``."
-msgstr ""
-
-#: arctern.GeoSeries.intersects:6 of
-msgid ""
-"If ``other`` is a GeoSeries, this function tests the intersection "
-"relation between each geometry in the GeoSeries and the geometry with the"
-" same index in ``other``."
-msgstr ""
+"用于检查与第一个 GeoSeries 中的几何体是否相交的几何体或 GeoSeries。* 如果 ``other`` 是几何体，那么此方法检查 "
+"GeoSeries 中的每个几何体是否与 ``other`` 相交。* 如果 ``other`` 是一个 GeoSeries，那么此方法检查 "
+"GeoSeries 中的每个几何体是否与 ``other`` 中具有相同索引的几何体相交。"
 
 #: arctern.GeoSeries.intersects of
 msgid "返回"
@@ -71,21 +54,9 @@ msgid ""
 "whether it intersects the geometries in ``other``.  * *True*: The two "
 "geometries intersect each other. * *False*: The two geometries do not "
 "intersect each other."
-msgstr "GeoSeries 中每个元素对应的布尔值，指示元素是否与 ``other`` 中的几何体相交。 * *True*: 两个几何体相交。* *False*: 两个几何体不相交。"
-
-#: arctern.GeoSeries.intersects:9 of
-msgid ""
-"Mask of boolean values for each element in the GeoSeries that indicates "
-"whether it intersects the geometries in ``other``."
 msgstr ""
-
-#: arctern.GeoSeries.intersects:11 of
-msgid "*True*: The two geometries intersect each other."
-msgstr ""
-
-#: arctern.GeoSeries.intersects:12 of
-msgid "*False*: The two geometries do not intersect each other."
-msgstr ""
+"GeoSeries 中每个元素对应的布尔值，指示元素是否与 ``other`` 中的几何体相交。 * *True*: 两个几何体相交。* "
+"*False*: 两个几何体不相交。"
 
 #: arctern.GeoSeries.intersects of
 msgid "返回类型"
@@ -97,7 +68,7 @@ msgstr ""
 
 #: arctern.GeoSeries.intersects:25 of
 msgid "Alternatively, ``other`` can be a geometry in WKB format."
-msgstr "或者，``other`` 可以是 WKB 格式的几何体。""
+msgstr "或者，``other`` 可以是 WKB 格式的几何体。\""
 
 #~ msgid "例子"
 #~ msgstr ""
@@ -110,5 +81,39 @@ msgstr "或者，``other`` 可以是 WKB 格式的几何体。""
 #~ "geometries intersect each other. * "
 #~ "*False*: The two geometries do not "
 #~ "intersect each other."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The geometry or GeoSeries to test "
+#~ "whether it is intersected with the "
+#~ "geometries in the first GeoSeries."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If ``other`` is a geometry, this "
+#~ "function tests the intersection relation "
+#~ "between each geometry in the GeoSeries"
+#~ " and ``other``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If ``other`` is a GeoSeries, this "
+#~ "function tests the intersection relation "
+#~ "between each geometry in the GeoSeries"
+#~ " and the geometry with the same "
+#~ "index in ``other``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Mask of boolean values for each "
+#~ "element in the GeoSeries that indicates"
+#~ " whether it intersects the geometries "
+#~ "in ``other``."
+#~ msgstr ""
+
+#~ msgid "*True*: The two geometries intersect each other."
+#~ msgstr ""
+
+#~ msgid "*False*: The two geometries do not intersect each other."
 #~ msgstr ""
 

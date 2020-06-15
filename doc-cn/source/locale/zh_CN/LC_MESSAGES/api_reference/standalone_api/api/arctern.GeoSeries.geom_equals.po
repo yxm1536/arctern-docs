@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctern \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-13 10:47+0800\n"
+"POT-Creation-Date: 2020-06-15 09:57+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,26 +44,9 @@ msgid ""
 "equivalence relation between each geometry in the GeoSeries and the "
 "geometry with the same index in ``other``."
 msgstr ""
-"用于检查与第一个 GeoSeries 中的几何体是否等价的几何体或 GeoSeries。* 如果 ``other`` 是几何体，则此方法检查 GeoSeries 中的每个几何体是否与 ``other`` 等价。* 如果 ``other`` 是一个 GeoSeries，则此方法检查 GeoSeries 中的每个几何体是否与 ``other`` 中具有相同索引的几何体等价。"
-
-#: arctern.GeoSeries.geom_equals:5 of
-msgid ""
-"The geometry or GeoSeries to test whether it equals the geometries in the"
-" first GeoSeries."
-msgstr ""
-
-#: arctern.GeoSeries.geom_equals:7 of
-msgid ""
-"If ``other`` is a geometry, this function tests the equivalence relation "
-"between each geometry in the GeoSeries and ``other``."
-msgstr ""
-
-#: arctern.GeoSeries.geom_equals:8 of
-msgid ""
-"If ``other`` is a GeoSeries, this function tests the equivalence relation"
-" between each geometry in the GeoSeries and the geometry with the same "
-"index in ``other``."
-msgstr ""
+"用于检查与第一个 GeoSeries 中的几何体是否等价的几何体或 GeoSeries。* 如果 ``other`` 是几何体，则此方法检查 "
+"GeoSeries 中的每个几何体是否与 ``other`` 等价。* 如果 ``other`` 是一个 GeoSeries，则此方法检查 "
+"GeoSeries 中的每个几何体是否与 ``other`` 中具有相同索引的几何体等价。"
 
 #: arctern.GeoSeries.geom_equals of
 msgid "返回"
@@ -75,22 +58,9 @@ msgid ""
 "whether it equals the geometries in ``other``.  * *True*: The first "
 "geometry equals the other. * *False*: The first geometry does not equal "
 "the other."
-msgstr "GeoSeries 中每个元素对应的布尔值，指示元素是否与 ``other`` 中的几何体等价。* *True*: 第一个几何体与另一个几何体等价。* *False*: 第一个几何体不与另一个几何体等价。"
-
-#: arctern.GeoSeries.geom_equals:11 of
-#, fuzzy
-msgid ""
-"Mask of boolean values for each element in the GeoSeries that indicates "
-"whether it equals the geometries in ``other``."
 msgstr ""
-
-#: arctern.GeoSeries.geom_equals:13 of
-msgid "*True*: The first geometry equals the other."
-msgstr ""
-
-#: arctern.GeoSeries.geom_equals:14 of
-msgid "*False*: The first geometry does not equal the other."
-msgstr ""
+"GeoSeries 中每个元素对应的布尔值，指示元素是否与 ``other`` 中的几何体等价。* *True*: "
+"第一个几何体与另一个几何体等价。* *False*: 第一个几何体不与另一个几何体等价。"
 
 #: arctern.GeoSeries.geom_equals of
 msgid "返回类型"
@@ -99,4 +69,38 @@ msgstr ""
 #: arctern.GeoSeries.geom_equals:18 of
 msgid "实际案例"
 msgstr ""
+
+#~ msgid ""
+#~ "The geometry or GeoSeries to test "
+#~ "whether it equals the geometries in "
+#~ "the first GeoSeries."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If ``other`` is a geometry, this "
+#~ "function tests the equivalence relation "
+#~ "between each geometry in the GeoSeries"
+#~ " and ``other``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "If ``other`` is a GeoSeries, this "
+#~ "function tests the equivalence relation "
+#~ "between each geometry in the GeoSeries"
+#~ " and the geometry with the same "
+#~ "index in ``other``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Mask of boolean values for each "
+#~ "element in the GeoSeries that indicates"
+#~ " whether it equals the geometries in"
+#~ " ``other``."
+#~ msgstr ""
+
+#~ msgid "*True*: The first geometry equals the other."
+#~ msgstr ""
+
+#~ msgid "*False*: The first geometry does not equal the other."
+#~ msgstr ""
 
