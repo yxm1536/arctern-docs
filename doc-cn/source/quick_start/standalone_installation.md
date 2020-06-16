@@ -17,7 +17,7 @@
 
 | 名称          | 版本              |
 | :------------ | :---------------- |
-| 操作系统      | Ubuntu LTS 18.04  |
+| 操作系统      | Ubuntu LTS 18.04 / Centos 7  |
 | Conda         | Miniconda Python3 |
 | CUDA          | 10.0              |
 | NVIDIA driver | 4.30              |
@@ -25,6 +25,8 @@
 > **注意：** 你可以到 [NVIDIA 官网](https://developer.nvidia.com/cuda-gpus) 查询你的 GPU 是否支持 CUDA 功能。
 
 ## 安装依赖库
+
+### Ubuntu
 
 * CPU 版本
 
@@ -38,7 +40,15 @@ $ sudo apt install libgl-dev libosmesa6-dev libglu1-mesa-dev
 $ sudo apt install libgl1-mesa-dev libegl1-mesa-dev
 ```
 
-> **注意：** 如果安装失败，请先执行 `apt update` 再执行以上命令。
+> **注意：** 如果安装失败，请先执行 `sudo apt update` 再执行以上命令。
+
+### Centos
+
+
+```bash
+$ sudo yum install mesa-libGLU-devel mesa-libOSMesa-devel
+```
+
 
 ## 安装 Miniconda
 
