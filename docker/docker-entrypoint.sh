@@ -27,5 +27,5 @@ git remote -v
 git branch
 cd /arctern-docs && \
 git checkout -b `cat version.json | jq -r .version` && git add . && \
-git commit -m "Arctern-bot release doc" && \
+git commit -m "Arctern-bot release doc"
 # git push -f origin HEAD:`cat version.json | jq -r .version`
