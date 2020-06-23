@@ -13,7 +13,8 @@ pip install sphinx-intl
 
 # compile arctern-doc-cn
 cd / && echo "--------" && tree /arctern-docs && echo "--------" && \
-cd /arctern-docs/ && \
-echo "*******"
-ls && \
-echo "*******"
+cd /arctern-docs/doc-cn && \
+mkdir build && python create_html.py && \
+cd ../doc-en && \
+mkdir build && python create_html.py && \
+tree build
