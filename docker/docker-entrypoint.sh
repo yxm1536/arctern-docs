@@ -19,8 +19,6 @@ mkdir build && python compile.py && mv build build-en &&\
 tree build-en && cd /arctern-docs && \
 git config --global user.email "Arctern-doc-bot@zilliz.com" && \
 git config --global user.name "Arctern-doc-bot"&& \
-export GITHUB_TOKEN=$token && \
-git config --global hub.protocol https. && \
 git status && \
 git remote -v && \
 git branch && \
@@ -28,7 +26,6 @@ cd /arctern-docs && \
 git checkout -b `cat version.json | jq -r .version` && git add . && \
 git commit -m "Arctern-bot release doc" && \
 current_version_release_branch=`cat version.json | jq -r .version` && echo $token && \
-echo ${GITHUB_TOKEN} && \
 echo ${current_version_release_branch} && \
 echo "end--------------------------"
 # && \
