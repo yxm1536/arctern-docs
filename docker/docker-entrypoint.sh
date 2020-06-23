@@ -17,7 +17,7 @@ cd / && echo "--------" && tree /arctern-docs && echo "--------" && \
 cd /arctern-docs/doc-cn && \
 mkdir build && python create_html.py && mv build build-cn &&\
 cd /arctern-docs/doc-en && \
-mkdir build && python compile.py && mv build build-en\
+mkdir build && python compile.py && mv build build-en &&\
 tree build-en
 
 # git push
