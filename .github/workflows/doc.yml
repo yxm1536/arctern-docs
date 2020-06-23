@@ -5,7 +5,7 @@ on:
   release:
     types: [published]
   push:
-    # file paths to consider in the event. Optional; defaults to all.
+    # push is only for test of this action.It will be deleted later.
     paths:
       - 'arctern-docs/**'
       - 'docker/**'
@@ -13,7 +13,7 @@ on:
       - '!**.md'
 
 jobs:
-  test:
+  compile-and-publish-docs:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,8 +23,8 @@ jobs:
         run: |
           docker build --tag arctern-docs:bot-release . --file ./docker/Dockerfile
           docker run -v ${GITHUB_WORKSPACE}:/arctern-docs arctern-docs:bot-release && \
-          git clone https://.:${{ secrets.PUSH_TOKEN }}@github.com/beautifulpython/arctern-docs.git y && tree -d . && \
-          cd y && \
+          git clone https://.:${{ secrets.PUSH_TOKEN }}@github.com/beautifulpython/arctern-docs.git repo-copy && \
+          cd repo-copy && \
           cp -rf ../doc-cn/build-cn ./ && \
           cp -rf ../doc-en/build-en ./ && \
           git config --global user.email "Arctern-doc-bot@zilliz.com" && \
