@@ -14,6 +14,9 @@ pip install pyspark && \
 cd / && echo "--------" && tree /arctern-docs && echo "--------" && \
 cd /arctern-docs/doc-cn && \
 mkdir build && python create_html.py && mv build build-cn &&\
+cd /arctern-docs/doc-en && \
+mkdir build && python compile.py && mv build build-en &&\
+tree build-en && \
 git config --global user.email "Arctern-doc-bot@zilliz.com" && \
 git config --global user.name "Arctern-doc-bot"&& \
 git status && \
