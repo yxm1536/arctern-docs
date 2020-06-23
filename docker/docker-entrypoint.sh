@@ -10,15 +10,15 @@ pip install sphinx_rtd_theme && \
 pip install --upgrade recommonmark && \
 pip install sphinx-markdown-tables==0.0.3 && \
 pip install sphinx-intl && \
-pip install pyspark 
+pip install pyspark
 
 # compile arctern-doc-cn
 cd / && echo "--------" && tree /arctern-docs && echo "--------" && \
 cd /arctern-docs/doc-cn && \
-mkdir build && python create_html.py && \
-cd ../doc-en && \
-mkdir build && python create_html.py && \
-tree build
+mkdir build && python create_html.py && mv build build-cn &&\
+cd /arctern-docs/doc-en && \
+mkdir build && python compile.py && mv build build-en\
+tree build-en
 
 # git push
 git config --global user.email "Arctern-doc-bot@zilliz.com"
