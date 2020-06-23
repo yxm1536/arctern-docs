@@ -18,3 +18,10 @@ mkdir build && python create_html.py && \
 cd ../doc-en && \
 mkdir build && python create_html.py && \
 tree build
+
+# git push
+git config --global user.email "Arctern-doc-bot@zilliz.com"
+git config --global user.name "Arctern-doc-bot"
+git status
+git remote -v
+git branch
