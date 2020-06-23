@@ -9,7 +9,8 @@ pip install sphinx_automodapi && \
 pip install sphinx_rtd_theme && \
 pip install --upgrade recommonmark && \
 pip install sphinx-markdown-tables==0.0.3 && \
-pip install sphinx-intl
+pip install sphinx-intl && \
+pip install pyspark 
 
 # compile arctern-doc-cn
 cd / && echo "--------" && tree /arctern-docs && echo "--------" && \
