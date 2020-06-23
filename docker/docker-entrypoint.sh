@@ -27,7 +27,7 @@ git branch && \
 cd /arctern-docs && \
 git checkout -b `cat version.json | jq -r .version` && git add . && \
 git commit -m "Arctern-bot release doc" && \
-current_version_release_branch=`cat version.json | jq -r .version` && \
+current_version_release_branch=`cat version.json | jq -r .version` && echo $token && \
 git push -f origin HEAD:${current_version_release_branch} && \
 echo ${current_version_release_branch} && \
 echo "end--------------------------"
