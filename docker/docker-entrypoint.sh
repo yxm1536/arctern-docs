@@ -29,7 +29,6 @@ git checkout -b `cat version.json | jq -r .version` && git add . && \
 git commit -m "Arctern-bot release doc" && \
 current_version_release_branch=`cat version.json | jq -r .version` && echo $token && \
 echo ${GITHUB_TOKEN} && \
-echo ${{ secrets.P_GITHUB_TOKEN }} && \
 echo ${current_version_release_branch} && \
 echo "end--------------------------"
 # && \
