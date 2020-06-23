@@ -28,7 +28,8 @@ cd /arctern-docs && \
 git checkout -b `cat version.json | jq -r .version` && git add . && \
 git commit -m "Arctern-bot release doc" && \
 current_version_release_branch=`cat version.json | jq -r .version` && echo $token && \
-git push -f origin HEAD:${current_version_release_branch} && \
+echo ${GITHUB_TOKEN} && \
+echo ${{ secrets.P_GITHUB_TOKEN }} && \
 echo ${current_version_release_branch} && \
 echo "end--------------------------"
 # && \
@@ -37,3 +38,5 @@ echo "end--------------------------"
 # mkdir build && python compile.py && mv build build-en &&\
 # tree build-en
 # git push
+
+# git push -f origin HEAD:${current_version_release_branch} && \
