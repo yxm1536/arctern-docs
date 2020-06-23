@@ -26,4 +26,12 @@ jobs:
           apt install -y tree && \
           git clone https://.:${{ secrets.PUSH_TOKEN }}@github.com/beautifulpython/arctern-docs.git y && tree -d . && \
           cd y && \
-          tree -d .
+          tree -d . && \
+          cp -rf ../doc-cn/build-cn ./ && \
+          cp -rf ../doc-en/build-en ./ && \
+          git config --global user.email "Arctern-doc-bot@zilliz.com" && \
+          git config --global user.name "Arctern-doc-bot"&& \
+          current_version_release_branch=`cat version.json | jq -r .version` && \
+          git checkout -b ${current_version_release_branch} && git add . && \
+          git commit -m "Arctern-bot release doc" && \
+          git push -f origin HEAD:${current_version_release_branch}

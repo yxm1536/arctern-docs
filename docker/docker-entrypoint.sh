@@ -11,28 +11,9 @@ pip install --upgrade recommonmark && \
 pip install sphinx-markdown-tables==0.0.3 && \
 pip install sphinx-intl && \
 pip install pyspark && \
-cd / && echo "--------" && tree /arctern-docs && echo "--------" && \
+cd / && echo "--------" && tree -d /arctern-docs && echo "--------" && \
 cd /arctern-docs/doc-cn && \
 mkdir build && python create_html.py && mv build build-cn &&\
 cd /arctern-docs/doc-en && \
 mkdir build && python compile.py && mv build build-en &&\
-tree build-en && cd /arctern-docs && \
-git config --global user.email "Arctern-doc-bot@zilliz.com" && \
-git config --global user.name "Arctern-doc-bot"&& \
-git status && \
-git remote -v && \
-git branch && \
-cd /arctern-docs && \
-git checkout -b `cat version.json | jq -r .version` && git add . && \
-git commit -m "Arctern-bot release doc" && \
-current_version_release_branch=`cat version.json | jq -r .version` && echo $token && \
-echo ${current_version_release_branch} && \
-echo "end--------------------------"
-# && \
-# git push -f origin HEAD:`cat version.json | jq -r .version`
-# cd /arctern-docs/doc-en && \
-# mkdir build && python compile.py && mv build build-en &&\
-# tree build-en
-# git push
-
-# git push -f origin HEAD:${current_version_release_branch} && \
+tree -d build-en
