@@ -21,6 +21,7 @@ jobs:
 
       - name: Run bot realease
         run: |
+          current_version_release_branch=`cat version.json | jq -r .version` && \
           docker build --tag arctern-docs:bot-release . --file ./docker/Dockerfile
           docker run -v ${GITHUB_WORKSPACE}:/arctern-docs arctern-docs:bot-release && \
           git clone https://.:${{ secrets.PUSH_TOKEN }}@github.com/beautifulpython/arctern-docs.git repo-copy && \
@@ -29,7 +30,6 @@ jobs:
           cp -rf ../doc-en/build-en ./ && \
           git config --global user.email "Arctern-doc-bot@zilliz.com" && \
           git config --global user.name "Arctern-doc-bot"&& \
-          current_version_release_branch=`cat version.json | jq -r .version` && \
           git checkout -b ${current_version_release_branch} && git add . && \
           git commit -m "Arctern-bot release doc" && \
           git push -f origin HEAD:${current_version_release_branch}
