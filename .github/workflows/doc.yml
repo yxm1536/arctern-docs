@@ -1,8 +1,16 @@
 name: Arctern-bot Release Doc
 
+# This workflow is triggered on pushes or pull request to the repository.
 on:
   release:
-    types: [created,prereleased,released,published]
+    types: [published]
+  push:
+    # push is only for test of this action.It will be deleted later.
+    paths:
+      - 'arctern-docs/**'
+      - 'docker/**'
+      - '.github/workflows/**'
+      - '!**.md'
 
 jobs:
   compile-and-publish-docs:
