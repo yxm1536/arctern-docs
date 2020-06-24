@@ -25,7 +25,8 @@ jobs:
           git config --global user.name "Arctern-doc-bot"&& \
           git checkout -b ${current_version_release_branch} && git add . && \
           git commit -m "Arctern-bot release doc" && \
-          echo "------------------------------------------------------------- clone ok --------------------------------------"
+          echo "------------------------------------------------------------- clone ok --------------------------------------" && \
+          git remote -v
           # git push -f origin HEAD:${current_version_release_branch} && \
           # cd .. && \
           # if [ ${released_check_flag} = 'yes' ];
