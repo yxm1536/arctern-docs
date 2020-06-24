@@ -16,7 +16,7 @@ jobs:
           current_version_release_branch=`cat version.json | jq -r .version` && \
           docker build --tag arctern-docs:bot-release . --file ./docker/Dockerfile
           docker run -v ${GITHUB_WORKSPACE}:/arctern-docs arctern-docs:bot-release && \
-          git clone https://.:${{ secrets.PUSH_TOKEN }}@github.com/beautifulpython/arctern-docs.git repo-copy && \
+          git clone https://.:${{ secrets.ARCTERN_DOC_RELEASE_TOKEN }}@github.com/arctern-io/arctern-docs.git repo-copy && \
           cd repo-copy && \
           cp -rf ../doc-cn/build-cn ./ && \
           cp -rf ../doc-en/build-en ./ && \
