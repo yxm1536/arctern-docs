@@ -25,16 +25,17 @@ jobs:
           git config --global user.name "Arctern-doc-bot"&& \
           git checkout -b ${current_version_release_branch} && git add . && \
           git commit -m "Arctern-bot release doc" && \
-          git push -f origin HEAD:${current_version_release_branch} && \
-          cd .. && \
-          if [ ${released_check_flag} = 'yes' ];
-            then
-              # git clone https://.:${{ secrets.ARCTERN_WEBDOC_RELEASE_TOKEN }}@github.com/zilliztech/arctern-webdocs.git arctern-webdocs-copy && \
-              git clone https://.:${{ secrets.PUSH_TOKEN }}@github.com/beautifulpython/arctern-docs.git arctern-webdocs-copy && \
-              cd arctern-webdocs-copy && \
-              cp -rf ../doc-cn/build-cn ./ && \
-              cp -rf ../doc-en/build-en ./ && \
-              git checkout -b ${current_version_release_branch} && git add . && \
-              git commit -m "Arctern-bot release web-doc" && \
-              git push -f origin HEAD:${current_version_release_branch}
-          fi
+          echo "------------------------------------------------------------- clone ok --------------------------------------"
+          # git push -f origin HEAD:${current_version_release_branch} && \
+          # cd .. && \
+          # if [ ${released_check_flag} = 'yes' ];
+          #   then
+          #     # git clone https://.:${{ secrets.ARCTERN_WEBDOC_RELEASE_TOKEN }}@github.com/zilliztech/arctern-webdocs.git arctern-webdocs-copy && \
+          #     git clone https://.:${{ secrets.PUSH_TOKEN }}@github.com/beautifulpython/arctern-docs.git arctern-webdocs-copy && \
+          #     cd arctern-webdocs-copy && \
+          #     cp -rf ../doc-cn/build-cn ./ && \
+          #     cp -rf ../doc-en/build-en ./ && \
+          #     git checkout -b ${current_version_release_branch} && git add . && \
+          #     git commit -m "Arctern-bot release web-doc" && \
+          #     git push -f origin HEAD:${current_version_release_branch}
+          # fi
