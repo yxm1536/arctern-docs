@@ -19,15 +19,16 @@ jobs:
           docker run -v ${GITHUB_WORKSPACE}:/arctern-docs arctern-docs:bot-release && \
           git clone https://.:${{ secrets.GITHUB_ACTION_TOKEN }}@github.com/become-nice/czp_github_action_test.git arctern-docs-copy && \
           cd arctern-docs-copy && \
-          cp -rf ../doc-cn/build-cn ./ && \
-          cp -rf ../doc-en/build-en ./ && \
+          cp -avr ../doc-cn/build-cn ./ && \
+          cp -avr ../doc-en/build-en ./ && \
           git config --global user.email "Arctern-doc-bot@zilliz.com" && \
           git config --global user.name "Arctern-doc-bot"&& \
           git checkout -b ${current_version_release_branch} && git add . && \
           git commit -m "Arctern-bot release doc" && \
-          echo "------------------------------------------------------------- clone ok --------------------------------------" && \
-          git remote -v
-          # git push -f origin HEAD:${current_version_release_branch} && \
+          echo "------------------------------------------------------------- clone ok --------------------------------------" &&  \
+          git remote -v & \
+          git push -f origin HEAD:${current_version_release_branch}
+          # && \
           # cd .. && \
           # if [ ${released_check_flag} = 'yes' ];
           #   then
