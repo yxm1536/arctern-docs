@@ -4,13 +4,6 @@ name: Arctern-bot Release Doc
 on:
   release:
     types: [published]
-  push:
-    # push is only for test of this action.It will be deleted later.
-    paths:
-      - 'arctern-docs/**'
-      - 'docker/**'
-      - '.github/workflows/**'
-      - '!**.md'
 
 jobs:
   compile-and-publish-docs:
