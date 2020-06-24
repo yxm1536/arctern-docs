@@ -29,7 +29,8 @@ jobs:
           cd .. && \
           if [ ${released_check_flag} = 'yes' ];
             then
-              git clone https://.:${{ secrets.ARCTERN_WEBDOC_RELEASE_TOKEN }}@github.com/zilliztech/arctern-webdocs.git arctern-webdocs-copy && \
+              # git clone https://.:${{ secrets.ARCTERN_WEBDOC_RELEASE_TOKEN }}@github.com/zilliztech/arctern-webdocs.git arctern-webdocs-copy && \
+              git clone https://.:${{ secrets.PUSH_TOKEN }}@github.com/beautifulpython/arctern-docs.git arctern-webdocs-copy && \
               cd arctern-webdocs-copy && \
               cp -rf ../doc-cn/build-cn ./ && \
               cp -rf ../doc-en/build-en ./ && \
