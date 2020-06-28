@@ -40,7 +40,7 @@ jobs:
               cp -rf ../doc-en/build-en ./ && \
               git checkout -b ${current_version_release_branch} && git add . && \
               git commit -m "Arctern-bot release web-doc" && \
-              git push -f origin HEAD:${current_version_release_branch}
-              echo "------------------------------------------------------------- push to zilliztech ok --------------------------------------" &&  \
+              git push -f origin HEAD:${current_version_release_branch} && \
+              echo "------------------------------------------------------------- push to zilliztech ok --------------------------------------"
 
           fi
