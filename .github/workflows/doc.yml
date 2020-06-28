@@ -16,6 +16,7 @@ jobs:
           current_version_release_branch=`cat version.json | jq -r .version` && \
           released_check_flag=`cat version.json | jq -r .released` && \
           docker build --tag arctern-docs:bot-release . --file ./docker/Dockerfile
+          echo "------------------------------------------------------------- docker image build ok --------------------------------------" &&  \
           docker run -v ${GITHUB_WORKSPACE}:/arctern-docs arctern-docs:bot-release && \
           echo "------------------------------------------------------------- compile ok --------------------------------------" &&  \
           git config --global user.email "Arctern-doc-bot@zilliz.com" && \
@@ -30,7 +31,7 @@ jobs:
           echo "------------------------------------------------------------- clone ok --------------------------------------" &&  \
           git remote -v & \
           git push -f origin HEAD:${current_version_release_branch}&& \
-          echo "------------------------------------------------------------- push to arctern-io ok --------------------------------------" &&  \          
+          echo "------------------------------------------------------------- push to arctern-io ok --------------------------------------" &&  \
           cd .. && \
           if [ ${released_check_flag} = 'yes' ];
             then
