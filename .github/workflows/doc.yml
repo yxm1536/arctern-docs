@@ -19,7 +19,7 @@ jobs:
           docker run -v ${GITHUB_WORKSPACE}:/arctern-docs arctern-docs:bot-release && \
           git clone https://.:${{ secrets.GITHUB_ACTION_TOKEN }}@github.com/beautifulpython/arctern-docs.git arctern-docs-copy && \
           #git clone https://.:${{ secrets.GITHUB_ACTION_TOKEN }}@github.com/become-nice/czp_github_action_test.git arctern-docs-copy && \
-          #git clone https://.:${{ secrets.GITHUB_ACTION_TOKEN }}@github.com/zilliztech/arctern-docs.git arctern-docs-copy && \
+          #git clone https://.:${{ secrets.GITHUB_ACTION_TOKEN }}@github.com/arctern-io/arctern-docs.git arctern-docs-copy && \
           cd arctern-docs-copy && \
           cp -avr ../doc-cn/build-cn ./ && \
           cp -avr ../doc-en/build-en ./ && \
