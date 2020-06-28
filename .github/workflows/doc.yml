@@ -23,11 +23,11 @@ jobs:
           cp -avr ../doc-en/build-en ./ && \
           git config --global user.email "Arctern-doc-bot@zilliz.com" && \
           git config --global user.name "Arctern-doc-bot"&& \
+          git config --global hub.protocol https . && \
           git checkout -b ${current_version_release_branch} && git add . && \
           git commit -m "Arctern-bot release doc" && \
           echo "------------------------------------------------------------- clone ok --------------------------------------" &&  \
           git remote -v & \
-          git remote set-url origin https://github.com/become-nice/czp_github_action_test.git && \
           git push -f origin HEAD:${current_version_release_branch}
           # && \
           # cd .. && \
