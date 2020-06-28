@@ -17,30 +17,26 @@ jobs:
           released_check_flag=`cat version.json | jq -r .released` && \
           docker build --tag arctern-docs:bot-release . --file ./docker/Dockerfile
           docker run -v ${GITHUB_WORKSPACE}:/arctern-docs arctern-docs:bot-release && \
-          git clone https://.:${{ secrets.GITHUB_ACTION_TOKEN }}@github.com/beautifulpython/arctern-docs.git arctern-docs-copy && \
-          #git clone https://.:${{ secrets.GITHUB_ACTION_TOKEN }}@github.com/become-nice/czp_github_action_test.git arctern-docs-copy && \
-          #git clone https://.:${{ secrets.GITHUB_ACTION_TOKEN }}@github.com/arctern-io/arctern-docs.git arctern-docs-copy && \
-          cd arctern-docs-copy && \
-          cp -avr ../doc-cn/build-cn ./ && \
-          cp -avr ../doc-en/build-en ./ && \
           git config --global user.email "Arctern-doc-bot@zilliz.com" && \
           git config --global user.name "Arctern-doc-bot"&& \
           git config --global hub.protocol https . && \
+          git clone https://.:${{ secrets.ARCTERN_DOC_RELEASE_TOKEN }}@github.com/zilliztech/arctern-docs.git arctern-docs-copy && \
+          cd arctern-docs-copy && \
+          cp -avr ../doc-cn/build-cn ./ && \
+          cp -avr ../doc-en/build-en ./ && \
           git checkout -b ${current_version_release_branch} && git add . && \
           git commit -m "Arctern-bot release doc" && \
           echo "------------------------------------------------------------- clone ok --------------------------------------" &&  \
           git remote -v & \
-          git push -f origin HEAD:${current_version_release_branch}
-          # && \
-          # cd .. && \
-          # if [ ${released_check_flag} = 'yes' ];
-          #   then
-          #     # git clone https://.:${{ secrets.ARCTERN_WEBDOC_RELEASE_TOKEN }}@github.com/zilliztech/arctern-webdocs.git arctern-webdocs-copy && \
-          #     git clone https://.:${{ secrets.PUSH_TOKEN }}@github.com/beautifulpython/arctern-docs.git arctern-webdocs-copy && \
-          #     cd arctern-webdocs-copy && \
-          #     cp -rf ../doc-cn/build-cn ./ && \
-          #     cp -rf ../doc-en/build-en ./ && \
-          #     git checkout -b ${current_version_release_branch} && git add . && \
-          #     git commit -m "Arctern-bot release web-doc" && \
-          #     git push -f origin HEAD:${current_version_release_branch}
-          # fi
+          git push -f origin HEAD:${current_version_release_branch}&& \
+          cd .. && \
+          if [ ${released_check_flag} = 'yes' ];
+            then
+              git clone https://.:${{ secrets.ARCTERN_DOC_RELEASE_TOKEN }}@github.com/zilliztech/arctern-webdocs.git arctern-webdocs-copy && \
+              cd arctern-webdocs-copy && \
+              cp -rf ../doc-cn/build-cn ./ && \
+              cp -rf ../doc-en/build-en ./ && \
+              git checkout -b ${current_version_release_branch} && git add . && \
+              git commit -m "Arctern-bot release web-doc" && \
+              git push -f origin HEAD:${current_version_release_branch}
+          fi
