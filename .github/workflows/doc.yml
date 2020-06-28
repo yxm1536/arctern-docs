@@ -20,7 +20,7 @@ jobs:
           docker run -v ${GITHUB_WORKSPACE}:/arctern-docs arctern-docs:bot-release && \
           echo "------------------------------------------------------------- compile ok --------------------------------------" &&  \
           git config --global user.email "Arctern-doc-bot@zilliz.com" && \
-          git config --global user.name "Arctern-doc-bot"&& \
+          git config --global user.name "Arctern-doc-bot" && \
           git clone https://.:${{ secrets.ARCTERN_DOC_RELEASE_TOKEN }}@github.com/arctern-io/arctern-docs.git arctern-docs-copy && \
           cd arctern-docs-copy && \
           cp -avr ../doc-cn/build-cn ./ && \
@@ -28,8 +28,8 @@ jobs:
           git checkout -b ${current_version_release_branch} && git add . && \
           git commit -m "Arctern-bot release doc" && \
           echo "------------------------------------------------------------- clone ok --------------------------------------" &&  \
-          git remote -v & \
-          git push -f origin HEAD:${current_version_release_branch}&& \
+          git remote -v && \
+          git push -f origin HEAD:${current_version_release_branch}  && \
           echo "------------------------------------------------------------- push to arctern-io ok --------------------------------------" &&  \
           cd .. && \
           if [ ${released_check_flag} = 'yes' ];
