@@ -20,7 +20,7 @@ jobs:
           git config --global user.email "Arctern-doc-bot@zilliz.com" && \
           git config --global user.name "Arctern-doc-bot"&& \
           git config --global hub.protocol https . && \
-          git clone https://.:${{ secrets.ARCTERN_DOC_RELEASE_TOKEN }}@github.com/zilliztech/arctern-docs.git arctern-docs-copy && \
+          git clone https://.:${{ secrets.ARCTERN_DOC_RELEASE_TOKEN }}@github.com/arctern-io/arctern-docs.git arctern-docs-copy && \
           cd arctern-docs-copy && \
           cp -avr ../doc-cn/build-cn ./ && \
           cp -avr ../doc-en/build-en ./ && \
