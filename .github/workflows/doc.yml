@@ -13,7 +13,7 @@ jobs:
 
       - name: Run bot realease
         run: |
-          current_version_release_branch=`cat version.json | jq -r .version` && \
+          arctern_docs_released_branch=`cat version.json | jq -r .arctern_docs_released_branch` && \
           released_check_flag=`cat version.json | jq -r .released` && \
           docker build --tag arctern-docs:bot-release . --file ./docker/Dockerfile && \
           echo "------------------------------------------------------------- docker image build ok --------------------------------------" &&  \
@@ -25,22 +25,23 @@ jobs:
           cd arctern-docs-copy && \
           cp -avr ../doc-cn/build-cn ./ && \
           cp -avr ../doc-en/build-en ./ && \
-          git checkout -b ${current_version_release_branch} && git add . && \
+          git checkout -b ${arctern_docs_released_branch} && git add . && \
           git commit -m "Arctern-bot release doc" && \
           echo "------------------------------------------------------------- clone ok --------------------------------------" &&  \
           git remote -v && \
-          git push -f origin HEAD:${current_version_release_branch}  && \
+          git push -f origin HEAD:${arctern_docs_released_branch}  && \
           echo "------------------------------------------------------------- push to arctern-io ok --------------------------------------" &&  \
           cd .. && \
           if [ ${released_check_flag} = 'yes' ];
             then
+              arctern_webdocs_released_branch=`cat version.json | jq -r .arctern_webdocs_released_branch` && \
               git clone https://.:${{ secrets.ARCTERN_DOC_RELEASE_TOKEN }}@github.com/zilliztech/arctern-webdocs.git arctern-webdocs-copy && \
               cd arctern-webdocs-copy && \
               cp -rf ../doc-cn/build-cn ./ && \
               cp -rf ../doc-en/build-en ./ && \
-              git checkout -b ${current_version_release_branch} && git add . && \
+              git checkout -b ${arctern_webdocs_released_branch} && git add . && \
               git commit -m "Arctern-bot release web-doc" && \
-              git push -f origin HEAD:${current_version_release_branch} && \
+              git push -f origin HEAD:${arctern_webdocs_released_branch} && \
               echo "------------------------------------------------------------- push to zilliztech ok --------------------------------------"
 
           fi

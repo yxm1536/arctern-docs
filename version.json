@@ -1,4 +1,5 @@
 {
-    "version": "v0.2.x",
-    "released": "yes"
+    "released": "yes",
+    "arctern_docs_released_branch": "v0.3.0",
+    "arctern_webdocs_released_branch": "v0.2.x"
 }
