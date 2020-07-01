@@ -212,7 +212,7 @@ dtype: object
 > **注意：** 你需要将示例中的 `</path/to/icon.png>` 替换为本地图片的绝对路径。
 
 ```python
->>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path="</path/to/icon.png>", coordinate_system="EPSG:4326")
+>>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path="</path/to/icon.png>", icon_size=[25, 25], coordinate_system="EPSG:4326")
 >>> png = icon_viz_layer(vega, ST_Point(pickup_df.head(25).pickup_longitude, pickup_df.head(25).pickup_latitude))
 >>> save_png(png, "/tmp/arctern_iconviz_pandas.png")
 ```

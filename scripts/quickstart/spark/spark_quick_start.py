@@ -125,7 +125,7 @@ pickup_sql = f"select st_point(pickup_longitude, pickup_latitude) from nyc_taxi 
 pickup_df = spark.sql(pickup_sql)
 # 根据查询结果绘制图标图图层。
 # 注意： 请将 /path/to/icon.png 改为 png 文件所在的绝对路径
-vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/path/to/icon.png', coordinate_system="EPSG:4326")
+vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/path/to/icon.png', icon_size=[25, 25], coordinate_system="EPSG:4326")
 res = icon_viz(vega, pickup_df)
 save_png(res, "/tmp/arctern_iconviz.png")
 

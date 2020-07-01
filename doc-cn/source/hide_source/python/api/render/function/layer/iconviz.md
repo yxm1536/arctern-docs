@@ -16,7 +16,9 @@
 
 &#x2002; &#x2003; &#x2002; &#x2003; * bounding_box(list) -- 图片对应的地理坐标区域，以 [x_min, y_min, x_max, y_max] 的形式表示一个矩形区域。图片左下角的像素坐标 (0, 0) 对应地理坐标 (x_min, y_min) ，图片右上角的像素坐标 (width, height) 对应地理坐标 (x_max, y_max)。
 
-&#x2002; &#x2003; &#x2002; &#x2003; * icon_path(str) -- 图标png文件的绝对路径。
+&#x2002; &#x2003; &#x2002; &#x2003; * icon_path(str) -- 图标 png 文件的绝对路径。
+
+&#x2002; &#x2003; &#x2002; &#x2003; * icon_size(list) -- 可选参数，图标 png 的尺寸，默认值为 None，以 [width, height] 的形式表示图标 png 的长和宽，单位为像素，缺省时表示保持原有图标的尺寸。
 
 &#x2002; &#x2003; &#x2002; &#x2003; * coordinate_system(str) -- 可选参数，表示输入数据所属的地理坐标系统，默认值为"EPSG:3857"，当前支持的地理坐标系统请参照 <https://spatialreference.org/>。
 
@@ -77,7 +79,7 @@
       >>> points = arctern.ST_Point(input1['longitude'], input1['latitude'])
       >>> 
       >>> # 根据 input1['color_weights'] 绘制图标图
-      >>> vega = vega_icon(1824, 1777, bounding_box=[-74.01424568752932, 40.72759334104623, -73.96056823889673, 40.76721122683304], icon_path='/path/to/icon.png', coordinate_system='EPSG:4326')
+      >>> vega = vega_icon(1824, 1777, bounding_box=[-74.01424568752932, 40.72759334104623, -73.96056823889673, 40.76721122683304], icon_path='/path/to/icon.png', icon_size=[17, 33], coordinate_system='EPSG:4326')
       >>> png = arctern.icon_viz_layer(vega, points)
       >>> save_png(png, "/tmp/python_icon_viz.png")
    ```

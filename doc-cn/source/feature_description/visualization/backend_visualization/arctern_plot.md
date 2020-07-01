@@ -150,13 +150,14 @@ $ conda install -c conda-forge pyproj
 wget https://raw.githubusercontent.com/arctern-io/arctern-docs/branch-0.2.x/img/icon/icon-viz.png -O /tmp/icon.png
 ```
 
-使用 [`plot.iconviz`](../../api_reference/plot/api/arctern.plot.iconviz.html) 方法根据出租车运营数绘制图标图。其中，图标的位置为上车地点。
+使用 [`plot.iconviz`](../../api_reference/plot/api/arctern.plot.iconviz.html) 方法根据出租车运营数绘制图标图，并更改图标大小为 [17, 33]。其中，图标的位置为上车地点。
 
 ```python
 >>> fig, ax = plt.subplots(figsize=(10, 6), dpi=200)
 >>> arctern.plot.iconviz(ax, 
 ...                      arctern.GeoSeries.point(df.pickup_longitude,df.pickup_latitude),
 ...                      icon_path="/tmp/icon.png", 
+...                      icon_size=[17, 33],
 ...                      bounding_box=bbox,
 ...                      coordinate_system="EPSG:4326")
 ```

@@ -18,6 +18,8 @@
 
 &#x2002; &#x2003; &#x2002; &#x2003; * icon_path(str) -- 图标png文件的绝对路径。在集群模式下，该图片需要被存储在集群所用的文件系统中。
 
+&#x2002; &#x2003; &#x2002; &#x2003; * icon_size(list) -- 可选参数，图标 png 的尺寸，默认值为 None，以 [width, height] 的形式表示图标 png 的长和宽，单位为像素，缺省时表示保持原有图标的尺寸。
+
 &#x2002; &#x2003; &#x2002; &#x2003; * coordinate_system(str) -- 可选参数，表示输入数据所属的地理坐标系统，默认值为"EPSG:3857"，当前支持的地理坐标系统请参照 <https://spatialreference.org/>。
 
 
@@ -78,7 +80,7 @@
       >>> # df 是包含 1 列数据的 pyspark.Dataframe，该列为 WKB 类型的points
       >>> # 根据 point 数据绘制图标图
       >>> df = spark.sql("select ST_Point(longitude, latitude) as point from test_table where ST_Within(ST_Point(longitude, latitude), ST_GeomFromText('POLYGON ((-74.01424568752932 40.72759334104623, -74.01424568752932 40.76721122683304, -73.96056823889673 40.76721122683304, -73.96056823889673 40.72759334104623, -74.01424568752932 40.72759334104623))'))  limit 10")
-      >>> vega = vega_icon(1824, 1777, bounding_box=[-74.01424568752932, 40.72759334104623, -73.96056823889673, 40.76721122683304], icon_path='/path/to/icon.png', coordinate_system='EPSG:4326')
+      >>> vega = vega_icon(1824, 1777, bounding_box=[-74.01424568752932, 40.72759334104623, -73.96056823889673, 40.76721122683304], icon_path='/path/to/icon.png', icon_size=[25, 25], coordinate_system='EPSG:4326')
       >>> res = icon_viz(vega, df)
       >>> save_png(res, '/tmp/icon_viz.png')
       >>> 

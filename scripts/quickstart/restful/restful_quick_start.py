@@ -219,7 +219,8 @@ payload = {
             40.728133570887906
         ],
         "coordinate_system": "EPSG:4326",
-        "icon_path": icon_path
+        "icon_path": icon_path,
+        "icon_size": [17, 33]
     }
 }
 r = requests.post(url=url_prefix + "/icon_viz", headers={"Content-Type": "application/json"}, data=json.dumps(payload))

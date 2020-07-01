@@ -312,7 +312,7 @@ SparkSession available as 'spark'.
 >>> pickup_df = spark.sql(pickup_sql)
 >>> 
 >>> # 根据查询结果绘制图标图图层，icon_path 配置为本地路径。
->>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/path/to/icon.png', coordinate_system="EPSG:4326")
+>>> vega = vega_icon(1024, 384, bounding_box=[pos1[0], pos1[1], pos2[0], pos2[1]], icon_path='/path/to/icon.png', icon_size=[25, 25], coordinate_system="EPSG:4326")
 >>> res = icon_viz(vega, pickup_df)
 >>> save_png(res, "/tmp/arctern_iconviz.png")
 ```

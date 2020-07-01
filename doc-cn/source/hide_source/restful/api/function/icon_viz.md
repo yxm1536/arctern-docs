@@ -19,6 +19,7 @@
         "height": 896,
         "bounding_box": [-75.37976, 40.191296, -71.714099, 41.897445],
         "icon_path": "/path/to/icon.png",
+        "icon_size": [25, 25],
         "coordinate_system": "EPSG:4326"
     }
 }
@@ -34,6 +35,7 @@
     - height：图片高度；
     - bounding_box：渲染图片所表示的地理范围 [`x_min`, `y_min`, `x_max`, `y_max`]；
     - icon_path：png 图标文件的绝对路径；
+    - icon_size：png 图标的尺寸；
     - coordinate_system：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)；
 
 ## 样例
@@ -63,6 +65,7 @@ payload  = {
         "height": 896,
         "bounding_box": [-75.37976, 40.191296, -71.714099, 41.897445],
         "icon_path": "/path/to/icon.png",
+        "icon_size": [25, 25],
         "coordinate_system": "EPSG:4326"
     }
 }
@@ -89,6 +92,7 @@ curl --location --request POST 'http://localhost:8080/icon_viz' \
         "height": 896,
         "bounding_box": [-75.37976, 40.191296, -71.714099, 41.897445],
         "icon_path": "/path/to/icon.png",
+        "icon_size": [25, 25],
         "coordinate_system": "EPSG:4326"
     }
 }'

@@ -156,7 +156,8 @@ Use the [`plot.iconviz`](../../api_reference/plot/api/arctern.plot.iconviz.html)
 >>> fig, ax = plt.subplots(figsize=(10, 6), dpi=200)
 >>> arctern.plot.iconviz(ax, 
 ...                     arctern.GeoSeries.point(df.pickup_longitude,df.pickup_latitude),
-...                     icon_path="/tmp/icon.png", 
+...                     icon_path="/tmp/icon.png",
+...                     icon_size=[17, 33],
 ...                     bounding_box=bbox,
 ...                     coordinate_system="EPSG:4326")
 ```
