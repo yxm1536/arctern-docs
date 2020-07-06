@@ -5,7 +5,7 @@ function compile_arctern() {
   wget https://github.com/Kitware/CMake/releases/download/v3.16.8/cmake-3.16.8-Linux-x86_64.tar.gz && \
   tar vxf cmake-3.16.8-Linux-x86_64.tar.gz && \
   export PATH=/cmake-3.16.8-Linux-x86_64/bin:$PATH && \
-  cd / && git clone https://github.com/arctern-io/arctern.git -b ${1} && cd arctern && \
+  cd / && git clone https://github.com/xiaocai2333/arctern.git -b ${1} && cd arctern && \
   cd cpp && mkdir build && cd build && \
   cmake .. -DCMAKE_INSTALL_PREFIX=${CONDA_PREFIX} -DCMAKE_BUILD_TYPE=Release -DBUILD_UNITTEST=ON && \
   make && make install && \
