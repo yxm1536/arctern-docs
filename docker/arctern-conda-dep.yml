@@ -5,8 +5,13 @@ dependencies:
 - python=3.7.6
 - gdal=3.0.4
 - pyarrow=0.17.1
+- koalas=1.0.0
 - gtest
 - rapidjson
 - Cython
 - pytest
 - pylint
+- contextily
+- pyproj
+- descartes
+- matplotlib

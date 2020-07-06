@@ -24,10 +24,6 @@ function compile_arctern_docs {
   pip install sphinx-markdown-tables==0.0.3 && \
   pip install sphinx-intl && \
   pip install pyspark && \
-  conda install -c conda-forge contextily && \
-  conda install -c conda-forge pyproj && \
-  conda install -c conda-forge descartes && \
-  conda install -c conda-forge matplotlib && \
   cd /arctern-docs/doc-cn && \
   mkdir build && python create_html.py && mv build build-cn && \
   cd /arctern-docs/doc-en && \
@@ -38,7 +34,13 @@ function compile_arctern_docs {
 source /opt/conda/etc/profile.d/conda.sh
 conda env create -n arctern-doc -f /arctern-docs/docker/arctern-conda-dep.yml && \
 conda activate arctern-doc && \
-ARCTERN_BRANCH=`cat /arctern-docs/version.json | jq -r .arctern_compile_branch`
+ARCTERN_BRANCH=`cat /arctern-docs/version.json | jq -r .arctern_compile_branch` && \
 compile_arctern ${ARCTERN_BRANCH} && \
+export PYSPARK_PYTHON="/opt/conda/envs/arctern-doc/bin/python" && \
+export PYSPARK_DRIVER_PYTHON="/opt/conda/envs/arctern-doc/bin/python" && \
+cd /opt/spark-3.0.0-bin-hadoop2.7/conf && /
+cp spark-defaults.conf.template spark-defaults.conf && \
+echo "spark.driver.extraClassPath /arctern/scala/target/scala-2.12/arctern_scala-assembly-0.1.jar" >> spark-defaults.conf && \
+echo "spark.executor.extraClassPath /arctern/scala/target/scala-2.12/arctern_scala-assembly-0.1.jar" >> spark-defaults.conf && \
 compile_arctern_docs && \
 python -c "import arctern;print(arctern.version())"

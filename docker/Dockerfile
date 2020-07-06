@@ -10,7 +10,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends wget build-esse
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     apt-get remove --purge -y && \
     mkdir /arctern-docs && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/*  && \
+    wget https://mirror.bit.edu.cn/apache/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz && \
+    tar -zxvf spark-3.0.0-bin-hadoop2.7.tgz -C /opt/
 
 COPY docker/docker-entrypoint.sh /opt/docker-entrypoint.sh
 
