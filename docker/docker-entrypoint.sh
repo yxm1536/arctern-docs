@@ -38,7 +38,7 @@ ARCTERN_BRANCH=`cat /arctern-docs/version.json | jq -r .arctern_compile_branch` 
 compile_arctern ${ARCTERN_BRANCH} && \
 export PYSPARK_PYTHON="/opt/conda/envs/arctern-doc/bin/python" && \
 export PYSPARK_DRIVER_PYTHON="/opt/conda/envs/arctern-doc/bin/python" && \
-cd /opt/spark-3.0.0-bin-hadoop2.7/conf && /
+cd /opt/spark-3.0.0-bin-hadoop2.7/conf && \
 cp spark-defaults.conf.template spark-defaults.conf && \
 echo "spark.driver.extraClassPath /arctern/scala/target/scala-2.12/arctern_scala-assembly-0.1.jar" >> spark-defaults.conf && \
 echo "spark.executor.extraClassPath /arctern/scala/target/scala-2.12/arctern_scala-assembly-0.1.jar" >> spark-defaults.conf && \
