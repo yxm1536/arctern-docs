@@ -1,8 +1,9 @@
 name: Arctern-bot Release Doc
 
 on:
-  release:
-    types: [published]
+  push:
+    - ./*
+    - docker/*
 
 jobs:
   compile-and-publish-docs:
