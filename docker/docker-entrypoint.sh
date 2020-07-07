@@ -36,6 +36,10 @@ function compile_arctern_docs {
 source /opt/conda/etc/profile.d/conda.sh
 conda env create -n arctern-doc -f /arctern-docs/docker/arctern-conda-dep.yml && \
 conda activate arctern-doc && \
+echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list && \
+curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823" | sudo apt-key add && \
+sudo apt-get update && \
+sudo apt-get install sbt && \
 ARCTERN_BRANCH=`cat /arctern-docs/version.json | jq -r .arctern_compile_branch` && \
 compile_arctern ${ARCTERN_BRANCH} && \
 export PYSPARK_PYTHON="/opt/conda/envs/arctern-doc/bin/python" && \
