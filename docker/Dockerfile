@@ -13,7 +13,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends wget build-esse
     rm -rf /var/lib/apt/lists/*  && \
     wget https://mirror.bit.edu.cn/apache/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz && \
     tar -zxvf spark-3.0.0-bin-hadoop2.7.tgz -C /opt/ && \
-
+    cd /opt/ &&  wget https://piccolo.link/sbt-1.3.13.tgz && \
+    tar -zxvf sbt-1.3.13.tgz && \
+    apt-get update && \
+    apt-get install openjdk-8-jdk -y
 
 COPY docker/docker-entrypoint.sh /opt/docker-entrypoint.sh
 

@@ -7,6 +7,7 @@ dependencies:
 - pyarrow=0.17.1
 - koalas=1.0.0
 - gtest
+- geopandas
 - rapidjson
 - Cython
 - pytest
