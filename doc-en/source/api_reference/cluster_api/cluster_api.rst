@@ -1,6 +1,6 @@
-.. _geoseries:
+.. _cluster_api:
 
-集群模式
+Cluster API
 ============
 .. currentmodule:: arctern_spark
 
