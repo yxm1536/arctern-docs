@@ -1,6 +1,6 @@
-# 模拟 Spark Standalone 集群的安装部署
+# 在 Spark 集群上安装部署 Arctern
 
-本文介绍使用 Docker 技术在一台主机上启动三个容器，并将它们组织成一个 Spark Standalone 集群。之后，你将在该集群上运行 CPU 版本的 Arctern。三个容器的信息如下：
+本文介绍使用 Docker 技术在一台主机上启动三个容器，并将它们组织成一个 **Standalone** 模式的 Spark 集群。之后，你将在该集群上运行 CPU 版本的 Arctern。三个容器的信息如下：
 
 | Host name |IP address | Container name | Type |
 | :--- | :--- | :--- | :--- |
@@ -10,144 +10,82 @@
 
 ## 创建 Docker 子网
 
-创建一个名为`arcternet` 的 Docker 子网：
+创建一个名为 `arcternet` 的 Docker 子网：
 
 ```bash
-docker network create --subnet=172.18.0.0/16 arcternet
+$ docker network create --subnet=172.18.0.0/16 arcternet
 ```
 
 ## 创建集群的共享目录
 
-创建一个名为`arcternas`的目录作为集群的共享目录：
+在 `HOME` 目录下创建 `arcternas`文件夹作为集群的共享目录：
 
 ```bash
-mkdir $HOME/arcternas
+$ mkdir $HOME/arcternas
 ```
 
 ## 启动容器
 
-启动容器，并设置目录 **$HOME/arcternas** 映射到容器内的 **/arcternas**：
+使用以下命令启动容器并设置目录 **$HOME/arcternas** 映射到容器内的 **/arcternas**：
 
 ```bash
-docker run -d -ti --name node_master --hostname node_master --net arcternet --ip 172.18.0.20 --add-host node_master:172.18.0.21 --add-host node_master:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:16.04 bash
-docker run -d -ti --name node_slave1 --hostname node_slave1 --net arcternet --ip 172.18.0.21 --add-host node_slave1:172.18.0.20 --add-host node_slave1:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:16.04 bash
-docker run -d -ti --name node_slave2 --hostname node_slave2 --net arcternet --ip 172.18.0.22 --add-host node_slave2:172.18.0.20 --add-host node_slave2:172.18.0.21 -v $HOME/arcternas:/arcternas ubuntu:16.04 bash
+$ docker run -d -ti --name node_master --hostname node_master --net arcternet --ip 172.18.0.20 --add-host node_master:172.18.0.21 --add-host node_master:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:16.04 bash
+$ docker run -d -ti --name node_slave1 --hostname node_slave1 --net arcternet --ip 172.18.0.21 --add-host node_slave1:172.18.0.20 --add-host node_slave1:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:16.04 bash
+$ docker run -d -ti --name node_slave2 --hostname node_slave2 --net arcternet --ip 172.18.0.22 --add-host node_slave2:172.18.0.20 --add-host node_slave2:172.18.0.21 -v $HOME/arcternas:/arcternas ubuntu:16.04 bash
 ```
 
-## 安装库
+## 安装基础库和工具
 
-下面以 `node_master` 为例展示如何安装库。你需要对 `node_slave1` 和 `node_slave2` 重复下方所述的操作。
+本文使用的Docker 镜像是 `ubuntu:16.04`， 为了方便后续安装操作，需要安装一些基础库和工具。下面以 `node_master` 为例展示如何安装库和工具。
 
-### 进入 Docker 节点
+> **注意：** 你需要对 `node_slave1` 和 `node_slave2` 重复下方所述的操作。
+
+使用以下命令进入 Docker 节点：
 
 ```bash
-# 登录 node_master，后续你需要对 node_slave1 和 node_slave2 重复此操作
-docker exec -it node_master bash
+$ docker exec -it node_master bash
 ```
 
-### 安装依赖库
+使用以下命令安装基础依赖库和工具:
 
 ```bash
 apt update
-apt install -y libgl-dev libosmesa6-dev libglu1-mesa-dev wget openjdk-8-jre openssh-server vim
+apt install -y wget openjdk-8-jre openssh-server vim
 service ssh start
-
-# 新建 arcterner 用户
-useradd -m arcterner -s /bin/bash
-
-# 修改 arcterner 用户密码为 arcterner
-echo -e "arcterner\narcterner" | passwd arcterner
-
-# 修改目录 /arcternas 为 arcterner 所有
-chown -R arcterner:arcterner /arcternas
-exit
 ```
 
-### 安装 Conda
+使用以下命令新建用户和设置密码:
 
-以`arcterner`用户登录 Docker 节点：
+```
+$ useradd -m arcterner -s /bin/bash
+$ echo -e "arcterner\narcterner" | passwd arcterner
+$ chown -R arcterner:arcterner /arcternas
+```
+创建了名为 arcterner 的用户，并且密码设置为 arcterner 。
+
+
+## 设置免密登录
+
+> **注意：** 此操作只在 `node_master` 上执行。
+
+以 `arcterner` 用户登录 `node_master`：
 
 ```bash
-# 以 arcterner 用户登录 node_master，后续你需要对 node_slave1 和 node_slave2 重复此操作
-docker exec -it -u arcterner node_master bash
+$ docker exec -it -u arcterner node_master bash
 ```
-
-在 Docker 节点上安装 Conda：
+使用以下命令设置 ‵node_master` 到所有节点免密登录：
 
 ```bash
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
-bash ~/miniconda.sh -b
-echo "source $HOME/miniconda3/etc/profile.d/conda.sh" >> .bashrc
-rm ~/miniconda.sh
-exit
+# 生成 ssh-key，用于免密登录
+$ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+$ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+$ ssh-copy-id node_master
+$ ssh-copy-id node_slave1
+$ ssh-copy-id node_slave2
 ```
 
-以`arcterner`用户重新登录 Docker 节点：
+## 在 Spark 上安装 Arctern
 
-```bash
-# 以 arcterner 用户登录 node_master，后续你需要对 node_slave1 和 node_slave2 重复此操作
-docker exec -it -u arcterner node_master bash
-```
-
-执行 `conda env list` 查询 Conda 环境。如果打印了 `base` 环境，则 Conda 安装生效。
-
-```bash
-hadoop@node_master:/$ conda env list
-
-# conda environments:
-base                  *  /home/hadoop/miniconda3
-```
-
-### 安装 Arctern
-
-创建一个名为 `arctern_env` 的 Conda 环境，并安装 Arctern：
-
-```bash
-conda create -y -n arctern_env -c conda-forge -c arctern arctern
-```
-
-进入 `arctern_env` 环境，并启动 Python：
-
-```bash
-conda activate arctern_env
-python
-```
-
-尝试打印 `arctern` 的版本，检查 Arctern 安装是否成功：
-
-```python
->>> import arctern
->>> print(arctern.version())
-version : 0.3.0
-```
-
-### 安装 Spark
-
-```bash
-# 进入 Home 目录
-cd ~/
-
-# 下载 Spark
-wget https://mirrors.sonic.net/apache/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz
-
-# 解压 Spark
-tar -xvf spark-3.0.0-bin-hadoop2.7.tgz
-rm -rf spark-3.0.0-bin-hadoop2.7.tgz
-```
-执行 `vim ~/.bashrc` 以编辑 **bashrc** 文件。 在该文件中添加以下内容:
-
-```bash
-export SPARK_HOME=$HOME/spark-3.0.0-bin-hadoop2.7
-```
-
-执行 `vim ~/spark3-bin-hadoop2.7/conf/spark-env.sh` 以编辑 **spark-env.sh** 文件。文件内容如下:
-
-```bash
-#! /usr/bin/env bash
-export PYSPARK_PYTHON=$HOME/miniconda3/envs/arctern_env/bin/python
-SPARK_WORKER_CORES=2
-SPARK_WORKER_MEMORY=4g
-```
 
 ## 配置主节点
 
@@ -174,30 +112,6 @@ spark.executor.cores               1
 node_master
 node_slave1
 node_slave2
-```
-
-## 设置免密登录
-
-> **注意：** 后续所有操作均在 `node_master` 上执行。
-
-退出 `node_master `的 root 账户，再以 `arcterner` 用户登录 `node_master`：
-
-```bash
-exit
-docker exec -it -u arcterner node_master bash
-```
-设置 spark `master` 到 spark `woker` 的免密登录：
-
-```bash
-# 生成 ssh-key，用于免密登录
-ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
-
-# cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-
-# 需要输入密码，密码为 arcterner
-ssh-copy-id node_master
-ssh-copy-id node_slave1
-ssh-copy-id node_slave2
 ```
 
 ## 启动 Spark 集群
