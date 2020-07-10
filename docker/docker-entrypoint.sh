@@ -14,6 +14,7 @@ function compile_arctern() {
   cd ../spark/pyspark && \
   ./build.sh && cd ../../ && \
   cd scala/ && /opt/sbt/bin/sbt "set test in assembly := {}" clean assembly && \
+
   cd ../spark/ && python setup.py install
 }
 
@@ -44,7 +45,7 @@ export PYSPARK_DRIVER_PYTHON=/opt/conda/envs/arctern-doc/bin/python && \
 compile_arctern ${ARCTERN_BRANCH} && \
 cd /opt/spark-3.0.0-bin-hadoop2.7/conf && \
 cp spark-defaults.conf.template spark-defaults.conf && \
-echo "spark.driver.extraClassPath /arctern/scala/target/scala-2.12/arctern_scala-assembly-$(echo 0.1).jar" >> spark-defaults.conf && \
-echo "spark.executor.extraClassPath /arctern/scala/target/scala-2.12/arctern_scala-assembly-$(echo 0.1).jar" >> spark-defaults.conf && \
+echo "spark.driver.extraClassPath $(ls /arctern/scala/target/scala-2.12/*.jar)" >> spark-defaults.conf && \
+echo "spark.executor.extraClassPath $(ls /arctern/scala/target/scala-2.12/*.jar)" >> spark-defaults.conf && \
 compile_arctern_docs && \
 python -c "import arctern;print(arctern.version())"
