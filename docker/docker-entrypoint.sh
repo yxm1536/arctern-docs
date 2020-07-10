@@ -14,7 +14,6 @@ function compile_arctern() {
   cd ../spark/pyspark && \
   ./build.sh && cd ../../ && \
   cd scala/ && /opt/sbt/bin/sbt "set test in assembly := {}" clean assembly && \
-
   cd ../spark/ && python setup.py install
 }
 
