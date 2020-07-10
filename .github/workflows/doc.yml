@@ -1,8 +1,7 @@
 name: Arctern-bot Release Doc
 
 on:
-  release:
-    types: [published]
+  push
 
 jobs:
   compile-and-publish-docs:
