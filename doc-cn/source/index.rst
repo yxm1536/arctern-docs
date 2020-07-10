@@ -35,4 +35,5 @@ Arctern 是一个快速可扩展的时空数据分析框架。
    quick_start/quick_start
    feature_description/feature_description
    api_reference/api_reference
+   cluster/cluster
    restful/restful
