@@ -8,13 +8,13 @@ Arctern RESTful Server 仅负责接收和解析 RESTful 请求，实际操作由
 
 请参考如下链接：
 
-* [在线安装 Arctern Python 后台](../python/installation_and_deployment/install_arctern_on_python.md)
+* [安装 Arctern](../quick_start/standalone_installation.md)
 
 ### 安装基于 Spark 的 Arctern 后台
 
 通过以下方式安装基于 Spark 的 Arctern 后台：
 
-* [在线安装 Arctern PySpark 后台](../spark/installation_and_deployment/install_arctern_on_spark_cn.md)
+* [安装 Arctern On Spark](./install_arctern_on_spark_cn.md)
 
 ## 安装 Arctern RESTful Server
 

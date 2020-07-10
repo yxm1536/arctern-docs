@@ -6,7 +6,7 @@
 
 请参考如下链接：
 
-* [在线安装 Arctern Python 后台](../rest/python/installation_and_deployment/install_arctern_on_python.md)
+* [安装 Arctern](../quick_start/standalone_installation.md)
 
 ## Spark 安装要求
 
