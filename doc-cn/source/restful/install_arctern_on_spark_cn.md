@@ -21,14 +21,14 @@
 以下对 local 模式的 Spark 安装和配置流程进行介绍。
 > **注意：** 若需要以集群模式安装 Spark,请参考 [Spark 官方文档](https://spark.apache.org/docs/latest/) 。
 
-下载 [spark-3.0.0编译包](https://mirrors.sonic.net/apache/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz) 并解压 Spark 压缩包：
+下载 [spark-3.0.0编译包](https://mirrors.sonic.net/apache/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz) 并解压：
 
 ```bash
 $ wget https://mirrors.sonic.net/apache/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz
 $ tar -xvzf spark-3.0.0-bin-hadoop2.7.tgz
 ```
 
-配置 SPARK_HOME变量:
+配置 `SPARK_HOME` 变量:
 
 执行 `vim ~/.bashrc` 以编辑 **bashrc** 文件。 在该文件中添加以下内容:
 
