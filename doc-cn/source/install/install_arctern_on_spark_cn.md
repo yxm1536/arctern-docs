@@ -6,7 +6,7 @@
 
 请参考如下链接：
 
-* [安装 Arctern](../quick_start/standalone_installation.md)
+* [安装 Arctern](./standalone_installation.md)
 
 ## Spark 安装要求
 
@@ -19,7 +19,7 @@
 
 以下对 local 模式的 Spark 安装和配置流程进行介绍。
 > **注意：** 若需要以集群模式安装 Spark ，请参考 [Spark 官方文档](https://spark.apache.org/docs/latest/) 。
-同时也可以参考 [在 Spark 集群上安装部署 Arctern](../cluster/cluster_installation.md) 。
+同时也可以参考 [在 Spark 集群上安装部署 Arctern](./cluster_installation.md) 。
 
 ### 下载 spark 预编译包
 

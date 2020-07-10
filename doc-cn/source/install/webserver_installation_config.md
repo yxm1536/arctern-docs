@@ -8,7 +8,7 @@ Arctern RESTful Server 仅负责接收和解析 RESTful 请求，实际操作由
 
 请参考如下链接：
 
-* [安装 Arctern](../quick_start/standalone_installation.md)
+* [安装 Arctern](./standalone_installation.md)
 
 ### 安装基于 Spark 的 Arctern 后台
 

@@ -6,4 +6,4 @@
 .. toctree::
    :maxdepth: 2
 
-   cluster_installation
+   ../install/cluster_installation
