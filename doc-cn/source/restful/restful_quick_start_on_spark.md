@@ -8,7 +8,7 @@
 
 ### 服务器启动
 
-在调用 Arctern RESTful API 之前请先启动服务，具体步骤见 [服务器启动](./webserver_installation_config.md)。
+在调用 Arctern RESTful API 之前请先启动服务，具体步骤见 [服务器启动](../install/webserver_installation_config.md)。
 
 ### 数据准备
 

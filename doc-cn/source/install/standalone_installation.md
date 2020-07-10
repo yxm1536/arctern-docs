@@ -1,8 +1,6 @@
 # 安装部署
 
-<!-- Arctern 既支持单机工作，也支持多个计算机通过集群模式协作。 -->
 本文档将引导你在单机模式下安装 Arctern。
-<!-- 如果你想了解如何部署 Arctern 的集群工作环境，请查看 [模拟 Spark Standalone 集群的安装部署](../feature_description/spatiotemporal_analysis/cluster_installation.md)。 -->
 
 ## 系统要求
 

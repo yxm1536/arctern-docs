@@ -1,6 +1,6 @@
 # 使用 Arctern 分析空间数据
 
-完成 [Arctern 的安装部署](./standalone_installation.md) 之后，本文档引导你使用 Arctern 分析帝国大厦附近的道路信息。
+完成 [Arctern 的安装部署](../install/standalone_installation.md) 之后，本文档引导你使用 Arctern 分析帝国大厦附近的道路信息。
 
 ### 安装 Jupyter 和 Kepler.gl
 
