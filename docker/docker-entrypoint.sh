@@ -12,11 +12,12 @@ function compile_arctern() {
   cd ../../python && \
   python setup.py build build_ext && python setup.py install && \
   cd ../spark/pyspark && \
-  ./build.sh && cd ../../
+  ./build.sh && cd ../../ && \
+  cd scala/ && /opt/sbt/bin/sbt "set test in assembly := {}" clean assembly && \
+  cd ../spark/ && python setup.py install
 }
 
 function compile_arctern_docs {
-  # arctern-docs dependencies
   pip install sphinx && \
   pip install sphinx_automodapi && \
   pip install sphinx_rtd_theme && \
@@ -24,21 +25,26 @@ function compile_arctern_docs {
   pip install sphinx-markdown-tables==0.0.3 && \
   pip install sphinx-intl && \
   pip install pyspark && \
-  conda install -c conda-forge contextily && \
-  conda install -c conda-forge pyproj && \
-  conda install -c conda-forge descartes && \
-  conda install -c conda-forge matplotlib && \
   cd /arctern-docs/doc-cn && \
   mkdir build && python create_html.py && mv build build-cn && \
   cd /arctern-docs/doc-en && \
-  make doctest && rm -rf build && \
-  mkdir build && python compile.py && mv build build-en
+  python compile.py && \
+  make doctest && \
+  mv build build-en
 }
 
 source /opt/conda/etc/profile.d/conda.sh
 conda env create -n arctern-doc -f /arctern-docs/docker/arctern-conda-dep.yml && \
 conda activate arctern-doc && \
-ARCTERN_BRANCH=`cat /arctern-docs/version.json | jq -r .arctern_compile_branch`
+ARCTERN_BRANCH=`cat /arctern-docs/version.json | jq -r .arctern_compile_branch` && \
+export SPARK_HOME=/opt/spark-3.0.0-bin-hadoop2.7 && \
+export PATH=/opt/spark-3.0.0-bin-hadoop2.7/bin:$PATH && \
+export PYSPARK_PYTHON=/opt/conda/envs/arctern-doc/bin/python && \
+export PYSPARK_DRIVER_PYTHON=/opt/conda/envs/arctern-doc/bin/python && \
 compile_arctern ${ARCTERN_BRANCH} && \
+cd /opt/spark-3.0.0-bin-hadoop2.7/conf && \
+cp spark-defaults.conf.template spark-defaults.conf && \
+echo "spark.driver.extraClassPath $(ls /arctern/scala/target/scala-2.12/*.jar)" >> spark-defaults.conf && \
+echo "spark.executor.extraClassPath $(ls /arctern/scala/target/scala-2.12/*.jar)" >> spark-defaults.conf && \
 compile_arctern_docs && \
 python -c "import arctern;print(arctern.version())"

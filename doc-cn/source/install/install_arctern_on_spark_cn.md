@@ -1,6 +1,6 @@
 # 安装
 
-本文档介绍 Spark3.0 和 Arctern 的安装步骤，以及如何配置 Arctern 运行在 Spark 上。
+本文档介绍 Spark 3.0 和 Arctern 的安装步骤，以及如何配置 Arctern 并在 Spark 上运行 Arctern。
 
 ## 安装 Arctern
 
@@ -8,7 +8,9 @@
 
 * [安装 Arctern](./standalone_installation.md)
 
-## Spark 安装要求
+## 安装并配置 Spark
+
+### Spark 安装要求
 
 |  名称    |   版本     |
 | :---------- | :------------ |
@@ -40,7 +42,9 @@ export SPARK_HOME=<path/to/spark-3.0.0-bin-hadoop2.7>
 export PATH=$SPARK_HOME/bin:$PATH
 ```
 
-创建 spark-defaults.conf 以及 spark-env.sh 文件：
+> **注意：** 你需要将 `<path/to/spark-3.0.0-bin-hadoop2.7>` 替换为本地文件夹 **spark-3.0.0-bin-hadoop2.7** 的路径。
+
+创建 **spark-defaults.conf** 以及 **spark-env.sh** 文件：
 
 ```bash
 $ cd spark-3.0.0-bin-hadoop2.7/conf
@@ -140,6 +144,7 @@ All tests of arctern have passed!
 ```bash
 $ conda activate arctern_env
 ```
+
 运行以下命令获取当前 conda 环境的安装路径：
 
 ```bash

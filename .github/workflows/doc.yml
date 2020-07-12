@@ -18,7 +18,7 @@ jobs:
           docker build --tag arctern-docs:bot-release . --file ./docker/Dockerfile && \
           echo "------------------------------------------------------------- docker image build ok --------------------------------------" &&  \
           docker run -v ${GITHUB_WORKSPACE}:/arctern-docs arctern-docs:bot-release && \
-          echo "------------------------------------------------------------- compile ok --------------------------------------" &&  \
+          echo "------------------------------------------------------------- compile ok --------------------------------------" && \
           git config --global user.email "Arctern-doc-bot@zilliz.com" && \
           git config --global user.name "Arctern-doc-bot" && \
           git clone https://.:${{ secrets.ARCTERN_DOC_RELEASE_TOKEN }}@github.com/arctern-io/arctern-docs.git arctern-docs-copy && \

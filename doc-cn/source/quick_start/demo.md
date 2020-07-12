@@ -75,3 +75,48 @@ dtype: bool
 你还可以点击 Kepler.gl 界面右上角的 **&gt;** 按钮以展开侧边栏，在其中设置每条路线的颜色和线宽。
 
 ![](../../../img/quick_start/kepler_set_witth.png)
+
+### 使用 Arctern 筛选信息
+
+> **注意：** 以下操作均在新建的 Notebook 中运行。
+
+导入 `arctern`、`keplergl` 以及其他的相关库：
+
+
+```python
+>>> from keplergl import KeplerGl
+>>> import pandas as pd
+>>> from arctern import GeoDataFrame
+```
+
+创建 `GeoDataFrame` 表示城市信息：
+
+```python
+>>> data = {
+>>>     'City': ['BeiJing', 'ShangHai', 'Tokyo', 'Seoul'],
+>>>     'Country': ['China', 'China', 'Japan', 'Korea'],
+>>>     'Coordinates': ['POINT(116.24 39.55)', 'POINT(121.29 31.14)', 
+>>>                     'POINT(139.49 35.40)', 'POINT(126.58 37.33)']
+>>> }
+>>> df = GeoDataFrame(data, geometries=["Coordinates"], crs="EPSG:4326")
+```
+
+筛选出 `Country == "China"` 的城市信息:
+```python
+>>> in_china = pd.Series([df.Country[idx] == "China" for idx in range (0, len(df))])
+>>> df_in_china = df[in_china]
+>>> df_in_china
+	City	Country	Coordinates
+0	BeiJing	China	POINT (116.24 39.55)
+1	ShangHai	China	POINT (121.29 31.14)
+```
+
+### 使用 Kepler.Gl 绘制地图
+
+使用 Kepler.Gl 在地图上标示出 `Beijing` 和　`ShangHai` 两个城市：
+
+```python
+>>> KeplerGl(height=600, data={"citys":pd.DataFrame(rst.Coordinates.to_wkt())})
+```
+
+![](../../../img/quick_start/citys.png)
