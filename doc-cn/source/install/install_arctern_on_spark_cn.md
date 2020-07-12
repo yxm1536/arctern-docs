@@ -40,9 +40,11 @@ $ tar -xvzf spark-3.0.0-bin-hadoop2.7.tgz
 ```bash
 export SPARK_HOME=<path/to/spark-3.0.0-bin-hadoop2.7>
 export PATH=$SPARK_HOME/bin:$PATH
+export SPARK_LOCAL_HOSTNAME=localhost
 ```
 
 > **注意：** 你需要将 `<path/to/spark-3.0.0-bin-hadoop2.7>` 替换为本地文件夹 **spark-3.0.0-bin-hadoop2.7** 的路径。
+> **注意：** 你需要重启终端以使上面的设置生效。
 
 创建 **spark-defaults.conf** 以及 **spark-env.sh** 文件：
 

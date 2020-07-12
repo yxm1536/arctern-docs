@@ -39,9 +39,9 @@ $ mkdir $HOME/arcternas
 使用以下命令启动容器并设置目录 **$HOME/arcternas** 映射到容器内的 **/arcternas**：
 
 ```bash
-$ docker run -d -ti --name node_master --hostname node_master --net arcternet --ip 172.18.0.20 --add-host node_master:172.18.0.20 --add-host node_master:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
-$ docker run -d -ti --name node_slave1 --hostname node_slave1 --net arcternet --ip 172.18.0.21 --add-host node_slave1:172.18.0.20 --add-host node_slave1:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
-$ docker run -d -ti --name node_slave2 --hostname node_slave2 --net arcternet --ip 172.18.0.22 --add-host node_slave2:172.18.0.20 --add-host node_slave2:172.18.0.21 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
+$ docker run -d -ti --name node_master --hostname node_master --net arcternet --ip 172.18.0.20 --add-host node_slave1:172.18.0.21 --add-host node_slave2:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
+$ docker run -d -ti --name node_slave1 --hostname node_slave1 --net arcternet --ip 172.18.0.21 --add-host node_master:172.18.0.20 --add-host node_slave2:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
+$ docker run -d -ti --name node_slave2 --hostname node_slave2 --net arcternet --ip 172.18.0.22 --add-host node_master:172.18.0.20 --add-host node_slave1:172.18.0.21 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
 ```
 
 ## 安装基础库和工具
@@ -60,14 +60,14 @@ $ docker exec -it node_master bash
 
 ```bash
 $ apt update
-$ apt install -y wget openjdk-8-jre openssh-server vim
+$ apt install -y wget openjdk-8-jre openssh-server vim sudo
 $ service ssh start
 ```
 
 使用以下命令新建用户 `arcterner` 并将密码设置为 `arcterner`:
 
 ```
-$ useradd -m arcterner -s /bin/bash
+$ useradd -m arcterner -s /bin/bash -G sudo
 $ echo -e "arcterner\narcterner" | passwd arcterner
 $ chown -R arcterner:arcterner /arcternas
 ```
