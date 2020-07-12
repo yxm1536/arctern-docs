@@ -15,6 +15,16 @@
 ```bash
 $ docker network create --subnet=172.18.0.0/16 arcternet
 ```
+如果提示
+```
+Error response from daemon: Pool overlaps with other one on this address space
+```
+则需表示已经有该子网，则无需创建子网，或者删除现有子网重新创建，或者尝试创建其它网段的子网。
+
+创建完毕后，可以通过以下命令查看创建的子网：
+```bash
+$ docker network ls
+```
 
 ## 创建集群的共享目录
 
@@ -29,7 +39,7 @@ $ mkdir $HOME/arcternas
 使用以下命令启动容器并设置目录 **$HOME/arcternas** 映射到容器内的 **/arcternas**：
 
 ```bash
-$ docker run -d -ti --name node_master --hostname node_master --net arcternet --ip 172.18.0.20 --add-host node_master:172.18.0.21 --add-host node_master:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
+$ docker run -d -ti --name node_master --hostname node_master --net arcternet --ip 172.18.0.20 --add-host node_master:172.18.0.20 --add-host node_master:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
 $ docker run -d -ti --name node_slave1 --hostname node_slave1 --net arcternet --ip 172.18.0.21 --add-host node_slave1:172.18.0.20 --add-host node_slave1:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
 $ docker run -d -ti --name node_slave2 --hostname node_slave2 --net arcternet --ip 172.18.0.22 --add-host node_slave2:172.18.0.20 --add-host node_slave2:172.18.0.21 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
 ```
