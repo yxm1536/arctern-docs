@@ -35,7 +35,6 @@ $ tar -xvzf spark-3.0.0-bin-hadoop2.7.tgz
 ### 配置 Spark
 
 执行 `vim ~/.bashrc` 以编辑 **bashrc** 文件，配置 `SPARK_HOME` 变量。在该文件中添加以下内容:
-> **注意：** 你需要将 `<path/to/spark-3.0.0-bin-hadoop2.7>` 替换为本地文件夹 spark-3.0.0-bin-hadoop2.7 的路径。
 
 ```bash
 export SPARK_HOME=<path/to/spark-3.0.0-bin-hadoop2.7>

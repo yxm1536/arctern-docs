@@ -4,9 +4,9 @@
 
 | Host name |IP address | Container name | Type |
 | :--- | :--- | :--- | :--- |
-| node_master | 172.18.0.20 | node_master | master |
-| node_slave1 | 172.18.0.21 | node_slave1 | worker |
-| node_slave2 | 172.18.0.22 | node_slave2 | worker |
+| node-master | 172.18.0.20 | node-master | master |
+| node-slave1 | 172.18.0.21 | node-slave1 | worker |
+| node-slave2 | 172.18.0.22 | node-slave2 | worker |
 
 ## 创建 Docker 子网
 
@@ -39,21 +39,21 @@ $ mkdir $HOME/arcternas
 使用以下命令启动容器并设置目录 **$HOME/arcternas** 映射到容器内的 **/arcternas**：
 
 ```bash
-$ docker run -d -ti --name node_master --hostname node_master --net arcternet --ip 172.18.0.20 --add-host node_slave1:172.18.0.21 --add-host node_slave2:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
-$ docker run -d -ti --name node_slave1 --hostname node_slave1 --net arcternet --ip 172.18.0.21 --add-host node_master:172.18.0.20 --add-host node_slave2:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
-$ docker run -d -ti --name node_slave2 --hostname node_slave2 --net arcternet --ip 172.18.0.22 --add-host node_master:172.18.0.20 --add-host node_slave1:172.18.0.21 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
+$ docker run -d -ti --name node-master --hostname node-master --net arcternet --ip 172.18.0.20 --add-host node-slave1:172.18.0.21 --add-host node-slave2:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
+$ docker run -d -ti --name node-slave1 --hostname node-slave1 --net arcternet --ip 172.18.0.21 --add-host node-master:172.18.0.20 --add-host node-slave2:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
+$ docker run -d -ti --name node-slave2 --hostname node-slave2 --net arcternet --ip 172.18.0.22 --add-host node-master:172.18.0.20 --add-host node-slave1:172.18.0.21 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
 ```
 
 ## 安装基础库和工具
 
-本文使用的 Docker 镜像是 `ubuntu:18.04`，需要安装一些基础库和工具。下面以 `node_master` 为例介绍安装步骤。
+本文使用的 Docker 镜像是 `ubuntu:18.04`，需要安装一些基础库和工具。下面以 `node-master` 为例介绍安装步骤。
 
-> **注意：** 你需要对 `node_slave1` 和 `node_slave2` 重复下方所述的操作。
+> **注意：** 你需要对 `node-slave1` 和 `node-slave2` 重复下方所述的操作。
 
-使用以下命令进入 `node_master` 节点：
+使用以下命令进入 `node-master` 节点：
 
 ```bash
-$ docker exec -it node_master bash
+$ docker exec -it node-master bash
 ```
 
 使用以下命令安装基础依赖库和工具:
@@ -74,20 +74,20 @@ $ chown -R arcterner:arcterner /arcternas
 
 ## 设置免密登录
 
-> **注意：** 此操作只在 `node_master` 上执行。
+> **注意：** 此操作只在 `node-master` 上执行。
 
-以 `arcterner` 用户登录 `node_master`：
+以 `arcterner` 用户登录 `node-master`：
 ```bash
-$ docker exec -it -u arcterner node_master bash
+$ docker exec -it -u arcterner node-master bash
 ```
 
-使用以下命令设置 ‵node_master` 到所有节点免密登录：
+使用以下命令设置 ‵node-master` 到所有节点免密登录：
 ```bash
 $ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-$ ssh-copy-id node_master
-$ ssh-copy-id node_slave1
-$ ssh-copy-id node_slave2
+$ ssh-copy-id node-master
+$ ssh-copy-id node-slave1
+$ ssh-copy-id node-slave2
 ```
 
 ## 部署 Spark 和 Arctern
@@ -100,39 +100,36 @@ $ ssh-copy-id node_slave2
 
 ## 配置 Spark 集群
 
-以 `arcterner` 用户登录 `node_master` 并执行 `vim ~/spark-3.0.0-bin-hadoop2.7/conf/slaves` 以编辑 **slaves** 文件。文件内容如下:
+以 `arcterner` 用户登录 `node-master` 。执行 `vim ~/spark-3.0.0-bin-hadoop2.7/conf/slaves` 以编辑 **slaves** 文件。文件内容如下:
 
 ```
-node_master
-node_slave1
-node_slave2
+node-master
+node-slave1
+node-slave2
 ```
 
+执行 `vim ~/spark-3.0.0-bin-hadoop2.7/conf/spark-defaults.conf` 以编辑 **spark-defaults.conf** 文件。在该文件中添加以下内容:
 
+```bash
+spark.master  spark://node-master:7077
+```
 
 ## 启动 Spark 集群
 
-以 `arcterner` 用户登录 `node_master` 并执行以下命令来启动集群：
+以 `arcterner` 用户登录 `node-master` 并执行以下命令来启动集群：
 
 ```bash
 $SPARK_HOME/sbin/start-master.sh
 $SPARK_HOME/sbin/start-slaves.sh
 ```
 
-关闭`node_master`宿主机的浏览器代理，在宿主机的浏览器中输入 `http://172.18.0.20:8080/`，验证 spark 集群是否正确启动：
+关闭`node-master`宿主机的浏览器代理，在宿主机的浏览器中输入 `http://172.18.0.20:8080/`，验证 Spark 集群是否正确启动：
 
-![查看 master](./img/standalone-cluster-start-master.png)
-![启动 slaves](./img/standalone-cluster-start-slaves.png)
+![查看集群](./check_cluster.png)
 
 ## 验证部署
 
-以 `arcterner` 用户登录 `node_master`：
-
-```bash
-$ docker exec -it -u arcterner node_master bash
-```
-
-进入 Conda 环境：
+以 `arcterner` 用户登录 `node-master`，并进入 Conda 环境：
 
 ```bash
 $ conda activate arctern_env
@@ -141,6 +138,7 @@ $ conda activate arctern_env
 使用以下命令验证是否部署成功：
 
 ```bash
+$ export PYSPARK_PYTHON=$CONDA_PREFIX/bin/python
 $ python -c "from arctern_spark import examples;examples.run_geo_functions_test()"
 ```
 
