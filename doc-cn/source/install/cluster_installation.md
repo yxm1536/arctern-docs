@@ -29,14 +29,14 @@ $ mkdir $HOME/arcternas
 使用以下命令启动容器并设置目录 **$HOME/arcternas** 映射到容器内的 **/arcternas**：
 
 ```bash
-$ docker run -d -ti --name node_master --hostname node_master --net arcternet --ip 172.18.0.20 --add-host node_master:172.18.0.21 --add-host node_master:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:16.04 bash
-$ docker run -d -ti --name node_slave1 --hostname node_slave1 --net arcternet --ip 172.18.0.21 --add-host node_slave1:172.18.0.20 --add-host node_slave1:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:16.04 bash
-$ docker run -d -ti --name node_slave2 --hostname node_slave2 --net arcternet --ip 172.18.0.22 --add-host node_slave2:172.18.0.20 --add-host node_slave2:172.18.0.21 -v $HOME/arcternas:/arcternas ubuntu:16.04 bash
+$ docker run -d -ti --name node_master --hostname node_master --net arcternet --ip 172.18.0.20 --add-host node_master:172.18.0.21 --add-host node_master:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
+$ docker run -d -ti --name node_slave1 --hostname node_slave1 --net arcternet --ip 172.18.0.21 --add-host node_slave1:172.18.0.20 --add-host node_slave1:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
+$ docker run -d -ti --name node_slave2 --hostname node_slave2 --net arcternet --ip 172.18.0.22 --add-host node_slave2:172.18.0.20 --add-host node_slave2:172.18.0.21 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
 ```
 
 ## 安装基础库和工具
 
-本文使用的 Docker 镜像是 `ubuntu:16.04`， 为了方便后续安装操作，需要安装一些基础库和工具。下面以 `node_master` 为例展示如何安装库和工具。
+本文使用的 Docker 镜像是 `ubuntu:18.04`，需要安装一些基础库和工具。下面以 `node_master` 为例介绍安装步骤。
 
 > **注意：** 你需要对 `node_slave1` 和 `node_slave2` 重复下方所述的操作。
 
@@ -54,7 +54,7 @@ $ apt install -y wget openjdk-8-jre openssh-server vim
 $ service ssh start
 ```
 
-使用以下命令新建用户 `arcterner` 以及设置密码为 `arcterner`:
+使用以下命令新建用户 `arcterner` 并将密码设置为 `arcterner`:
 
 ```
 $ useradd -m arcterner -s /bin/bash
@@ -86,19 +86,11 @@ $ ssh-copy-id node_slave2
 
 参考以下方式：
 
-* [安装 Arctern On Spark](./install_arctern_on_spark_cn.md)
+* [在 Spark 上部署 Arctern](./install_arctern_on_spark_cn.md)
 
 ## 配置 Spark 集群
 
-> **注意：** 此操作只在 `node_master` 上执行。
-
-以 `arcterner` 用户登录 `node_master`：
-
-```bash
-$ docker exec -it -u arcterner node_master bash
-```
-
-执行 `vim ~/spark-3.0.0-bin-hadoop2.7/conf/slaves` 以编辑 **slaves** 文件。文件内容如下:
+以 `arcterner` 用户登录 `node_master` 并执行 `vim ~/spark-3.0.0-bin-hadoop2.7/conf/slaves` 以编辑 **slaves** 文件。文件内容如下:
 
 ```
 node_master
@@ -120,5 +112,28 @@ $SPARK_HOME/sbin/start-slaves.sh
 ![查看 master](./img/standalone-cluster-start-master.png)
 ![启动 slaves](./img/standalone-cluster-start-slaves.png)
 
-## 测试 Arctern
+## 验证部署
 
+以 `arcterner` 用户登录 `node_master`：
+
+```bash
+$ docker exec -it -u arcterner node_master bash
+```
+
+进入 Conda 环境：
+
+```bash
+$ conda activate arctern_env
+```
+
+使用以下命令验证是否部署成功：
+
+```bash
+$ python -c "from arctern_spark import examples;examples.run_geo_functions_test()"
+```
+
+若输出结果包含以下内容，则表示通过测试样例。
+
+```bash
+All tests have passed!
+```

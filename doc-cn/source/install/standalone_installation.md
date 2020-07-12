@@ -92,8 +92,8 @@ $ conda activate arctern_env
 
 ```python
 >>> import arctern
->>> print(arctern.version())
-version : 0.2.0
+>>> arctern.__version__
+>>> arctern.version(verbose=True)
 ```
 
 ## 卸载 Arctern
