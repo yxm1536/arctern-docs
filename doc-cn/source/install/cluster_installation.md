@@ -116,7 +116,7 @@ $SPARK_HOME/sbin/start-slaves.sh
 
 关闭 `node-master` 宿主机的浏览器代理，在宿主机的浏览器中输入 `http://172.18.0.20:8080/`，验证 Spark 集群是否正确启动：
 
-![查看集群](./check_cluster.png)
+![查看集群](./img/check_cluster.png)
 
 ## 验证部署
 
