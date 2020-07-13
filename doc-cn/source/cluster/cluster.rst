@@ -7,3 +7,4 @@
    :maxdepth: 2
 
    ../install/cluster_installation
+   cluster_code
