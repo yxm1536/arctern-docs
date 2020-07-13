@@ -58,10 +58,10 @@ $ cp spark-env.sh.template spark-env.sh
 > **注意：** 你需要将 `<conda_prefix>` 替换为本地 Conda 环境的安装路径。如何获取 conda 环境的安装路径请参考本文档末尾的 [FAQ](#FAQ)部分。
 
 ```bash
-spark.driver.extraClassPath <conda_prefix>/jars/arctern_assembly-0.3.0.jar
+spark.driver.extraClassPath <conda_prefix>/jars/arctern_scala-assembly-0.3.0.jar
 spark.executorEnv.PROJ_LIB <conda_prefix>/share/proj
 spark.executorEnv.GDAL_DATA <conda_prefix>/share/gdal
-spark.executor.extraClassPath <conda_prefix>/jars/arctern_assembly-0.3.0.jar
+spark.executor.extraClassPath <conda_prefix>/jars/arctern_scala-assembly-0.3.0.jar
 ```
 
 在文件 spark-env.sh 的最后添加以下内容：

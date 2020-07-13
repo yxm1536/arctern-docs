@@ -5,7 +5,8 @@ Arctern 是一个快速可扩展的时空数据分析框架。可扩展性的其
 本文列举一些典型的代码示例，展示如何将单机版本下的代码进行微小修改即可在分布式环境下运行。
 
 
-## 快速开始
+## 代码示例
+
 单机版本下的 `GeoSeries` 和 `GeoDataFrame` 位于 `arctern` Python 包，对应的分布式版本的数据结构则位于 `arctern_spark` Python 包。
 因此大多数情况下只需要将 `GeoSeries` 和 `GeoDataFrame` 的 import 方式修改即可。就像如下代码所示：
 
@@ -35,9 +36,7 @@ rst = data.area
 print(rst)
 ```
 
-## 构造
-
-`arctern.GeoSeries` 可根据 `list`, `koalas.GeoSereis` 以及 `pandas.GeoSeries` 来构造。
+`arctern_spark.GeoSeries` 可根据 `list-like`类型的数据和`koalas.GeoSereis` 来构造。`list-like` 类型包括 lists, tuples, sets, NumPy arrays, 以及 Pandas Series。
 
 ```python
 from arctern_spark.geoseries import GeoSeries
@@ -55,8 +54,4 @@ print(aser.area)
 aser = GeoSeries(kser)
 print(aser.area)
 ```
-
-
-## 数据处理
-
 
