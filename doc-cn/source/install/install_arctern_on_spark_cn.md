@@ -70,8 +70,7 @@ spark.executor.extraClassPath <conda_prefix>/jars/arctern_scala-assembly-0.3.0.j
 $ export PYSPARK_PYTHON=<conda_prefix>/bin/python
 ```
 
-### 编译安装 PySpark Python 包
-如果需要使用 `python <file>` 的方式在 Spark 上运行 python 模块，则需要在 conda 环境中编译安装 pyspark 包。
+### 编译安装 pyspark 包
 
 进入 Conda 环境：
 
@@ -85,25 +84,23 @@ $ cd $SPAKR_HOME/python
 $ python setup.py install
 ```
 
-安装完毕后，使用以下命令验证是否成功安装 pyspark：
+使用以下命令验证是否成功安装 pyspark：
 
 ```bash
 $ python -c "import pyspark"
 ```
-如果上述命令没有任何错误信息输出，则表示安装成功。
+如果上述命令没有错误信息输出，则表示安装成功。
 
 
 ## 测试样例
 
 ### 下载测试模块
 
-执行以下命令下载测试模块：
-
 ```bash
 $ wget https://raw.githubusercontent.com/arctern-io/arctern/branch-0.3.x/spark/pyspark/examples/gis/spark_udf_ex.py
 ```
 
-### spark submit 方式提交任务
+### 提交测试任务
 
 执行以下命令提交 Spark 任务：
 
@@ -122,7 +119,7 @@ All tests of arctern have passed!
 
 ### 直接运行测试模块
 
-使用以下命令可以直接运行测试文件:
+也使用以下命令可以直接运行测试文件:
 > **注意：** 你需要将 `<path/to/your/spark>` 替换为 Spark 的本地安装路径，将 `<path/to/spark_udf_ex.py>` 替换为本地测试文件的路径。
 > **注意：** 此种方式要求进入 Conda 环境。
 
@@ -145,7 +142,7 @@ All tests of arctern have passed!
 $ conda activate arctern_env
 ```
 
-运行以下命令获取当前 conda 环境的安装路径：
+运行以下命令获取当前 Conda 环境的安装路径：
 
 ```bash
  $ echo $CONDA_PREFIX
