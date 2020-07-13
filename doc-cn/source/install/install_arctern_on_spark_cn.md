@@ -1,6 +1,6 @@
-# 安装
+# 在 Spark 上安装 Arctern
 
-本文档介绍 Spark 3.0 和 Arctern 的安装步骤，以及如何配置 Arctern 并在 Spark 上运行 Arctern。
+本文档介绍 Spark3.0.0 和 Arctern 的安装步骤，以及如何在 Spark 上运行 Arctern。
 
 ## 安装 Arctern
 
@@ -10,18 +10,16 @@
 
 ## 安装并配置 Spark
 
+以下对 local 模式的 Spark 安装和配置流程进行介绍。
+> **注意：** 若需要以集群模式安装 Spark ，请参考 [Spark 官方文档](https://spark.apache.org/docs/latest/) 。
+同时也可以参考 [在 Spark 集群上安装部署 Arctern](./cluster_installation.md)。
+
 ### Spark 安装要求
 
 |  名称    |   版本     |
 | :---------- | :------------ |
 | 操作系统 |Ubuntu LTS 18.04, Centos 7|
 | JDK    | JDK 8 |
-
-## 安装并配置 Spark
-
-以下对 local 模式的 Spark 安装和配置流程进行介绍。
-> **注意：** 若需要以集群模式安装 Spark ，请参考 [Spark 官方文档](https://spark.apache.org/docs/latest/) 。
-同时也可以参考 [在 Spark 集群上安装部署 Arctern](./cluster_installation.md) 。
 
 ### 下载 spark 预编译包
 
@@ -34,7 +32,7 @@ $ tar -xvzf spark-3.0.0-bin-hadoop2.7.tgz
 
 ### 配置 Spark
 
-执行 `vim ~/.bashrc` 以编辑 **bashrc** 文件，配置 `SPARK_HOME` 变量。在该文件中添加以下内容:
+执行 `vim ~/.bashrc` 以编辑 **bashrc** 文件。在该文件中添加以下内容:
 
 ```bash
 export SPARK_HOME=<path/to/spark-3.0.0-bin-hadoop2.7>
@@ -43,9 +41,10 @@ export SPARK_LOCAL_HOSTNAME=localhost
 ```
 
 > **注意：** 你需要将 `<path/to/spark-3.0.0-bin-hadoop2.7>` 替换为本地文件夹 **spark-3.0.0-bin-hadoop2.7** 的路径。
+
 > **注意：** 你需要重启终端以使上面的设置生效。
 
-创建 **spark-defaults.conf** 以及 **spark-env.sh** 文件：
+创建 **spark-defaults.conf** 和 **spark-env.sh** 文件：
 
 ```bash
 $ cd spark-3.0.0-bin-hadoop2.7/conf
@@ -55,7 +54,7 @@ $ cp spark-env.sh.template spark-env.sh
 
 在文件 spark-defaults.conf 的最后添加以下内容：
 
-> **注意：** 你需要将 `<conda_prefix>` 替换为本地 Conda 环境的安装路径。如何获取 conda 环境的安装路径请参考本文档末尾的 [FAQ](#FAQ)部分。
+> **注意：** 你需要将 `<conda_prefix>` 替换为本地 Conda 环境的安装路径。如何获取 conda 环境的安装路径请参考本文档末尾的 [FAQ](#FAQ) 部分。
 
 ```bash
 spark.driver.extraClassPath <conda_prefix>/jars/arctern_scala-assembly-0.3.0.jar
@@ -65,7 +64,7 @@ spark.executor.extraClassPath <conda_prefix>/jars/arctern_scala-assembly-0.3.0.j
 ```
 
 在文件 spark-env.sh 的最后添加以下内容：
-> **注意：** 你需要将 `<conda_prefix>` 替换为本地 Conda 环境的安装路径。如何获取 conda 环境的安装路径请参考本文档末尾的 [FAQ](#FAQ)部分。
+> **注意：** 你需要将 `<conda_prefix>` 替换为本地 Conda 环境的安装路径。如何获取 conda 环境的安装路径请参考本文档末尾的 [FAQ](#FAQ) 部分。
 
 ```bash
 $ export PYSPARK_PYTHON=<conda_prefix>/bin/python
