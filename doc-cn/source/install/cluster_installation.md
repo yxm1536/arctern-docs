@@ -26,22 +26,14 @@ Error response from daemon: Pool overlaps with other one on this address space
 $ docker network ls
 ```
 
-## 创建集群的共享目录
-
-在 `HOME` 目录下创建 `arcternas`文件夹作为集群的共享目录：
-
-```bash
-$ mkdir $HOME/arcternas
-```
-
 ## 启动容器
 
-使用以下命令启动容器并设置目录 **$HOME/arcternas** 映射到容器内的 **/arcternas**：
+使用以下命令启动容器：
 
 ```bash
-$ docker run -d -ti --name node-master --hostname node-master --net arcternet --ip 172.18.0.20 --add-host node-slave1:172.18.0.21 --add-host node-slave2:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
-$ docker run -d -ti --name node-slave1 --hostname node-slave1 --net arcternet --ip 172.18.0.21 --add-host node-master:172.18.0.20 --add-host node-slave2:172.18.0.22 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
-$ docker run -d -ti --name node-slave2 --hostname node-slave2 --net arcternet --ip 172.18.0.22 --add-host node-master:172.18.0.20 --add-host node-slave1:172.18.0.21 -v $HOME/arcternas:/arcternas ubuntu:18.04 bash
+$ docker run -d -ti --name node-master --hostname node-master --net arcternet --ip 172.18.0.20 --add-host node-slave1:172.18.0.21 --add-host node-slave2:172.18.0.22  ubuntu:18.04 bash
+$ docker run -d -ti --name node-slave1 --hostname node-slave1 --net arcternet --ip 172.18.0.21 --add-host node-master:172.18.0.20 --add-host node-slave2:172.18.0.22  ubuntu:18.04 bash
+$ docker run -d -ti --name node-slave2 --hostname node-slave2 --net arcternet --ip 172.18.0.22 --add-host node-master:172.18.0.20 --add-host node-slave1:172.18.0.21  ubuntu:18.04 bash
 ```
 
 ## 安装基础库和工具
@@ -69,7 +61,6 @@ $ service ssh start
 ```
 $ useradd -m arcterner -s /bin/bash -G sudo
 $ echo -e "arcterner\narcterner" | passwd arcterner
-$ chown -R arcterner:arcterner /arcternas
 ```
 
 ## 设置免密登录
@@ -81,7 +72,7 @@ $ chown -R arcterner:arcterner /arcternas
 $ docker exec -it -u arcterner node-master bash
 ```
 
-使用以下命令设置 ‵node-master` 到所有节点免密登录：
+使用以下命令设置 `node-master` 到所有节点免密登录：
 ```bash
 $ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
@@ -92,11 +83,11 @@ $ ssh-copy-id node-slave2
 
 ## 部署 Spark 和 Arctern
 
-> **注意：** 你需要以 `arcterner` 用户登录所有 Docker 节点并部署 Spark 和 Arctern。
+> **注意：** 你需要以 `arcterner` 用户登录所有 Docker 节点部署 Spark 和 Arctern。
 
 参考以下方式：
 
-* [在 Spark 上部署 Arctern](./install_arctern_on_spark_cn.md)
+* [在 Spark 上安装 Arctern](./install_arctern_on_spark_cn.md)
 
 ## 配置 Spark 集群
 
@@ -123,7 +114,7 @@ $SPARK_HOME/sbin/start-master.sh
 $SPARK_HOME/sbin/start-slaves.sh
 ```
 
-关闭`node-master`宿主机的浏览器代理，在宿主机的浏览器中输入 `http://172.18.0.20:8080/`，验证 Spark 集群是否正确启动：
+关闭 `node-master` 宿主机的浏览器代理，在宿主机的浏览器中输入 `http://172.18.0.20:8080/`，验证 Spark 集群是否正确启动：
 
 ![查看集群](./check_cluster.png)
 
