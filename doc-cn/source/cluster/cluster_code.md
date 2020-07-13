@@ -1,11 +1,8 @@
 # 代码迁移
 
-Arctern 是一个快速可扩展的时空数据分析框架。可扩展性的其中一个挑战是从单机到集群和云，跨平台实现一致的数据分析和处理接口。我们基于 Spark 开发 `GeoSeries` 和 `GeoDataFame` 的分布式版本并借助 Koalas 接口实现和单机版一致的 `GeoDataFrame` 和 `GeoSeries` 接口。
+Arctern 是一个快速可扩展的时空数据分析框架。可扩展性的其中一个挑战是从单机到集群和云，跨平台实现一致的数据分析和处理接口。我们基于 Spark 开发 `GeoSeries` 和 `GeoDataFame` 的分布式版本并借助 Koalas 接口实现和单机版接口一致的 `GeoDataFrame` 和 `GeoSeries`。
 
 本文展示如何将单机版本下的代码进行微小修改即可在分布式环境下运行。
-
-
-## 代码示例
 
 单机版本下的 `GeoSeries` 和 `GeoDataFrame` 位于 `arctern` Python 包，对应的分布式版本的数据结构则位于 `arctern_spark` Python 包。
 因此大多数情况下只需要将 `GeoSeries` 和 `GeoDataFrame` 的 import 方式修改即可。就像如下代码所示：
