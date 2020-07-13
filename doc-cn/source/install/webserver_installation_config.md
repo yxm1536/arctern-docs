@@ -2,7 +2,7 @@
 
 ## 安装 Arctern 后台
 
-Arctern RESTful Server 仅负责接收和解析 RESTful 请求，实际操作由 Arctern 后台执行。在安装 Arctern RESTful Server 前，你需要事先安装 Arctern 后台系统。目前，Arctern RESTful Server 支持基于 Python 和基于 Spark(PySpark) 两种 Arctern 后台，你可以任选一种安装使用。
+Arctern RESTful Server 仅负责接收和解析 RESTful 请求，实际操作由 Arctern 后台执行。在安装 Arctern RESTful Server 前，你需要事先安装 Arctern 后台系统。目前，Arctern RESTful Server 支持基于 Python 和基于 Spark 的两种 Arctern 后台。你可以任选一种安装使用。
 
 ### 安装基于 Python 的 Arctern 后台
 
@@ -36,7 +36,7 @@ $ conda create -n arctern_server_env -c conda-forge -c arctern arctern-webserver
 $ conda activate arctern_server_env
 ```
 
-Workspace 文件夹用于存放 Arctern RESTful Server 所依赖的第三方工具、插件、系统配置文件等信息。在初次启动 RESTful Server 前，你需要通过 Bootstrap 命令设置 workspace。
+Workspace 文件夹用于存放 Arctern RESTful Server 所依赖的第三方工具、插件、系统配置文件等信息。在初次启动 RESTful Server 前，你需要通过 `bootstrap` 命令设置 workspace。
 
 > **注意：** 此处 `workspace` 指定为 `/home/usr/arctern_server/`，你可根据需求自行选择合适的路径。
 
