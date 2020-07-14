@@ -312,7 +312,7 @@ $ pip install requests
 
 热力图的绘制结果如下：
 
-![热力图](../../../img/restful-result/heatmap_spark.png)
+![热力图](./img/heatmap_spark.png)
 
 ### 删除数据表
 

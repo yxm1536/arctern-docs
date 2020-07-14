@@ -229,4 +229,4 @@ $ pip install requests
 
 热力图的绘制结果如下：
 
-![热力图](../../../img/restful-result/heatmap.png)
+![热力图](./img/heatmap.png)
