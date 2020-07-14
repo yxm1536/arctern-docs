@@ -57,10 +57,10 @@ arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080
 如果选用 Spark 作为后台，请依照以下命令示例进行配置，配置项解释详见 [Arctern RESTful Server 配置选项](../restful/restful_config.md)：
 
 ```bash
-arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080 --interpreter_type=pyspark --interpreter_name=arcternpyspark --interpreter_pyspark_python="</path/to/python>" --interpreter_pyspark_driver_python=</path/to/python> --interpreter_spark_home="</path/to/spark>" --interpreter_master=local[*]
+arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080 --interpreter_type=pyspark --interpreter_name=arcternpyspark --interpreter_pyspark_python="</path/to/python>" --interpreter_pyspark_driver_python=</path/to/python> --interpreter_spark_home="</path/to/spark>" --interpreter_master=local
 ```
 
-> **注意：** 你需要将 `</path/to/python>` 替换为 Arctern 所在 Conda 环境的 Python 绝对路径，如何获取该路径请参考 [FAQ](#FAQ) 。
+> **注意：** 你需要将 `</path/to/python>` 替换为 Arctern 所在 Conda 环境的 Python 绝对路径，如何获取该路径请参考 [FAQ](#faq) 。
 > **注意：** 你还需要将 `</path/to/spark>` 替换为 Spark 的 HOME 路径。
 
 ## 启动
