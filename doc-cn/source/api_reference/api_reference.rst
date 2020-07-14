@@ -7,5 +7,6 @@ API 参考
    :maxdepth: 1
 
    standalone_api/geoseries
+   cluster_api/cluster_api
    map_match/map_match
    plot/plot
