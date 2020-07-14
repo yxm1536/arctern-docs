@@ -5,7 +5,7 @@ Cluster API
 .. currentmodule:: arctern_spark
 
 GeoSeries is a Series to store and process geometry data by extending
-Koalas Series. It internally store geometry as bytes object.
+Koalas Series.
 
 Constructor
 -----------
@@ -22,6 +22,7 @@ Attributes
    :toctree: api/
 
    GeoSeries.is_valid
+   GeoSeries.length
    GeoSeries.is_simple
    GeoSeries.area
    GeoSeries.geom_type
