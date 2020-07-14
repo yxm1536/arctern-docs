@@ -31,7 +31,7 @@ Arctern 是一个快速可扩展的时空数据分析框架。可扩展性的其
 >>> print(rst)
 ```
 
-`arctern_spark.GeoSeries` 可根据 `list-like` 类型的数据和 `koalas.GeoSereis` 来构造。`list-like` 类型包括 list、tuple、set、numpy.array 以及 pandas.Series。
+`arctern_spark.GeoSeries` 可根据 `list-like` 类型的数据和 `koalas.Series` 来构造。`list-like` 类型包括 list、tuple、set、numpy.array 以及 pandas.Series。
 
 ```python
 >>> from arctern_spark.geoseries import GeoSeries
