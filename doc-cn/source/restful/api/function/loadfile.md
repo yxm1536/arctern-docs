@@ -1,6 +1,6 @@
 # 加载文件
 
-加载数据文件。当前支持的文件格式详见 [Arctern-Spark 文件的导入导出](../../../spark/data_source/file_data.md)。
+加载数据文件。当前支持的文件格式详见 [RESTful 文件的导入导出](../../file_data.md)。
 
 ## 请求说明
 
