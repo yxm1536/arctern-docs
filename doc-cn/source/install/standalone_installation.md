@@ -54,7 +54,6 @@ $ sudo yum install mesa-libGLU-devel mesa-libOSMesa-devel
 $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 $ bash Miniconda3-latest-Linux-x86_64.sh -b
 $ echo "source $HOME/miniconda3/etc/profile.d/conda.sh" >> $HOME/.bashrc
-$ rm Miniconda3-latest-Linux-x86_64.sh
 ```
 
 关闭当前终端，并重新打开一个新的终端。在新终端中打印所有 Conda 环境。若出现 `base` 环境，则 Conda 安装成功。

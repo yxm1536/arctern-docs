@@ -54,7 +54,6 @@ Install [Miniconda](https://docs.conda.io/projects/conda/en/latest/user-guide/in
 $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 $ bash Miniconda3-latest-Linux-x86_64.sh -b
 $ echo "source $HOME/miniconda3/etc/profile.d/conda.sh" >> $HOME/.bashrc
-$ rm Miniconda3-latest-Linux-x86_64.sh
 ```
 
 Close the current terminal. Then, open a new terminal and run the commands below to list all Conda environments in it. Conda installation is successful if the `base` environment is printed.
