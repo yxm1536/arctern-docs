@@ -44,12 +44,13 @@ export SPARK_LOCAL_HOSTNAME=localhost
 
 > **注意：** 你需要重启终端以使上面的设置生效。
 
-创建 **spark-defaults.conf** 和 **spark-env.sh** 文件：
+创建 **spark-defaults.conf**、**spark-env.sh** 和 **hive-site.xml** 文件：
 
 ```bash
 $ cd spark-3.0.0-bin-hadoop2.7/conf
 $ cp spark-defaults.conf.template spark-defaults.conf
 $ cp spark-env.sh.template spark-env.sh
+$ touch hive-site.xml
 ```
 
 在文件 spark-defaults.conf 的最后添加以下内容：
@@ -68,6 +69,18 @@ spark.executor.extraClassPath <conda_prefix>/jars/arctern_scala-assembly-0.3.0.j
 
 ```bash
 $ export PYSPARK_PYTHON=<conda_prefix>/bin/python
+```
+
+在文件 **hive-site.xml** 中添加如下内容：
+
+```xml
+<configuration>
+    <property>
+        <name>hive.metastore.warehouse.dir</name>
+        <value>${user.home}/hive/warehouse</value>
+        <description>location of default database for the warehouse</description>
+    </property>
+</configuration>
 ```
 
 ### 编译安装 pyspark 包
