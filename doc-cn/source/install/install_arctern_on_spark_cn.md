@@ -10,7 +10,7 @@
 
 ## 安装并配置 Spark
 
-以下对 local 模式的 Spark 安装和配置流程进行介绍。
+以下对 **local** 模式的 Spark 安装和配置流程进行介绍。
 > **注意：** 若需要以集群模式安装 Spark ，请参考 [Spark 官方文档](https://spark.apache.org/docs/latest/) 。
 同时也可以参考 [在 Spark 集群上安装部署 Arctern](./cluster_installation.md)。
 
@@ -121,7 +121,7 @@ $ wget https://raw.githubusercontent.com/arctern-io/arctern/branch-0.3.x/spark/p
 > **注意：** 此种方式不强制要求进入 Conda 环境。
 
 ```bash
-$ spark-submit <path/to/spark_udf_ex.py>
+$ spark-submit --master local <path/to/spark_udf_ex.py>
 ```
 
 若最后结果输出包含以下内容，则表示通过测试样例。
