@@ -135,6 +135,7 @@ All tests of arctern have passed!
 也使用以下命令可以直接运行测试文件:
 > **注意：** 你需要将 `<path/to/your/spark>` 替换为 Spark 的本地安装路径，将 `<path/to/spark_udf_ex.py>` 替换为本地测试文件的路径。
 > **注意：** 此种方式要求进入 Conda 环境。
+以下对 **local** 模式的 Spark 安装和配置流程进行介绍。
 
 ```bash
 $ python <path/to/spark_udf_ex.py>
