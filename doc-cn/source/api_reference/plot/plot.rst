@@ -13,9 +13,9 @@ Plot
    arctern.plot.choroplethmap
    arctern.plot.iconviz
    arctern.plot.fishnetmap
-   arctern.point_map_layer
-   arctern.weighted_point_map_layer
-   arctern.heat_map_layer
-   arctern.choropleth_map_layer
-   arctern.icon_viz_layer
-   arctern.fishnet_map_layer
+   arctern.plot.pointmap_layer
+   arctern.plot.weighted_pointmap_layer
+   arctern.plot.heatmap_layer
+   arctern.plot.choroplethmap_layer
+   arctern.plot.iconviz_layer
+   arctern.plot.fishnetmap_layer
