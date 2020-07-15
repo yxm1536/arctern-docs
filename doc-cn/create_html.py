@@ -10,7 +10,7 @@ def ignore_python_prompt():
 
 def add_content(path):
     file_read = open(path, 'r')
-    udf_file_read = open('replace_udf.py','r')
+    udf_file_read = open('replace_udf.py', 'r')
     content = file_read.read()
     contentadd = udf_file_read.read()
     pos = content.find("if __name__ == '__main__':")
@@ -20,6 +20,7 @@ def add_content(path):
     content = content[:pos] + contentadd + content[pos:]
     file_write.write(content)
     file_write.close()
+
 
 def delete_content(path):
     file_read = open(path, 'r')
@@ -40,12 +41,11 @@ def replace(source_api_path):
            with open(source_api_path + os.sep + html_file, 'w') as f:
                 f.write(contents)
 
+
 if __name__ == "__main__":
     path = os.popen('which sphinx-build').readline().replace("\n", "")
     add_content(path)
     os.system('make clean')
-    os.system('make html')
-    os.system('make gettext')
     os.system('make html')
     delete_content(path)
     replace("build/html/")

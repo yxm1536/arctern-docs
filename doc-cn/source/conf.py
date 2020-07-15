@@ -13,10 +13,14 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+
+#
+# Currently we must make sure arctern package installed before generate doc.
+#
+# -- Project information -----------------------------------------------------
 import logging
 
 
-# -- Project information -----------------------------------------------------
 project = 'Arctern'
 copyright = '2020, zilliz'
 author = 'zilliz'
@@ -27,22 +31,22 @@ logger = logging.getLogger(__name__)
 import arctern
 release = arctern.version()
 
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-   'sphinx.ext.autodoc',
-   'sphinx.ext.viewcode',
-   'sphinx_automodapi.automodapi',
-   'sphinx.ext.inheritance_diagram',
-   'sphinx.ext.autosummary',
-   'sphinx_markdown_tables',
-   'matplotlib.sphinxext.plot_directive',
-   'recommonmark',
-   'sphinx.ext.napoleon'
+    'sphinx.ext.doctest',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
+    'sphinx_automodapi.automodapi',
+    'sphinx.ext.inheritance_diagram',
+    'sphinx.ext.autosummary',
+    'sphinx_markdown_tables',
+    'matplotlib.sphinxext.plot_directive',
+    'recommonmark',
+    'sphinx.ext.napoleon'
 ]
 
 exclude_patterns = ["**.ipynb_checkpoints"]
@@ -70,6 +74,7 @@ source_suffix = {
     '.txt': 'markdown',
     '.md': 'markdown',
 }
+
 autosummary_generate = True
 
 # Add any paths that contain templates here, relative to this directory.
@@ -80,26 +85,31 @@ templates_path = ['_templates']
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'zh_CN'
-locale_dirs = ['locale/'] # path is example but recommended.
-gettext_compact = False # optional.
+language = 'python'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#add_module_names = False
+# add_module_names = False
 html_last_updated_fmt = '%b %d, %Y'
 html_domain_indices = True
 html_theme = 'sphinx_rtd_theme'
-#html_logo = './_static/arctern-color.png'
+# html_logo = './_static/arctern-color.png'
+inheritance_graph_attrs = dict(rankdir="LR", size='"6.0, 8.0"',
+                               fontsize=14, ratio='compress')
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+# Style has not been decided yet
+
+# html_css_files = [
+#     'style.css',
+# ]
