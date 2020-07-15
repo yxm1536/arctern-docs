@@ -1,6 +1,6 @@
-.. _map_match:
+.. _top_level_functions:
 
-Map Match
+Top Level Functions
 ==========
 
 .. autosummary::
@@ -10,3 +10,5 @@ Map Match
    arctern.nearest_road
    arctern.near_road
    arctern.within_which
+   arctern.sjoin
+   arctern.read_file
