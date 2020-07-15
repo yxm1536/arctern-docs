@@ -8,5 +8,5 @@ API 参考
 
    standalone_api/geoseries
    standalone_api/geodataframe
-   map_match/map_match
+   top_level_functions/top_level_functions
    plot/plot
