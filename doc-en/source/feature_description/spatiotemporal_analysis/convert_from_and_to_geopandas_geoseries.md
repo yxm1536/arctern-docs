@@ -1,4 +1,4 @@
-# Convert with GeoPandas GeoSeries
+# GeoSeries conversion between Arctern and GeoPandas
 
 Arctern seamlessly connects with GeoPandas ecology. By switching between Arctern GeoSeries and GeoPandas GeoSeries, you can improve the efficiency of processing geographic data. For example, GeoPandas takes longer time to run in scenarios of large data volume, while Arctern can speed up data processing via some GPU-accelerated methods. In this case, you might want to convert GeoPandas GeoSeries to Arctern GeoSeries, and Arctern's `to_geopandas` and `from_geopandas` methods help you do this quickly and easily.
 

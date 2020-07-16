@@ -1,7 +1,8 @@
 # 绘图方法
 
 本文档介绍 Arctern 的绘图方法。
-[plot_geometry](../../api_reference/plot/api/arctern.plot.plot_geometry.html)plot_geometry
+
+## [plot_geometry](../../api_reference/plot/api/arctern.plot.plot_geometry.html)
 
 ### 方法定义
 

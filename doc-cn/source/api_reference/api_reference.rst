@@ -7,5 +7,6 @@ API 参考
    :maxdepth: 1
 
    standalone_api/geoseries
-   map_match/map_match
+   standalone_api/geodataframe
+   top_level_functions/top_level_functions
    plot/plot
