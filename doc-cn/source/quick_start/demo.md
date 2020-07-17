@@ -82,14 +82,13 @@ dtype: bool
 
 导入 `arctern`、`keplergl` 以及其他的相关库：
 
-
 ```python
 >>> from keplergl import KeplerGl
 >>> import pandas as pd
 >>> from arctern import GeoDataFrame
 ```
 
-创建 `GeoDataFrame` 表示城市信息：
+创建一个 GeoDataFrame 对象 `df`以表示城市信息：
 
 ```python
 >>> data = {
@@ -101,7 +100,8 @@ dtype: bool
 >>> df = GeoDataFrame(data, geometries=["Coordinates"], crs="EPSG:4326")
 ```
 
-筛选出 `Country == "China"` 的城市信息:
+筛选出 `Country == "China"` 的城市信息：
+
 ```python
 >>> in_china = pd.Series([df.Country[idx] == "China" for idx in range (0, len(df))])
 >>> df_in_china = df[in_china]
