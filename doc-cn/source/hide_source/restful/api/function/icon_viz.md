@@ -36,7 +36,7 @@
     - bounding_box：渲染图片所表示的地理范围 [`x_min`, `y_min`, `x_max`, `y_max`]；
     - icon_path：png 图标文件的绝对路径；
     - icon_size：png 图标的尺寸；
-    - coordinate_system：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)；
+    - `coordinate_system`：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)；
 
 ## 示例
 

@@ -9,29 +9,30 @@
 - Headers:
     - `Content-Type: application/json`
 - Body:
-```json
-{
-    "tables": [
-        {
-            "sql": "select * from table_name",
-            "format": "csv",
-            "path": "/path/to/data.csv",
-            "options": {
-                "header": "True",
-                "delimiter": ","
+
+    ```json
+    {
+        "tables": [
+            {
+                "sql": "select * from table_name",
+                "format": "csv",
+                "path": "/path/to/data.csv",
+                "options": {
+                    "header": "True",
+                    "delimiter": ","
+                }
             }
-        }
-    ]
-}
-```
+        ]
+    }
+    ```
 
-参数说明：
+    参数说明：
 
-- tables：将数据保存为文件时的描述信息。该字段为一个列表( `list` )，系统将会按照列表中的顺序依次进行文件保存操作。
-    - sql：待执行的 SQL 查询语句，该语句的结果将作为要保存的表。
-    - format：待保存的文件格式。
-    - path：文件路径。
-    - options：保存文件时的指定选项，使用 `key-value` 形式提供。
+    - `tables`: 将数据保存为文件时的描述信息。该字段为一个列表，系统将会按照列表中的顺序依次进行文件保存操作。
+        - `sql`: 待执行的 SQL 查询语句，该语句的结果将作为要保存的表。
+        - `format`: 待保存的文件格式。
+        - `path`: 文件路径。
+        - `options`: 保存文件时的指定选项，使用 `key-value` 形式提供。
 
 ## 请求示例
 

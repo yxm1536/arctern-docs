@@ -10,30 +10,30 @@
     - `Content-Type: application/json`
 - Body:
 
-数据查询：
+    - 数据查询：
 
-```json
-{
-    "sql": "select * from table_name limit 1",
-    "collect_result": "1"
-}
-```
+    ```json
+    {
+        "sql": "select * from table_name limit 1",
+        "collect_result": "1"
+    }
+    ```
 
-创建数据表：
+    - 创建数据表：
 
-```json
-{
-    "sql": "create table new_table as (select * from table_name)",
-    "collect_result": "0"
-}
-```
+    ```json
+    {
+        "sql": "create table new_table as (select * from table_name)",
+        "collect_result": "0"
+    }
+    ```
 
-参数说明：
+    参数说明：
 
-- sql：待执行的 SQL 查询语句。
-- collect_result：可选参数，默认值为 `1`。
-    - `1`：将 SQL 语句的查询结果用 `json` 格式返回。
-    - `0`：仅在后台执行查询语句不返回执行结果。
+    - `sql`: 待执行的 SQL 查询语句。
+    - `collect_result`: 可选参数，默认值为 1。
+        - 1: 将 SQL 语句的查询结果用 JSON 格式返回。
+        - 0: 仅在后台执行查询语句不返回执行结果。
 
 ## 请求示例
 

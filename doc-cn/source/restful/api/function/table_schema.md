@@ -6,7 +6,6 @@
 
 - Method: `GET`
 - URL: `/table/schema?table=table_name`
-
 - table: 表名。
 
 ## 请求示例

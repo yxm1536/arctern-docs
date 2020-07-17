@@ -34,9 +34,9 @@
     - width：图片宽度；
     - height：图片高度；
     - bounding_box：渲染图片所表示的地理范围 [`x_min`, `y_min`, `x_max`, `y_max`]；
-    - coordinate_system：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)；
+    - `coordinate_system`：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)；
     - map_zoom_level：地图放大比例，取值范围 `(1 ~ 15)`；
-    - aggregation_type：聚合类型。
+    - `aggregation_type`：聚合类型。
 
 ## 示例
 

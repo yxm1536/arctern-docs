@@ -9,15 +9,16 @@
 - Headers:
     - `Content-Type: application/json`
 - Body:
-```json
-{
-    "command": "import sys\nprint(len(sys.argv))"
-}
-```
 
-参数说明：
+    ```json
+    {
+        "command": "import sys\nprint(len(sys.argv))"
+    }
+    ```
 
-- command: 待执行的 Python 代码。
+    参数说明：
+
+    - `command`: 待执行的 Python 代码。
 
 ## 请求示例
 

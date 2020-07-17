@@ -37,12 +37,12 @@
     - width：图片宽度；
     - height：图片高度；
     - bounding_box：渲染图片所表示的地理范围 [`x_min`, `y_min`, `x_max`, `y_max`]；
-    - coordinate_system：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)；
+    - `coordinate_system`：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)；
     - color_gradient：渔网网格的颜色渐变范围，目前仅支持默认值["#0000FF", "#FF0000"]；
     - cell_size：渔网网格的边长；
     - cell_spacing：渔网网格之间的间隔；
     - opacity：渔网网格的不透明度;
-    - aggregation_type：聚合类型。
+    - `aggregation_type`：聚合类型。
 
 
 ## 示例
