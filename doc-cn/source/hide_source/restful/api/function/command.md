@@ -4,7 +4,7 @@
 
 ## 请求说明
 
-- Method: **POST**
+- Method: `POST`
 - URL: `/command`
 - Headers:
     - `Content-Type: application/json`
@@ -21,7 +21,7 @@
 - scope：该字段指明在哪一个作用域内执行 command；
 - command：待执行的 `python` 代码。
 
-## 样例
+## 示例
 
 ### Python
 

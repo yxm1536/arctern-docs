@@ -105,7 +105,7 @@ $ python -c "import pyspark"
 如果上述命令没有错误信息输出，则表示安装成功。
 
 
-## 测试样例
+## 测试示例
 
 ### 下载测试模块
 
@@ -124,7 +124,7 @@ $ wget https://raw.githubusercontent.com/arctern-io/arctern/branch-0.3.x/spark/p
 $ spark-submit --master local <path/to/spark_udf_ex.py>
 ```
 
-若最后结果输出包含以下内容，则表示通过测试样例。
+若最后结果输出包含以下内容，则表示通过测试示例。
 
 ```bash
 All tests of arctern have passed!
@@ -140,7 +140,7 @@ All tests of arctern have passed!
 $ python <path/to/spark_udf_ex.py>
 ```
 
-若最后结果输出包含以下内容，则表示通过测试样例。
+若最后结果输出包含以下内容，则表示通过测试示例。
 ```bash
 All tests of arctern have passed!
 ```

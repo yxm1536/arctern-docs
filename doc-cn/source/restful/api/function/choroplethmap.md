@@ -4,15 +4,32 @@
 
 ## 请求说明
 
-- HTTP方法: **POST**
-- 请求URL: `/choroplethmap`
+- Method: `POST`
+- URL: `/choroplethmap`
 - Headers:
     - `Content-Type: application/json`
-- Body:
+- Body: 见 [Body 示例](#Body-示例)。
 
-### Python 后台示例
+## Body 示例
 
-如果数据处理后台为 Python, 则示例 JSON 如下：
+参数说明：
+
+- `input_data`: 输入数据描述，需为已定义的变量名称或可执行的 Python 语句。
+    - `region_boundaries`: 轮廓的位置，格式为 WKB 的 pandas.Series。
+    - `weights`: 轮廓权重，为 float64 或 int64 类型的 pandas.Series。
+- `params`: 绘图参数。
+    - `width`: 图片宽度。
+    - `height`: 图片高度。
+    - `bounding_box`: 渲染图片所表示的地理范围 [x_min, y_min, x_max, y_max]。
+    - `coordinate_system`: 输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)。
+    - `color_gradient`: 轮廓的颜色渐变范围，即轮廓的颜色从左边渐变到右边。
+    - `color_bound`: 轮廓颜色的取值范围，与 `color_gradient` 配合使用。
+    - `opacity`: 轮廓的不透明度。
+    - `aggregation_type`: 聚合类型。
+
+### Python 后台
+
+如果数据处理后台为 Python，则示例如下：
 
 ```json
 {
@@ -33,30 +50,15 @@
 }
 ```
 
-### PySpark 后台示例
+### PySpark 后台
 
-如果数据处理后台为 PySpark, 你只需将上面 Python 后台的示例代码中的 `input_data` 改为相应的 SQL 查询语句，示例如下：
+如果数据处理后台为 PySpark，你只需将上面 Python 后台的示例代码中的 `input_data` 改为相应的 SQL 查询语句，示例如下：
 
 ```
 "sql": "select ST_GeomFromText(buildingtext_pickup) as polygon, fare_amount as count from raw_data where buildingtext_pickup!=''"
 ```
 
-参数说明：
-
-- input_data：输入数据描述，需为已定义的变量名称或可执行的 Python 语句；
-    - region_boundaries：轮廓的位置，格式为 WKB 的 pandas.Series；
-    - weights：轮廓权重，为 float64 或 int64 类型的 pandas.Series；
-- params：绘图参数。
-    - width：图片宽度。
-    - height：图片高度。
-    - bounding_box：渲染图片所表示的地理范围 [`x_min`, `y_min`, `x_max`, `y_max`]。
-    - coordinate_system：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)。
-    - color_gradient：轮廓的颜色渐变范围，即轮廓的颜色从左边渐变到右边。
-    - color_bound：轮廓颜色的取值范围，与 `color_gradient` 配合使用。
-    - opacity：轮廓的不透明度。
-    - aggregation_type：聚合类型。
-
-## 请求样例
+## 请求示例
 
 ### Python
 
@@ -122,7 +124,7 @@ curl --location --request POST 'http://localhost:8080/choroplethmap' \
 }'
 ```
 
-## 响应样例
+## 响应示例
 
 ```json
 {

@@ -4,8 +4,8 @@
 
 ## 请求说明
 
-- HTTP方法: **POST**
-- 请求URL: `/savefile`
+- Method: `POST`
+- URL: `/savefile`
 - Headers:
     - `Content-Type: application/json`
 - Body:
@@ -33,7 +33,7 @@
     - path：文件路径。
     - options：保存文件时的指定选项，使用 `key-value` 形式提供。
 
-## 请求样例
+## 请求示例
 
 ### Python
 
@@ -93,7 +93,7 @@ curl --location --request POST 'http://localhost:8080/savefile' \
 }'
 ```
 
-## 响应样例
+## 响应示例
 
 ```json
 {

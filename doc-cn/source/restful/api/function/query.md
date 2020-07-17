@@ -4,8 +4,8 @@
 
 ## 请求说明
 
-- HTTP方法: **POST**
-- 请求URL: `/query`
+- Method: `POST`
+- URL: `/query`
 - Headers:
     - `Content-Type: application/json`
 - Body:
@@ -35,7 +35,7 @@
     - `1`：将 SQL 语句的查询结果用 `json` 格式返回。
     - `0`：仅在后台执行查询语句不返回执行结果。
 
-## 请求样例
+## 请求示例
 
 ### Python
 
@@ -105,7 +105,7 @@ curl --location --request POST 'http://localhost:8080/query' \
 }'
 ```
 
-## 响应样例
+## 响应示例
 
 ```json
 {

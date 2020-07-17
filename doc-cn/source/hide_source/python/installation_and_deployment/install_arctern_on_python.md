@@ -91,7 +91,7 @@ $ conda install -c arctern -c conda-forge arctern
 >>> arctern.version()
 ```
 
-## 测试样例
+## 测试示例
 
 ```bash
 # 安装 py.test

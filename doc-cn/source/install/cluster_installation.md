@@ -133,7 +133,7 @@ $ export PYSPARK_PYTHON=$CONDA_PREFIX/bin/python
 $ python -c "from arctern_spark import examples;examples.run_geo_functions_test()"
 ```
 
-若输出结果包含以下内容，则表示通过测试样例。
+若输出结果包含以下内容，则表示通过测试示例。
 
 ```bash
 All tests have passed!

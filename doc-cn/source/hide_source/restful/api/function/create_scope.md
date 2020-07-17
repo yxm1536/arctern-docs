@@ -6,8 +6,8 @@ Arctern Restful Server 使用作用域（`scope`）为你分配服务器资源�
 
 ## 请求说明
 
-- HTTP方法: **POST**
-- 请求URL: `/scope`
+- Method: `POST`
+- URL: `/scope`
 - Headers:
     - `Content-Type: application/json`
 - Body:
@@ -21,7 +21,7 @@ Arctern Restful Server 使用作用域（`scope`）为你分配服务器资源�
 
 - scope：可选参数，若不指定 `scope`，则请求的 `headers` 字段可以省略，服务器将产生一个随机字符串作为新建 `scope` 的名称，并将其返回。
 
-## 样例
+## 示例
 
 ### Python
 
@@ -63,7 +63,7 @@ curl --location --request POST 'http://localhost:8080/scope' \
 
 ## 返回说明
 
-成功样例：
+成功示例：
 
 ```json
 {
@@ -74,7 +74,7 @@ curl --location --request POST 'http://localhost:8080/scope' \
 }
 ```
 
-失败样例：
+失败示例：
 
 ```json
 {

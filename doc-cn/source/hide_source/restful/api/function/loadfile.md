@@ -4,8 +4,8 @@
 
 ## 请求说明
 
-- HTTP方法: **POST**
-- 请求URL: `/loadfile`
+- Method: `POST`
+- URL: `/loadfile`
 - Headers:
     - `Content-Type: application/json`
 - Body:
@@ -43,7 +43,7 @@
     - options：加载文件时的指定选项，使用 `key-value` 形式提供。具体的选项内容参见 [Arctern-Spark 文件的导入导出](../../../spark/data_source/file_data.md)；
     - schema：各列数据的名称和类型描述，schema 字段是一个列表( `list` )，顺序需要和文件中各列的实际存储顺序保持一致。
 
-## 样例
+## 示例
 
 ### Python
 
@@ -61,7 +61,7 @@ import json
 
 url = "http://localhost:8080/loadfile"
 
-# /path/to/data.csv文件内容样例如下：
+# /path/to/data.csv文件内容示例如下：
 """
 column0, column1, column2
 str1, 0.1, 1
@@ -138,7 +138,7 @@ curl --location --request POST 'http://localhost:8080/loadfile' \
 
 ## 返回说明
 
-成功样例：
+成功示例：
 
 ```json
 {
@@ -148,7 +148,7 @@ curl --location --request POST 'http://localhost:8080/loadfile' \
 }
 ```
 
-失败样例：
+失败示例：
 
 ```json
 {

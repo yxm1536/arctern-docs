@@ -4,8 +4,8 @@
 
 ## 请求说明
 
-- HTTP方法: **POST**
-- 请求URL: `/pointmap`
+- Method: `POST`
+- URL: `/pointmap`
 - Headers:
     - `Content-Type: application/json`
 - Body:
@@ -52,7 +52,7 @@
     - point_color：点的颜色。
     - opacity：点的不透明度。
 
-## 请求样例
+## 请求示例
 
 ### Python
 
@@ -114,7 +114,7 @@ curl --location --request POST 'http://localhost:8080/pointmap' \
 }'
 ```
 
-## 响应样例
+## 响应示例
 
 ```json
 {

@@ -313,7 +313,7 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-点图样例：
+点图示例：
 
 ![点图](../../../img/restful-result/pointmap.png)
 
@@ -362,7 +362,7 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-带权点图样例：
+带权点图示例：
 
 ![带权点图](../../../img/restful-result/weighted_pointmap.png)。
 
@@ -400,7 +400,7 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-热力图样例：
+热力图示例：
 
 ![热力图](../../../img/restful-result/heatmap.png)
 
@@ -446,7 +446,7 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-轮廓图样例：
+轮廓图示例：
 
 ![轮廓图](../../../img/restful-result/choroplethmap.png)
 
@@ -488,7 +488,7 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-图标图样例：
+图标图示例：
 
 ![图标图](../../../img/restful-result/icon_viz.png)
 
@@ -532,7 +532,7 @@ $ pip install requests
 ...     f.write(base64.b64decode(r.json()['result']))
 ```
 
-渔网图样例：
+渔网图示例：
 
 ![渔网图](../../../img/restful-result/fishnetmap.png)
 

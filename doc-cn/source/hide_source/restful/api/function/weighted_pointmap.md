@@ -4,8 +4,8 @@
 
 ## 请求说明
 
-- HTTP方法: **POST**
-- 请求URL: `/weighted_pointmap`
+- Method: `POST`
+- URL: `/weighted_pointmap`
 - Headers:
     - `Content-Type: application/json`
 - Body:
@@ -42,7 +42,7 @@
     - opacity：点的不透明度；
     - size_bound：点大小的取值范围。
 
-## 样例
+## 示例
 
 ### Python
 
@@ -108,7 +108,7 @@ curl --location --request POST 'http://localhost:8080/weighted_pointmap' \
 
 ## 返回说明
 
-成功样例：
+成功示例：
 
 ```json
 {
@@ -118,7 +118,7 @@ curl --location --request POST 'http://localhost:8080/weighted_pointmap' \
 }
 ```
 
-失败样例：
+失败示例：
 
 ```json
 {

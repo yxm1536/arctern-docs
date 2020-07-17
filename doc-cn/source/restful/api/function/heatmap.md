@@ -4,8 +4,8 @@
 
 ## 请求说明
 
-- HTTP方法: **POST**
-- 请求URL: `/heatmap`
+- Method: `POST`
+- URL: `/heatmap`
 - Headers:
     - `Content-Type: application/json`
 - Body:
@@ -52,7 +52,7 @@
     - map_zoom_level：地图放大比例，取值范围 `(1 ~ 15)`。
     - aggregation_type：聚合类型。
 
-## 请求样例
+## 请求示例
 
 ### Python
 
@@ -114,7 +114,7 @@ curl --location --request POST 'http://localhost:8080/heatmap' \
 }'
 ```
 
-## 响应样例
+## 响应示例
 
 ```json
 {

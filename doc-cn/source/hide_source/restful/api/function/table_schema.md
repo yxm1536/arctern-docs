@@ -4,14 +4,14 @@
 
 ## 请求说明
 
-- HTTP方法: **GET**
-- 请求URL: /table/schema?scope=scope1&session=spark&table=table1
+- Method: `GET`
+- URL: /table/schema?scope=scope1&session=spark&table=table1
 
 - scope：该字段指明在哪一个作用域内查询表的信息；
 - session：可选参数，该字段指明使用哪个 `SparkSession` 查询表的信息；
 - table：表名。
 
-## 样例
+## 示例
 
 ### Python
 
@@ -44,7 +44,7 @@ curl --location --request GET 'http://localhost:8080/table/schema?scope=scope1&s
 
 ## 返回说明
 
-成功样例：
+成功示例：
 
 ```json
 {
@@ -58,7 +58,7 @@ curl --location --request GET 'http://localhost:8080/table/schema?scope=scope1&s
 }
 ```
 
-失败样例：
+失败示例：
 
 ```json
 {

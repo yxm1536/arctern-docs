@@ -4,8 +4,8 @@
 
 ## 请求说明
 
-- HTTP方法: **POST**
-- 请求URL: `/fishnetmap`
+- Method: `POST`
+- URL: `/fishnetmap`
 - Headers:
     - `Content-Type: application/json`
 - Body:
@@ -45,7 +45,7 @@
     - aggregation_type：聚合类型。
 
 
-## 样例
+## 示例
 
 ### Python
 
@@ -113,7 +113,7 @@ curl --location --request POST 'http://localhost:8080/fishnetmap' \
 
 ## 返回说明
 
-成功样例：
+成功示例：
 
 ```json
 {
@@ -123,7 +123,7 @@ curl --location --request POST 'http://localhost:8080/fishnetmap' \
 }
 ```
 
-失败样例：
+失败示例：
 
 ```json
 {

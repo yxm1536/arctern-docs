@@ -141,7 +141,7 @@ $ [path/to/your/spark]/bin/pyspark
 [path/to/your/conda]/envs/arctern_env
 ```
 
-## 测试样例
+## 测试示例
 
 使用测试文件检验 Arctern-Spark 是否安装成功,执行以下命令提交 Spark 任务。
 
@@ -158,7 +158,7 @@ $ [path/to/your/spark]/bin/spark-submit --master [spark service address] spark_u
 $ [path/to/your/spark]/bin/spark-submit --master yarn spark_udf_ex.py
 ```
 
-如果测试样例运行无误，将在终端打印如下信息：
+如果测试示例运行无误，将在终端打印如下信息：
 
 ```
 All tests of arctern have passed!

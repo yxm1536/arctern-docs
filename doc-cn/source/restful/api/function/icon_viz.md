@@ -4,8 +4,8 @@
 
 ## 请求说明
 
-- HTTP方法: **POST**
-- 请求URL: `/icon_viz`
+- Method: `POST`
+- URL: `/icon_viz`
 - Headers:
     - `Content-Type: application/json`
 - Body:
@@ -48,7 +48,7 @@
     - icon_path：png 图标文件的绝对路径。
     - coordinate_system：输入数据的坐标系统，详见 [World Geodetic System](https://en.wikipedia.org/wiki/World_Geodetic_System)。
 
-## 请求样例
+## 请求示例
 
 ### Python
 
@@ -106,7 +106,7 @@ curl --location --request POST 'http://localhost:8080/icon_viz' \
 }'
 ```
 
-## 响应样例
+## 响应示例
 
 ```json
 {

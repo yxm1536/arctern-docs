@@ -163,7 +163,7 @@ $ [path/to/your/spark]/bin/pyspark
 [path/to/your/conda]/envs/arctern_env
 ```
 
-## 测试样例
+## 测试示例
 
 执行以下命令下载测试文件：
 
@@ -184,7 +184,7 @@ $ [path/to/your/spark]/bin/spark-submit --master [spark service address] [path/t
 $ [path/to/your/spark]/bin/spark-submit --master yarn [path/to/]spark_udf_ex.py
 ```
 
-若最后打印结果类似以下内容，则表示通过测试样例。
+若最后打印结果类似以下内容，则表示通过测试示例。
 ```bash
 All tests of arctern have passed!
 ```

@@ -6,14 +6,14 @@
 
 ## 请求说明
 
-- HTTP方法: **DELETE**
-- 请求URL: `/scope/<scope>`
+- Method: **DELETE**
+- URL: `/scope/<scope>`
 
 参数说明：
 
 - scope：作用域名称。
 
-## 样例
+## 示例
 
 ### Python
 
@@ -47,7 +47,7 @@ curl --location --request DELETE 'http://localhost:8080/scope/scope_name'
 
 ## 返回说明
 
-成功样例：
+成功示例：
 
 ```json
 {
@@ -58,7 +58,7 @@ curl --location --request DELETE 'http://localhost:8080/scope/scope_name'
 }
 ```
 
-失败样例：
+失败示例：
 
 ```json
 {

@@ -4,8 +4,8 @@
 
 ## 请求说明
 
-- HTTP方法: **POST**
-- 请求URL: `/choroplethmap`
+- Method: `POST`
+- URL: `/choroplethmap`
 - Headers:
     - `Content-Type: application/json`
 - Body:
@@ -42,7 +42,7 @@
     - opacity：轮廓的不透明度。
     - aggregation_type：聚合类型。
 
-## 样例
+## 示例
 
 ### Python
 
@@ -106,7 +106,7 @@ curl --location --request POST 'http://localhost:8080/choroplethmap' \
 
 ## 返回说明
 
-成功样例：
+成功示例：
 
 ```json
 {
@@ -116,7 +116,7 @@ curl --location --request POST 'http://localhost:8080/choroplethmap' \
 }
 ```
 
-失败样例：
+失败示例：
 
 ```json
 {

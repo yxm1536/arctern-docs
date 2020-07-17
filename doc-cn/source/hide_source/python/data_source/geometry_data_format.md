@@ -4,7 +4,7 @@ Arctern 在导入和导出数据时支持 [Well Know Text (WKT)](https://en.wiki
 
 目前，Arctern API 仅支持 WKB 格式的几何体数据作为输入参数和返回参数。如下例所示，如果数据源使用 WKT 格式的数据，在导入数据后需要调用 `ST_GeomFromText` 函数将数据转换为 WKB 格式；相应的，在导出数据后也需要调用 `ST_GeomFromText` 函数将数据转换回 WKT 格式。数据形式的转换将带来额外的数据开销。因此，如果你对几何体数据的可读性要求不高，建议将数据存储为 WKB 格式。
 
-## 样例
+## 示例
 
 导入和导出 WKT 格式的数据：
 
