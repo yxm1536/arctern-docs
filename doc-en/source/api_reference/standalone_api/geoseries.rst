@@ -4,10 +4,9 @@ GeoSeries
 =========
 .. currentmodule:: arctern
 
-GeoSeries is a Series to store and process geometry data by extending
-Pandas Series. It internally store geometry as bytes object.
+GeoSeries inherits pandas Series. It is a Series to store and process geometric data, and internally stores geometries as bytes objects.
 
-Constructor
+Constructor 
 -----------
 .. autosummary::
    :toctree: api/
@@ -22,14 +21,16 @@ Attributes
    :toctree: api/
 
    GeoSeries.is_valid
-   GeoSeries.length
    GeoSeries.is_simple
+   GeoSeries.is_empty
+   GeoSeries.length
    GeoSeries.area
    GeoSeries.geom_type
    GeoSeries.centroid
    GeoSeries.convex_hull
    GeoSeries.npoints
    GeoSeries.envelope
+   GeoSeries.boundary
 
 .. TODO: should we use this title?
 
@@ -41,12 +42,14 @@ Constructing Geometry
     GeoSeries.point
     GeoSeries.polygon_from_envelope
     GeoSeries.geom_from_geojson
+    GeoSeries.from_geopandas
+    GeoSeries.from_file
     GeoSeries.as_geojson
     GeoSeries.to_wkt
     GeoSeries.to_wkb
     GeoSeries.to_geopandas
-
-    GeoSeries.from_geopandas
+    GeoSeries.to_json
+    GeoSeries.to_file
 
 Processing Geometry
 -------------------
@@ -56,12 +59,20 @@ Processing Geometry
    GeoSeries.buffer
    GeoSeries.precision_reduce
    GeoSeries.intersection
+   GeoSeries.union
    GeoSeries.make_valid
    GeoSeries.simplify
    GeoSeries.set_crs
    GeoSeries.crs
    GeoSeries.to_crs
    GeoSeries.curve_to_line
+   GeoSeries.exterior
+   GeoSeries.difference
+   GeoSeries.symmetric_difference
+   GeoSeries.scale
+   GeoSeries.affine_transform
+   GeoSeries.translate
+   GeoSeries.rotate
 
 Spatial Relationship
 --------------------
@@ -75,6 +86,7 @@ Spatial Relationship
    GeoSeries.contains
    GeoSeries.intersects
    GeoSeries.within
+   GeoSeries.disjoint
 
 Measurement
 -----------
