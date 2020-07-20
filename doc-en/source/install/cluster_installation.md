@@ -1,6 +1,6 @@
-# 在 Spark 集群上安装部署 Arctern
+# Install and deploy Arctern on a Spark cluster
 
-本文介绍使用 Docker 技术在一台主机上启动三个容器，并将它们组织成一个 **Standalone** 模式的 Spark 集群。之后，你将在该集群上运行 CPU 版本的 Arctern。三个容器的信息如下：
+This article describes how to use Docker to start three containers on a host and organize them into a Spark cluster in **standalone** mode. Then, you can run the CPU version of Arctern on the cluster. The information of the three containers is as follows:
 
 | Host name |IP address | Container name | Type |
 | :--- | :--- | :--- | :--- |
@@ -8,27 +8,27 @@
 | node-slave1 | 172.18.0.21 | node-slave1 | worker |
 | node-slave2 | 172.18.0.22 | node-slave2 | worker |
 
-## 创建 Docker 子网
+## Create a Docker subnet
 
-创建一个名为 `arcternet` 的 Docker 子网：
+Create a Docker subnet named `arcternet`:
 
 ```bash
 $ docker network create --subnet=172.18.0.0/16 arcternet
 ```
-如果提示
+
+If you see the error message below, it means that the subnet already exists and you do not need to create a subnet. Also, you can delete the existing subnet and then recreate the subnet; or try to create a subnet in another network segment.
+
 ```
 Error response from daemon: Pool overlaps with other one on this address space
 ```
-则需表示已经有该子网，则无需创建子网，或者删除现有子网重新创建，或者尝试创建其它网段的子网。
 
-创建完毕后，可以通过以下命令查看创建的子网：
+After creating the subnet, you can view the new subnet with the following command:
+
 ```bash
 $ docker network ls
 ```
 
-## 启动容器
-
-使用以下命令启动容器：
+## Start containers
 
 ```bash
 $ docker run -d -ti --name node-master --hostname node-master --net arcternet --ip 172.18.0.20 --add-host node-slave1:172.18.0.21 --add-host node-slave2:172.18.0.22  ubuntu:18.04 bash
@@ -36,19 +36,19 @@ $ docker run -d -ti --name node-slave1 --hostname node-slave1 --net arcternet --
 $ docker run -d -ti --name node-slave2 --hostname node-slave2 --net arcternet --ip 172.18.0.22 --add-host node-master:172.18.0.20 --add-host node-slave1:172.18.0.21  ubuntu:18.04 bash
 ```
 
-## 安装基础库和工具
+## Install basic libraries and tools
 
-本文使用的 Docker 镜像是 `ubuntu:18.04`，需要安装一些基础库和工具。下面以 `node-master` 为例介绍安装步骤。
+Here we use the Docker image `ubuntu:18.04` and take `node-master` as an example to introduce the installation steps.
 
-> **注意：** 你需要对 `node-slave1` 和 `node-slave2` 重复下方所述的操作。
+> **Note:** You need to repeat the operations below for `node-slave1` and `node-slave2`.
 
-使用以下命令进入 `node-master` 节点：
+Enter the `node-master` node:
 
 ```bash
 $ docker exec -it node-master bash
 ```
 
-使用以下命令安装基础依赖库和工具:
+Install basic dependent libraries and tools:
 
 ```bash
 $ apt update
@@ -56,23 +56,25 @@ $ apt install -y wget openjdk-8-jre openssh-server vim sudo
 $ service ssh start
 ```
 
-使用以下命令新建用户 `arcterner` 并将密码设置为 `arcterner`:
+Create a new user named `arcterner` and set the password to `arcterner`:
 
 ```
 $ useradd -m arcterner -s /bin/bash -G sudo
 $ echo -e "arcterner\narcterner" | passwd arcterner
 ```
 
-## 设置免密登录
+## Set up password-free login
 
-> **注意：** 此操作只在 `node-master` 上执行。
+> **Note:** This operation is only performed on `node-master`.
 
-以 `arcterner` 用户登录 `node-master`：
+Log in to `node-master` as user `arcterner`:
+
 ```bash
 $ docker exec -it -u arcterner node-master bash
 ```
 
-使用以下命令设置 `node-master` 到所有节点免密登录：
+Enable `node-master` to log into all nodes without password:
+
 ```bash
 $ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 $ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
@@ -81,17 +83,17 @@ $ ssh-copy-id node-slave1
 $ ssh-copy-id node-slave2
 ```
 
-## 部署 Spark 和 Arctern
+## Deploy Spark and Arctern
 
-> **注意：** 你需要以 `arcterner` 用户登录所有 Docker 节点部署 Spark 和 Arctern。
+> **Note:** You need to log into all Docker nodes as the `arcterner` user to deploy Spark and Arctern.
 
-参考以下方式：
+See the article below:
 
-* [在 Spark 上安装 Arctern](./install_arctern_on_spark_cn.md)
+* [Install Arctern on Spark](./install_arctern_on_spark_cn.md)
 
-## 配置 Spark 集群
+## Configure Spark cluster
 
-以 `arcterner` 用户登录 `node-master` 。执行 `vim ~/spark-3.0.0-bin-hadoop2.7/conf/slaves` 以编辑 **slaves** 文件。文件内容如下:
+Log into `node-master` as user `arcterner`. Run `vim ~/spark-3.0.0-bin-hadoop2.7/conf/slaves` to edit the **slaves** file. The content of the file is as follows:
 
 ```
 node-master
@@ -99,41 +101,41 @@ node-slave1
 node-slave2
 ```
 
-执行 `vim ~/spark-3.0.0-bin-hadoop2.7/conf/spark-defaults.conf` 以编辑 **spark-defaults.conf** 文件。在该文件中添加以下内容:
+Run `vim ~/spark-3.0.0-bin-hadoop2.7/conf/spark-defaults.conf` to edit the **spark-defaults.conf** file. Add the following to the file:
 
 ```bash
 spark.master  spark://node-master:7077
 ```
 
-## 启动 Spark 集群
+## Start Spark cluster
 
-以 `arcterner` 用户登录 `node-master` 并执行以下命令来启动集群：
+Log into `node-master` as the `arcterner` user and start the cluster:
 
 ```bash
 $SPARK_HOME/sbin/start-master.sh
 $SPARK_HOME/sbin/start-slaves.sh
 ```
 
-关闭 `node-master` 宿主机的浏览器代理，在宿主机的浏览器中输入 `http://172.18.0.20:8080/`，验证 Spark 集群是否正确启动：
+In the host `node-master`, close the HTTP proxy, open the link `http://172.18.0.20:8080/` in the browser to check if the Spark cluster is started correctly:
 
-![查看集群](./img/check_cluster.png)
+![View the cluster](./img/check_cluster.png)
 
-## 验证部署
+## Verify deployment
 
-以 `arcterner` 用户登录 `node-master`，并进入 Conda 环境：
+Log into `node-master` as the `arcterner` user and enter the Conda environment:
 
 ```bash
 $ conda activate arctern_env
 ```
 
-使用以下命令验证是否部署成功：
+Check if the deployment is successful:
 
 ```bash
 $ export PYSPARK_PYTHON=$CONDA_PREFIX/bin/python
 $ python -c "from arctern_spark import examples;examples.run_geo_functions_test()"
 ```
 
-若输出结果包含以下内容，则表示通过测试示例。
+If you see the following message, then the test example is passed.
 
 ```bash
 All tests have passed!
