@@ -1,6 +1,6 @@
 # 渔网图
 
-根据相关画图参数绘制渔网图，将绘图结果以 base64 编码方式返回。
+根据相关画图参数绘制渔网图，将绘图结果以 Base64 编码方式返回。
 
 ## 请求说明
 
@@ -134,6 +134,6 @@ curl --location --request POST 'http://localhost:8080/fishnetmap' \
 {
     "status": "success",
     "code": "200",
-    "result": "使用 base64 编码后的渔网图数据"
+    "result": "使用 Base64 编码后的渔网图数据"
 }
 ```

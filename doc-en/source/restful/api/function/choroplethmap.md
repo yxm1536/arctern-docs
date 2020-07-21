@@ -1,6 +1,7 @@
-# 轮廓图
+# Choropleth map
 
-根据相关画图参数绘制轮廓图，将绘图结果以 base64 编码方式返回。
+根据相关画图参数绘制轮廓图，将绘图结果以 Base64 编码方式返回。
+Draws the choropleth map according to the relevant parameters and returns a Base64 image.
 
 ## 请求说明
 
@@ -130,6 +131,6 @@ curl --location --request POST 'http://localhost:8080/choroplethmap' \
 {
     "status": "success",
     "code": "200",
-    "result": "使用 base64 编码后的轮廓图数据"
+    "result": "使用 Base64 编码后的轮廓图数据"
 }
 ```
