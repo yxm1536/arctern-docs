@@ -12,7 +12,7 @@ Draws the choropleth map according to the relevant parameters and returns a Base
 
 ## Body example
 
-参数说明：
+Parameter description:
 
 - `input_data`: 输入数据描述，需为已定义的变量名称或可执行的 Python 语句。
     - `region_boundaries`: 轮廓的位置，格式为 WKB 的 pandas.Series。
