@@ -1,8 +1,8 @@
-# 保存文件
+# Save file
 
 执行数据查询操作并将结果存入指定文件。仅当数据处理后台为 PySpark 时可用。当数据处理后台为 Python 时请使用 `command` 接口保存文件。参见 [代码执行接口说明](command.md)。
 
-## 请求说明
+## Request description
 
 - Method: `POST`
 - URL: `/savefile`
@@ -34,7 +34,7 @@
         - `path`: 文件路径。
         - `options`: 保存文件时的指定选项，使用 `key-value` 形式提供。
 
-## 请求示例
+## Request example
 
 ### Python
 
@@ -44,7 +44,7 @@
 pip install requests
 ```
 
-调用示例
+Here is an example of calling the `savefile` API:
 
 ```python
 import requests
@@ -94,7 +94,7 @@ curl --location --request POST 'http://localhost:8080/savefile' \
 }'
 ```
 
-## 响应示例
+## Response example
 
 ```json
 {

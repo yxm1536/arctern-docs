@@ -1,8 +1,8 @@
-# 代码执行
+# Run codes
 
 执行给定的 Python 代码。
 
-## 请求说明
+## Request description
 
 - Method: `POST`
 - URL: `/command`
@@ -20,7 +20,7 @@
 
     - `command`: 待执行的 Python 代码。
 
-## 请求示例
+## Request example
 
 ### Python
 
@@ -30,7 +30,7 @@
 pip install requests
 ```
 
-调用示例：
+Here is an example of calling the `command` API:
 
 ```python
 import requests
@@ -60,7 +60,7 @@ curl --location --request POST 'http://localhost:8080/command' \
 }'
 ```
 
-## 响应示例
+## Response example
 
 ```json
 {

@@ -1,8 +1,8 @@
-# 加载文件
+# Load file
 
 加载数据文件。当前支持的文件格式详见 [文件的导入导出](../../file_data.md)。
 
-## 请求说明
+## Request description
 
 - Method: `POST`
 - URL: `/loadfile`
@@ -40,7 +40,7 @@
         - options: 加载文件时的指定选项，使用 `key-value` 形式提供。
         - schema: 各列数据的名称和类型描述。schema 字段是一个列表，顺序需要和文件中各列的实际存储顺序保持一致。
 
-## 请求示例
+## Request example
 
 ### Python
 
@@ -50,7 +50,7 @@
 pip install requests
 ```
 
-调用示例：
+Here is an example of calling the `loadfile` API:
 
 ```python
 import requests
@@ -129,7 +129,7 @@ curl --location --request POST 'http://localhost:8080/loadfile' \
 }'
 ```
 
-## 响应示例
+## Response example
 
 ```json
 {

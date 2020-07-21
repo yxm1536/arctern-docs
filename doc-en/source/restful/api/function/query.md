@@ -1,8 +1,8 @@
-# 查询
+# Query
 
 执行给定的 SQL 查询语句。仅当数据处理后台为 PySpark 时可用。
 
-## 请求说明
+## Request description
 
 - Method: `POST`
 - URL: `/query`
@@ -35,7 +35,7 @@
         - 1: 将 SQL 语句的查询结果用 JSON 格式返回。
         - 0: 仅在后台执行查询语句不返回执行结果。
 
-## 请求示例
+## Request example
 
 ### Python
 
@@ -45,7 +45,7 @@
 pip install requests
 ```
 
-调用示例
+Here is an example of calling the `query` API:
 
 ```python
 import requests
@@ -105,7 +105,7 @@ curl --location --request POST 'http://localhost:8080/query' \
 }'
 ```
 
-## 响应示例
+## Response example
 
 ```json
 {

@@ -1,17 +1,16 @@
 # Choropleth map
 
-根据相关画图参数绘制轮廓图，将绘图结果以 Base64 编码方式返回。
 Draws the choropleth map according to the relevant parameters and returns a Base64 image.
 
-## 请求说明
+## Request description
 
 - Method: `POST`
 - URL: `/choroplethmap`
 - Headers:
     - `Content-Type: application/json`
-- Body: 见 [Body 示例](#Body-示例)。
+- Body: See [Body example](#Body-example).
 
-## Body 示例
+## Body example
 
 参数说明：
 
@@ -28,7 +27,7 @@ Draws the choropleth map according to the relevant parameters and returns a Base
     - `opacity`: 轮廓的不透明度。
     - `aggregation_type`: 聚合类型。
 
-### Python 后台
+### Python backend
 
 如果数据处理后台为 Python，则示例如下：
 
@@ -51,7 +50,7 @@ Draws the choropleth map according to the relevant parameters and returns a Base
 }
 ```
 
-### PySpark 后台
+### PySpark backend
 
 如果数据处理后台为 PySpark，你只需将上面 Python 后台的示例代码中的 `input_data` 改为相应的 SQL 查询语句，示例如下：
 
@@ -59,7 +58,7 @@ Draws the choropleth map according to the relevant parameters and returns a Base
 "sql": "select ST_GeomFromText(buildingtext_pickup) as polygon, fare_amount as count from raw_data where buildingtext_pickup!=''"
 ```
 
-## 请求示例
+## Request example
 
 ### Python
 
@@ -69,7 +68,7 @@ Draws the choropleth map according to the relevant parameters and returns a Base
 pip install requests
 ```
 
-调用示例：
+Here is an example of calling the `choroplethmap` API:
 
 ```python
 import requests
@@ -125,7 +124,7 @@ curl --location --request POST 'http://localhost:8080/choroplethmap' \
 }'
 ```
 
-## 响应示例
+## Response example
 
 ```json
 {

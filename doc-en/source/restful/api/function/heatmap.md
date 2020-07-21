@@ -1,16 +1,16 @@
-# 热力图
+# Heat map
 
 根据相关画图参数绘制热力图，将绘图结果以 Base64 编码方式返回。
 
-## 请求说明
+## Request description
 
 - Method: `POST`
 - URL: `/heatmap`
 - Headers:
     - `Content-Type: application/json`
-- Body: 见 [Body 示例](#Body-示例)。
+- Body: See [Body example](#Body-example)。
 
-## Body 示例
+## Body example
 
 参数说明：
 
@@ -25,7 +25,7 @@
     - `map_zoom_level`: 地图放大比例，取值范围 [1, 15]。
     - `aggregation_type`: 聚合类型。
 
-### Python 后台
+### Python backend
 
 如果数据处理后台为 Python，则示例 JSON 如下：
 
@@ -46,7 +46,7 @@
 }
 ```
 
-### PySpark 后台
+### PySpark backend
 
 如果数据处理后台为 PySpark，你只需将上面 Python 后台的示例代码中的 `input_data` 改为相应的 SQL 查询语句，示例如下：
 
@@ -54,7 +54,7 @@
 "sql": "select ST_Point(pickup_longitude, pickup_latitude) as point, fare_amount as weights from raw_data"
 ```
 
-## 请求示例
+## Request example
 
 ### Python
 
@@ -64,7 +64,7 @@
 pip install requests
 ```
 
-调用示例：
+Here is an example of calling the `heatmap` API:
 
 ```python
 import requests
@@ -116,7 +116,7 @@ curl --location --request POST 'http://localhost:8080/heatmap' \
 }'
 ```
 
-## 响应示例
+## Response example
 
 ```json
 {

@@ -70,7 +70,7 @@
 pip install requests
 ```
 
-调用示例
+调用示例：
 
 ```python
 import requests
