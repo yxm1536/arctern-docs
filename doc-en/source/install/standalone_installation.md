@@ -1,6 +1,6 @@
 # Installation
 
-This document guides you to install Arctern in standalone mode.
+This article describes how to install Arctern in standalone mode.
 
 ## System requirements
 
@@ -20,7 +20,7 @@ This document guides you to install Arctern in standalone mode.
 | CUDA             | 10.0              |
 | NVIDIA driver    | 4.30              |
 
-> **Note:** You can go to [NVIDIA website](https://developer.nvidia.com/cuda-gpus) to check whether you have a CUDA-enabled GPU.
+> **Note:** You can go to the [NVIDIA website](https://developer.nvidia.com/cuda-gpus) to check whether you have a CUDA-enabled GPU.
 
 ## Installing dependent libraries
 
