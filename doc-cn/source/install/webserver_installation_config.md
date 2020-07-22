@@ -18,7 +18,7 @@ Arctern RESTful Server 仅负责接收和解析 RESTful 请求，实际操作由
 
 ## 安装 Arctern RESTful Server
 
-执行以下命令为 Arctern RESTful Server 构建 Conda 环境。
+为 Arctern RESTful Server 构建 Conda 环境：
 
 > **注意：** 此处使用的环境名为 `arctern_server_env`，你可根据需求自行选择合适的名称。
 
@@ -46,7 +46,7 @@ arctern-server bootstrap --workspace=/home/usr/arctern_server/
 
 ## 配置 Arctern RESTful Server
 
-Arctern RESTful Server 为用户开放了一组系统配置项，包括服务端口、IP地址、数据处理后台等。其中，Python 或 PySpark 等不同的数据处理后台的选择由 `interpreter_type` 选项控制。
+Arctern RESTful Server 为用户开放了一组系统配置项，包括服务端口、IP 地址、数据处理后台等。其中，Python 或 PySpark 等不同的数据处理后台的选择由 `interpreter_type` 选项控制。
 
 如果选用 Python 作为后台，请依照以下命令示例进行配置，配置项解释详见 [Arctern RESTful Server 配置选项](../restful/restful_config.md)：
 
@@ -60,8 +60,9 @@ arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080
 arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080 --interpreter_type=pyspark --interpreter_name=arcternpyspark --interpreter_pyspark_python="</path/to/python>" --interpreter_pyspark_driver_python=</path/to/python> --interpreter_spark_home="</path/to/spark>" --interpreter_master=local
 ```
 
-> **注意：** 你需要将 `</path/to/python>` 替换为 Arctern 所在 Conda 环境的 Python 绝对路径，如何获取该路径请参考 [FAQ](#faq) 。
-> **注意：** 你还需要将 `</path/to/spark>` 替换为 Spark 的 HOME 路径。
+> **注意：**
+> * 你需要将 `</path/to/python>` 替换为 Arctern 所在 Conda 环境的 Python 绝对路径，如何获取该路径请参考 [FAQ](#faq)。
+> * 你还需要将 `</path/to/spark>` 替换为 Spark 的 HOME 路径。
 
 ## 启动
 
@@ -74,16 +75,19 @@ arctern-server start --mode=release
 ## FAQ
 
 ### 如何获取 Arctern Conda 环境的 Python 路径
-进入 Arctern 所在的 conda 环境：
+
+进入 Arctern 所在的 Conda 环境：
 
 ```bash
 $ conda activate arctern_env
 ```
-使用以下命令获取 python 的路径
+
+获取 python 的路径：
+
 ```bash
 $ which python
 ```
 
-### 使用 http 代理对运行 Arctern RESTful Server 的影响
+### 使用 HTTP 代理对 Arctern RESTful Server 的影响
 
-使用 http 代理可能会导致 RESTful API 无法被正常调用，请关闭 http 代理然后重启 Arctern RESTful Server。
+使用 HTTP 代理可能会导致 RESTful API 无法被正常调用，请关闭 HTTP 代理然后重启 Arctern RESTful Server。

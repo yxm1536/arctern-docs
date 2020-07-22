@@ -29,7 +29,7 @@
 
 ### Python 后台
 
-如果数据处理后台为 Python，则示例如下：
+如果数据处理后台为 Python，则示例 JSON 如下：
 
 ```json
 {

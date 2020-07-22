@@ -16,7 +16,7 @@
     }
     ```
 
-    参数说明：
+    Parameter description:
 
     - `command`: 待执行的 Python 代码。
 
@@ -24,7 +24,7 @@
 
 ### Python
 
-本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，执行以下命令安装 `requests`：
+The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
 
 ```bash
 pip install requests

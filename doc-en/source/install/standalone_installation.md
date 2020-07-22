@@ -22,7 +22,7 @@ This article describes how to install Arctern in standalone mode.
 
 > **Note:** You can go to the [NVIDIA website](https://developer.nvidia.com/cuda-gpus) to check whether you have a CUDA-enabled GPU.
 
-## Installing dependent libraries
+## Installing dependencies
 
 ### Ubuntu
 

@@ -31,7 +31,7 @@
     }
     ```
 
-    参数说明：
+    Parameter description:
 
     - tables: 创建数据表的描述信息。该字段为一个列表，系统将会按照列表中的顺序依次进行建表操作。
         - name: 数据表名称。
@@ -44,7 +44,7 @@
 
 ### Python
 
-本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，执行以下命令安装 `requests`：
+The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
 
 ```bash
 pip install requests

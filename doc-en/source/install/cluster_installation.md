@@ -48,7 +48,7 @@ Enter the `node-master` node:
 $ docker exec -it node-master bash
 ```
 
-Install basic dependent libraries and tools:
+Install basic dependencies and tools:
 
 ```bash
 $ apt update

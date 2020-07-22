@@ -26,7 +26,7 @@
     }
     ```
 
-    参数说明：
+    Parameter description:
 
     - `tables`: 将数据保存为文件时的描述信息。该字段为一个列表，系统将会按照列表中的顺序依次进行文件保存操作。
         - `sql`: 待执行的 SQL 查询语句，该语句的结果将作为要保存的表。
@@ -38,7 +38,7 @@
 
 ### Python
 
-本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，执行以下命令安装 `requests`：
+The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
 
 ```bash
 pip install requests

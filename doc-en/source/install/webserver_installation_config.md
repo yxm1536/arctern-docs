@@ -1,89 +1,93 @@
-# Arctern RESTful Server 安装与配置
+# Install and deploy Arctern RESTful server
 
-## 安装 Arctern 后台
+## Install Arctern backend
 
-Arctern RESTful Server 仅负责接收和解析 RESTful 请求，实际操作由 Arctern 后台执行。在安装 Arctern RESTful Server 前，你需要事先安装 Arctern 后台系统。目前，Arctern RESTful Server 支持基于 Python 和基于 Spark 的两种 Arctern 后台。你可以任选一种安装使用。
+Arctern RESTful Server only takes charge of receiving and parsing RESTful requests. Actual operations are performed by the Arctern backend. Before installing Arctern RESTful Server, you need to install the Arctern backend in advance. Currently, Arctern RESTful Server supports two Arctern backend systems, which are based on Python and Spark respectively. You can choose to install and use one type of backend.
 
-### 安装基于 Python 的 Arctern 后台
+### Install Python-based Arctern backend
 
-请参考如下链接：
+See the following article:
 
-* [安装 Arctern](./standalone_installation.md)
+* [Install Arctern](./standalone_installation.md)
 
-### 安装基于 Spark 的 Arctern 后台
+### Install Spark-based Arctern backend
 
-请参考如下链接：
+See the following article:
 
-* [在 Spark 上安装 Arctern](./install_arctern_on_spark_cn.md)
+* [Install Arctern on Spark](./install_arctern_on_spark.md)
 
-## 安装 Arctern RESTful Server
+## Install Arctern RESTful server
 
-执行以下命令为 Arctern RESTful Server 构建 Conda 环境。
+Build a Conda environment for Arctern RESTful server:
 
-> **注意：** 此处使用的环境名为 `arctern_server_env`，你可根据需求自行选择合适的名称。
+> **Note:** Here we name the environment `arctern_server_env`. You can use another name according to your needs.
 
 ```bash
 $ conda create -n arctern_server_env -c conda-forge -c arctern arctern-webserver
 ```
 
-> **注意：** 如果你在同一台计算机上安装 Arctern 后台系统和 Arctern RESTful Server，建议二者使用不同的 Conda 环境。例如，为 Arctern 后台创建名为 `arctern_env` 的环境，为 Arctern RESTful Server 的创建名为 `arctern_server_env` 的环境。
+> **Note:** If you want to install the Arctern backend and Arctern RESTful server on the same computer, it is recommended that they use different Conda environments. For example, create an environment called `arctern_env` for the Arctern backend and an environment called `arctern_server_env` for the Arctern RESTful server.
 
-## 设置 Workspace
+## Set up workspace
 
-进入 `arctern_server_env` 虚拟环境：
+Enter the `arctern_server_env` virtual environment:
 
 ```bash
 $ conda activate arctern_server_env
 ```
 
-Workspace 文件夹用于存放 Arctern RESTful Server 所依赖的第三方工具、插件、系统配置文件等信息。在初次启动 RESTful Server 前，你需要通过 `bootstrap` 命令设置 workspace。
+The workspace folder is used to store the third-party tools, extensions, and system configuration files that Arctern RESTful server depends on. Before starting RESTful Server for the first time, you need to set the workspace through the `bootstrap` command.
 
-> **注意：** 此处 `workspace` 指定为 `/home/usr/arctern_server/`，你可根据需求自行选择合适的路径。
+> **Note:** Here we specify `workspace` as `/home/usr/arctern_server/`, you can choose the appropriate path according to your needs.
 
 ```bash
 arctern-server bootstrap --workspace=/home/usr/arctern_server/
 ```
 
-## 配置 Arctern RESTful Server
+## Configure Arctern RESTful server
 
-Arctern RESTful Server 为用户开放了一组系统配置项，包括服务端口、IP地址、数据处理后台等。其中，Python 或 PySpark 等不同的数据处理后台的选择由 `interpreter_type` 选项控制。
+Arctern RESTful server provides a set of system configurations, including service port, IP address, data processing backend, and so on. The `interpreter_type` option controls the selection of different data processing backends (such as Python or PySpark).
 
-如果选用 Python 作为后台，请依照以下命令示例进行配置，配置项解释详见 [Arctern RESTful Server 配置选项](../restful/restful_config.md)：
+If you choose Python as the backend, you can configure it according to the following command. For detailed information about configurations, please refer to [Arctern RESTful server configurations](../restful/restful_config.md):
 
 ```bash
 arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080 --interpreter_type=python --interpreter_name=arcternpython --interpreter_python_path="</path/to/python>"
 ```
 
-如果选用 Spark 作为后台，请依照以下命令示例进行配置，配置项解释详见 [Arctern RESTful Server 配置选项](../restful/restful_config.md)：
+If you choose Spark as the backend, you can configure it according to the following command. For detailed information about configurations, please refer to [Arctern RESTful server configurations](../restful/restful_config.md):
 
 ```bash
 arctern-server config --arctern_server_host=127.0.0.1 --arctern_server_port=8080 --interpreter_type=pyspark --interpreter_name=arcternpyspark --interpreter_pyspark_python="</path/to/python>" --interpreter_pyspark_driver_python=</path/to/python> --interpreter_spark_home="</path/to/spark>" --interpreter_master=local
 ```
 
-> **注意：** 你需要将 `</path/to/python>` 替换为 Arctern 所在 Conda 环境的 Python 绝对路径，如何获取该路径请参考 [FAQ](#faq) 。
-> **注意：** 你还需要将 `</path/to/spark>` 替换为 Spark 的 HOME 路径。
+> **Note:**
+> * You need to replace `</path/to/python>` with the absolute path to Python in the Arctern Conda environment. See [FAQ](#faq) for details about how to obtain the path.
+> * You also need to replace `</path/to/spark>` with Spark's HOME path.
 
-## 启动
+## Start Arctern RESTful server
 
 ```bash
 arctern-server start --mode=release
 ```
 
-`mode` 可选 `release` 或 `debug`。`debug` 模式会提供更准确的提示信息，但比 `release` 模式的执行效率低。
+`mode` can be `release` or `debug`. The `debug` mode provides more accurate information, but it is less efficient than the `release` mode.
 
 ## FAQ
 
-### 如何获取 Arctern Conda 环境的 Python 路径
-进入 Arctern 所在的 conda 环境：
+### How to get the path to Python in the Arctern Conda environment
+
+Enter the Arctern Conda environment:
 
 ```bash
 $ conda activate arctern_env
 ```
-使用以下命令获取 python 的路径
+
+Get the path to python:
+
 ```bash
 $ which python
 ```
 
-### 使用 http 代理对运行 Arctern RESTful Server 的影响
+### The impact of using HTTP proxy on Arctern RESTful server
 
-使用 http 代理可能会导致 RESTful API 无法被正常调用，请关闭 http 代理然后重启 Arctern RESTful Server。
+Using the HTTP proxy may cause the failure of calling RESTful APIs. Please close the HTTP proxy and restart Arctern RESTful Server.

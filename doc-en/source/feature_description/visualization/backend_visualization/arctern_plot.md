@@ -35,7 +35,7 @@ In the geographic area with a longitude range of -73.991504 ~ -73.945155 and a l
 | fare_amount      | Dollar amount of the cost of the taxi ride without any tip.  | double |
 | total_amount     | Total dollar amount of the cost of the taxi ride including the tip. | double |
 
-## Installing dependent libraries
+## Installing dependencies
 
 ```bash
 $ conda install -c conda-forge matplotlib

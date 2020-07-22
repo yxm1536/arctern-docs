@@ -28,7 +28,7 @@
     }
     ```
 
-    参数说明：
+    Parameter description:
 
     - `sql`: 待执行的 SQL 查询语句。
     - `collect_result`: 可选参数，默认值为 1。
@@ -39,7 +39,7 @@
 
 ### Python
 
-本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，执行以下命令安装 `requests`：
+The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
 
 ```bash
 pip install requests

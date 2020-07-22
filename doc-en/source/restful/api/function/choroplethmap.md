@@ -29,7 +29,7 @@ Parameter description:
 
 ### Python backend
 
-如果数据处理后台为 Python，则示例如下：
+The example for Python backend is as follows:
 
 ```json
 {
@@ -52,7 +52,7 @@ Parameter description:
 
 ### PySpark backend
 
-如果数据处理后台为 PySpark，你只需将上面 Python 后台的示例代码中的 `input_data` 改为相应的 SQL 查询语句，示例如下：
+If you use the PySpark backend, you only need to change the `input_data` in the example of Python backend to the following SQL query:
 
 ```
 "sql": "select ST_GeomFromText(buildingtext_pickup) as polygon, fare_amount as count from raw_data where buildingtext_pickup!=''"
@@ -62,7 +62,7 @@ Parameter description:
 
 ### Python
 
-本文示例代码使用 Python 的 `requests` 库调用 `Arctern RESTful API`，执行以下命令安装 `requests`：
+The example uses Python's `requests` library to call `Arctern RESTful API`. Run the following command to install `requests`:
 
 ```bash
 pip install requests
