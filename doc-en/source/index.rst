@@ -13,7 +13,7 @@ Scalability is key to building productive data science pipelines. To address the
 * Unified data analytic and processing interface across different platforms, from laptops to clusters and cloud.
 * Rich and consistent algorithms and models, including trajectory processing, spatial clustering, and regression, etc., across different data science pipeline stages.
 
-We adopt GeoPandas‘s interface and plan to build the GeoDataFrame and GeoSeries that scale both up and out. On top of GeoDataFrame/GeoSeries, we will develop a consistent spatial-temporal algorithm set across execution environments.
+We adopt GeoPandas's interface and plan to build the GeoDataFrame and GeoSeries that scale both up and out. On top of GeoDataFrame/GeoSeries, we will develop a consistent spatial-temporal algorithm set across execution environments.
 
 We have now developed an efficient multi-thread GeoSeries implementation, and the distributed version is in progress. In the latest version 0.2.0, Arctern achieves 7x speedup against GeoPandas. The detailed evaluation results are illustrated in the figure below.
 
@@ -32,7 +32,8 @@ Table of contents
 .. toctree::
    :maxdepth: 1       
 
-   overview
    quick_start/quick_start
    feature_description/feature_description
    api_reference/api_reference
+   cluster/cluster
+   restful/restful

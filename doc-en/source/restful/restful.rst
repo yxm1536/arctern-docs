@@ -1,6 +1,6 @@
 .. _restful:
 
-RESTful 服务
+RESTful Service
 ============
 
 .. toctree::
